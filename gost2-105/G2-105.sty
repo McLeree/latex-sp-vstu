@@ -42,7 +42,7 @@
 \newcommand{\VSTUDocCode}{THIS IS A RUBBERY}
 \fancypagestyle{plain} {
   \fancyhf{}
-  \fancyhf[HCO,HCE]{\mdseries{\VSTUDocCode{}}}
+  \fancyhf[HCO,HCE]{\mdseries{\VSTUDocCode{}\vspace{2mm}}}
   \fancyhf[FCO,FCE]{\thepage}
   \renewcommand{\headrulewidth}{0pt} % remove lines as well
   \renewcommand{\footrulewidth}{0pt}
@@ -65,24 +65,24 @@
 \renewcommand\floatpagefraction{.5}   %
 \renewcommand\dbltopfraction{.7}      %
 \renewcommand\dblfloatpagefraction{.5}%
-%  \def\ps@headings{%
-%    \let\@oddfoot\@empty
-%    \def\@oddhead{{\slshape\rightmark}\hfil\thepage}%
-%    \let\@mkboth\markboth
-%    \def\chaptermark##1{%
-%      \markright {\MakeUppercase{%
-%        \ifnum \c@secnumdepth >\m@ne
-%            \@chapapp\ \thechapter. \ %
-%        \fi
-%        ##1}}}}
-%  \def\ps@myheadings{%
-%      \let\@oddfoot\@empty\let\@evenfoot\@empty
-%      \def\@evenhead{\thepage\hfil\slshape\leftmark}%
-%      \def\@oddhead{{\slshape\rightmark}\hfil\thepage}%
-%      \let\@mkboth\@gobbletwo
-%      \let\chaptermark\@gobble
-%      \let\sectionmark\@gobble
-%  }
+  \def\ps@headings{%
+    \let\@oddfoot\@empty
+    \def\@oddhead{{\slshape\rightmark}\hfil\thepage}%
+    \let\@mkboth\markboth
+    \def\chaptermark##1{%
+      \markright {\MakeUppercase{%
+        \ifnum \c@secnumdepth >\m@ne
+            \@chapapp\ \thechapter. \ %
+        \fi
+        ##1}}}}
+  \def\ps@myheadings{%
+      \let\@oddfoot\@empty\let\@evenfoot\@empty
+      \def\@evenhead{\thepage\hfil\slshape\leftmark}%
+      \def\@oddhead{{\slshape\rightmark}\hfil\thepage}%
+      \let\@mkboth\@gobbletwo
+      \let\chaptermark\@gobble
+      \let\sectionmark\@gobble
+  }
 \setlength\columnsep{10\p@}
 \setlength\columnseprule{0\p@}
 \setlength\lineskip{1\p@}
@@ -423,10 +423,17 @@
 }
 
 %всякие оглавления
-\newcommand{\contentsname}{Содержание}
-\newcommand\tableofcontents{\chapter*{Содержание}\@starttoc{toc}} % КОСТЫЛЬ
-\newcommand\listoffigures{\chapter*{\listfigurename}\@starttoc{lof}}
-\newcommand\listoftables{\chapter*{\listtablename}\@starttoc{lot}}
+
+\newcommand\tableofcontents {
+  \renewcommand{\contentsname}{Содержание}
+  \chapter*{Содержание}\@starttoc{toc}
+}
+\newcommand\listoffigures {
+  \chapter*{\listfigurename}\@starttoc{lof}
+}
+\newcommand\listoftables{
+  \chapter*{\listtablename}\@starttoc{lot}
+}
 
 \newcommand{\l@chapter}   {\@dottedtocline{1}{12mm}{1.1em}}
 \newcommand{\l@section}{\@dottedtocline{2}{12mm}{2.1em}}
