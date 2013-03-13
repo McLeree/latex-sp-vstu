@@ -1,5 +1,3 @@
-% This package designed and commented in russian koi8-r encoding.
-%
 % Лицензия GNU GPL v2 и совместимые
 %
 % Стиль, задающий соответствие документа ГОСТ 2-105-95.
@@ -17,6 +15,7 @@
 %  caption2     оформление заголовков риснуков и таблиц
 %  icomma       запятая в формулах
 %  longtable    многостраничные таблицы
+%  fancyhdr		кастомные колонтитулы для кода документа
 
 \ProvidesPackage{G2-105}[2003/07/07 v1.00 General reqs. GOST 2.105-95]
 \NeedsTeXFormat{LaTeX2e}
@@ -39,7 +38,7 @@
 %стиль страницы
 
 \RequirePackage{fancyhdr}
-\newcommand{\VSTUDocCode}{THIS IS A RUBBERY}
+\newcommand{\VSTUDocCode}{THIS IS A ROBBERY}
 \fancypagestyle{plain} {
   \fancyhf{}
   \fancyhf[HCO,HCE]{\mdseries{\VSTUDocCode{}\vspace{2mm}}}
