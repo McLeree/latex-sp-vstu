@@ -35,13 +35,35 @@
 \ExecuteOptions{a4paper,14pt,final,utf8}
 \ProcessOptions
 
+%оформление документов по СТП ВолгГТУ
+\newcommand{\VSTUDocumentType}{NONE}
+\newcommand{\VSTUDocumentCode}{THIS IS A ROBBERY-\VSTUDocumentType}
+\newcommand{\VSTUSetPersonalCode}[1] {
+  \renewcommand{\VSTUDocumentCode}{#1-\VSTUDocumentType}
+}
+\RequirePackage[\Gost@encoding]{inputenc}
+\newcommand{\VSTUTitle}{Title}
+\newcommand{\VSTUSetTitle}[1]{\renewcommand{\VSTUTitle}{#1}}
+\newcommand{\VSTUDirectorName}{Фамилия\ И.О.}
+\newcommand{\VSTUDirectorDegree}{кто-то,\ какая-то\ каф.}
+\newcommand{\VSTUSetDirector}[2] {
+  \renewcommand{\VSTUDirectorName}{#2}
+  \renewcommand{\VSTUDirectorDegree}{#1}
+}
+\newcommand{\VSTUStudentName}{Фамилия\ И.О.}
+\newcommand{\VSTUStudentGroup}{ГРП--000}
+\newcommand{\VSTUSetStudent}[2] {
+  \renewcommand{\VSTUStudentName}{#2}
+  \renewcommand{\VSTUStudentGroup}{#1}
+}
+
+\input{PZ_title_include.tex}
 %стиль страницы
 
 \RequirePackage{fancyhdr}
-\newcommand{\VSTUDocCode}{THIS IS A ROBBERY}
 \fancypagestyle{plain} {
   \fancyhf{}
-  \fancyhf[HCO,HCE]{\mdseries{\VSTUDocCode{}\vspace{2mm}}}
+  \fancyhf[HCO,HCE]{\mdseries{\VSTUDocumentCode{}\vspace{2mm}}}
   \fancyhf[FCO,FCE]{\thepage}
   \renewcommand{\headrulewidth}{0pt} % remove lines as well
   \renewcommand{\footrulewidth}{0pt}
@@ -425,7 +447,7 @@
 
 \newcommand\tableofcontents {
   \renewcommand{\contentsname}{Содержание}
-  \chapter*{Содержание}\@starttoc{toc}
+  \chapter*{\contentsname}\@starttoc{toc}
 }
 \newcommand\listoffigures {
   \chapter*{\listfigurename}\@starttoc{lof}
