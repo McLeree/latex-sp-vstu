@@ -62,12 +62,12 @@
 
 \RequirePackage{fancyhdr}
 \fancypagestyle{plain} {
+  \setlength\headheight{25pt}
   \fancyhf{}
   \fancyhf[HCO,HCE]{\mdseries{\VSTUDocumentCode{}\vspace{2mm}}}
   \fancyhf[FCO,FCE]{\thepage}
   \renewcommand{\headrulewidth}{0pt} % remove lines as well
   \renewcommand{\footrulewidth}{0pt}
-  %\chead[E, O]{THIS IS A RUBBERY!}
 }
 \pagestyle{plain}
 \pagenumbering{arabic}
@@ -195,6 +195,7 @@
 \newcommand*\chaptermark[1]{}
 \newcommand\apart[2]{\chapter {#2\label{#1}}}
 \newcommand\cpart[2]{\chapter*{#2\label{#1}}}
+
 
 %  Подраздел
 \newcounter{section}[chapter]
@@ -467,10 +468,10 @@
   \chapter*{\listtablename}\@starttoc{lot}
 }
 
-\newcommand{\l@chapter}   {\@dottedtocline{1}{12mm}{1.1em}}
-\newcommand{\l@section}{\@dottedtocline{2}{12mm}{2.1em}}
-\newcommand{\l@subsection}   {\@dottedtocline{3}{12mm}{3.1em}}
-\newcommand{\l@subsubsection}{\@dottedtocline{4}{12mm}{4.1em}}
+\newcommand{\l@chapter}   {\@dottedtocline{1}{0mm}{1.1em}}
+\newcommand{\l@section}{\@dottedtocline{2}{0mm}{2.1em}}
+\newcommand{\l@subsection}   {\@dottedtocline{3}{0mm}{3.1em}}
+\newcommand{\l@subsubsection}{\@dottedtocline{4}{0mm}{4.1em}}
 \newcommand*\l@figure{\@dottedtocline{1}{1.5em}{2.3em}}
 \newcommand*\l@table {\@dottedtocline{1}{1.5em}{2.3em}}
 \newcommand\@tocrmarg{2.55em} %отступ правого края оглавления перенесённых строк
@@ -491,7 +492,7 @@
 \newdimen\bibindent
 \newenvironment{thebibliography}[1]{
 \renewcommand\bibname{Список использованных источников}
- \chapter*{\bibname}\addcontentsline{toc}{chapter}{\bibname}%
+ \chapter*{\bibname}\ttl\addcontentsline{toc}{chapter}{\bibname}%
  \list{\@biblabel{\@arabic\c@enumiv}}%
       {\settowidth\labelwidth{\@biblabel{#1}}%
        \leftmargin\labelwidth
