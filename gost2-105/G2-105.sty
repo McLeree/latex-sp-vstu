@@ -42,8 +42,14 @@
   \renewcommand{\VSTUDocumentCode}{#1-\VSTUDocumentType}
 }
 \RequirePackage[\Gost@encoding]{inputenc}
+\RequirePackage[normalem]{ulem}
 \newcommand{\VSTUTitle}{Title}
-\newcommand{\VSTUSetTitle}[1]{\renewcommand{\VSTUTitle}{#1}}
+\newcommand{\VSTUTitleUL}{\uline{Title}}
+\newcommand{\VSTUSetTitle}[1] {
+	\renewcommand{\VSTUTitle}{#1}
+	\renewcommand{\VSTUTitleUL}{\uline{#1}}
+}
+	
 \newcommand{\VSTUDirectorName}{Фамилия\ И.О.}
 \newcommand{\VSTUDirectorDegree}{кто-то,\ какая-то\ каф.}
 \newcommand{\VSTUSetDirector}[2] {
@@ -57,7 +63,6 @@
   \renewcommand{\VSTUStudentGroup}{#1}
 }
 
-\input{PZ_title_include.tex}
 %стиль страницы
 
 \RequirePackage{fancyhdr}
@@ -268,6 +273,9 @@
 \RequirePackage[\Gost@encoding]{inputenc}
 \RequirePackage{flafter}
 
+% Импорт заголовком для ПЗ
+
+\input{PZ_title_include.tex}
 % 4.2.7 Перечисления
 
 \newlength{\GostItemGap}
@@ -330,19 +338,19 @@
 \RequirePackage{icomma}
 \input{leqno.clo}
 
-\newcommand\eqref[1]{\ref{#1}}
-\def\@eqnnum{{\normalfont\normalcolor\theequation}}
-\newenvironment{table} {\@float   {table}}{\end@float   }
-\newenvironment{table*}{\@dblfloat{table}}{\end@dblfloat}
-\renewcommand{\theequation}{(\arabic{equation})}%
-\newlength\Gost@EqRemLen
-\newlength\Gost@@EqRemLen
-\newenvironment{eqrem}{%
- \begin{tabular}{p{\Gost@@EqRemLen}p{\Gost@EqRemLen}}
-  где
-}{
- \end{tabular}
-}
+%\newcommand\eqref[1]{\ref{#1}}
+%\def\@eqnnum{{\normalfont\normalcolor\theequation}}
+%\newenvironment{table} {\@float   {table}}{\end@float   }
+%\newenvironment{table*}{\@dblfloat{table}}{\end@dblfloat}
+%\renewcommand{\theequation}{(\arabic{equation})}%
+%\newlength\Gost@EqRemLen
+%\newlength\Gost@@EqRemLen
+%\newenvironment{eqrem}{%
+% \begin{tabular}{p{\Gost@@EqRemLen}p{\Gost@EqRemLen}}
+%  где
+%}{
+% \end{tabular}
+%}
 % пояснения м.б. в виде
 %  \begin{eqrem}
 %   & X~--- неизвестная \\
@@ -484,10 +492,10 @@
 
 \AtBeginDocument{%
  \makeatletter%
-  \setlength\Gost@EqRemLen{\textwidth}%
-  \addtolength\Gost@EqRemLen{-10mm}%
-  \settowidth\Gost@@EqRemLen{где}%
-  \addtolength\Gost@EqRemLen{-\Gost@@EqRemLen}%
+  %\setlength\Gost@EqRemLen{\textwidth}%
+  %\addtolength\Gost@EqRemLen{-10mm}%
+  %\settowidth\Gost@@EqRemLen{где}%
+  %\addtolength\Gost@EqRemLen{-\Gost@@EqRemLen}%
  \makeatother%
 }
 

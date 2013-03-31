@@ -1,6 +1,180 @@
+\RequirePackage{amsmath}
+\RequirePackage{ulem}
 \newcommand{\VSTUInitializePZ} {
 \renewcommand{\VSTUDocumentType}{81}
 {
+\sloppy
+%---------------PZ_TASK---------------
+\clearpage
+\thispagestyle{empty}
+\begin{center}
+Министерство образования и науки Российской Федерации\\
+Федеральное государственное бюджетное образовательное учреждение высшего профессионального образованияa\\
+<<Волгоградский государственный технический университет>>\\
+\end{center}
+Факультет\hfill \uline{\makebox[28em][l]{Электроники и вычислительной техники}}\\
+Кафедра\hfill \uline{\makebox[28em][l]{Программного обеспечения автоматизированных систем}}\\
+\begin{flushright}
+\begin{minipage}[c]{17em}
+Утверждаю\\
+Зав.\ кафедрой\\
+\raisebox{-3pt} { % really dirty hack
+$\underset{\text{(подпись)}}{\uline{\makebox[1.5cm]{}}}$
+}
+\raisebox{0pt} { 
+$\underset{\text{(инициалы, фамилия)}}{\uline{\makebox[6.5cm]{\text{д.т.н.~проф.~А.М.~Дворянкин}}}}$\\
+}
+<<\makebox[1.5cm]{\hrulefill}>>\makebox[3.5cm]{\hrulefill}\the\year
+\end{minipage}
+\end{flushright}
+\begin{center}
+ПОЯСНИТЕЛЬНАЯ ЗАПИСКА
+\end{center}
+к\hfill $\underset{\text{(наименование вида работы)}}{\uline{\makebox[28em]{\text{выпускной работе бакалавра}}}}$
+\hfill
+на тему\\
+\VSTUTitleUL\uline{\hfill}\\
+Автор  $\underset{\text{(подпись и дата подписания)}}{\uline{\makebox[6cm]{}}}$
+\hfill
+$\underset{\text{(фамилия, имя, отчество)}}{\uline{\makebox[8cm]{}}}$\\
+Обозначение $\underset{\text{(код документа)}}{\uline{\makebox[\width]{\VSTUDocumentCode}}}$\\
+Группа $\underset{\text{(шифр группы)}}{\uline{\makebox[3cm]{\VSTUStudentGroup}}}$\\
+Направление\hfill $\underset{\text{(код по ОКСО, наименование направления, программы)}}{\uline{\makebox[27em]{230100 Информатика и вычислительная техника}}}$\\
+\uline{\makebox[\textwidth]{\hfill}}\\
+\uline{\makebox[\textwidth]{\hfill}}\\
+Руководитель работы $\underset{\text{(подпись и дата подписания)}}{\uline{\makebox[6cm]{}}}$
+\hfill
+$\underset{\text{(инициалы и фамилия)}}{\uline{\makebox[5cm]{\VSTUDirectorName}}}$\\
+Консультанты по разделам:\\
+$\underset{\text{(краткое напименование раздела)}}{\uline{\makebox[5.2cm]{}}}$
+\hfill
+$\underset{\text{(подпись и дата подписания)}}{\uline{\makebox[5cm]{}}}$
+\hfill
+$\underset{\text{(инициалы и фамилия)}}{\uline{\makebox[5cm]{}}}$\\
+$\underset{\text{(краткое напименование раздела)}}{\uline{\makebox[5.2cm]{}}}$
+\hfill
+$\underset{\text{(подпись и дата подписания)}}{\uline{\makebox[5cm]{}}}$
+\hfill
+$\underset{\text{(инициалы и фамилия)}}{\uline{\makebox[5cm]{}}}$\\
+$\underset{\text{(краткое напименование раздела)}}{\uline{\makebox[5.2cm]{}}}$
+\hfill
+$\underset{\text{(подпись и дата подписания)}}{\uline{\makebox[5cm]{}}}$
+\hfill
+$\underset{\text{(инициалы и фамилия)}}{\uline{\makebox[5cm]{}}}$
+\vspace{3mm}
+\\
+Нормоконтролер  $\underset{\text{(подпись и дата подписания)}}{\uline{\makebox[6cm]{}}}$
+\hfill
+$\underset{\text{(фамилия, имя, отчество)}}{\uline{\makebox[5cm]{О.Н. Ляпина}}}$\\
+\vfill
+\begin{center}
+Волгоград, \the\year
+\end{center}
+%---------------PZ_TASK_P2-------------
+{
+\clearpage
+\thispagestyle{empty}
+\begin{center}
+Министерство образования и науки Российской Федерации\\
+Федеральное государственное бюджетное образовательное учреждение высшего профессионального образованияa\\
+<<Волгоградский государственный технический университет>>\\
+\end{center}
+Кафедра\hfill \uline{\makebox[28em][l]{Программного обеспечения автоматизированных систем}}\\
+\begin{flushright}
+\begin{minipage}[c]{17em}
+Утверждаю\\
+Зав.\ кафедрой\\
+\raisebox{-3pt} { % really dirty hack
+$\underset{\text{(подпись)}}{\uline{\makebox[1.5cm]{}}}$
+}
+\raisebox{0pt} { 
+$\underset{\text{(инициалы, фамилия)}}{\uline{\makebox[6.5cm]{\text{д.т.н.~проф.~А.М.~Дворянкин}}}}$\\
+}
+<<\makebox[1.5cm]{\hrulefill}>>\makebox[3.5cm]{\hrulefill}\the\year
+\end{minipage}
+\end{flushright}
+Задание на \hfill $\underset{\text{(наименование вида работы)}}{\uline{\makebox[28em]{\text{выпускную работу бакалавра}}}}$
+Студент\hfill $\underset{\text{(фамилия, имя, отчество)}}{\uline{\makebox[28em]{}}}$\\
+Код кафедры \uline{\makebox[4cm]{10.19}} \hfill Группа \uline{\makebox[4cm]{\VSTUStudentGroup}} \\
+Тема \VSTUTitleUL\uline{\hfill}\\
+Утверждена приказом по университету от <<\makebox[1cm]{\hrulefill}>>\makebox[3cm]{\hrulefill}\the\year г. \No\makebox[3cm]{\hrulefill}\\
+Срок представления готовой работы $\underset{\text{(дата, подпись студента)}}{\uline{\makebox[6cm]{}}}$\\
+Исходные данные для выполнения работы\\
+\uline{\makebox[\textwidth]{\hfill}}\\
+\uline{\makebox[\textwidth]{\hfill}}\\
+\uline{\makebox[\textwidth]{\hfill}}\\
+\uline{\makebox[\textwidth]{\hfill}}\\
+Содержание основной части пояснительной записки\\
+\small {
+\uline{\makebox[\textwidth]{\hfill}}\\
+\uline{\makebox[\textwidth]{\hfill}}\\
+\uline{\makebox[\textwidth]{\hfill}}\\
+\uline{\makebox[\textwidth]{\hfill}}\\
+\uline{\makebox[\textwidth]{\hfill}}\\
+\uline{\makebox[\textwidth]{\hfill}}\\
+\uline{\makebox[\textwidth]{\hfill}}\\
+\uline{\makebox[\textwidth]{\hfill}}\\
+\uline{\makebox[\textwidth]{\hfill}}\\
+\uline{\makebox[\textwidth]{\hfill}}\\
+\uline{\makebox[\textwidth]{\hfill}}\\
+\uline{\makebox[\textwidth]{\hfill}}\\
+\uline{\makebox[\textwidth]{\hfill}}\\
+\uline{\makebox[\textwidth]{\hfill}}\\
+\uline{\makebox[\textwidth]{\hfill}}\\
+\uline{\makebox[\textwidth]{\hfill}}\\
+}
+\begin{center}
+	Перечень графического материала\\
+\end{center}
+\thispagestyle{empty}
+\small {
+1) \uline{\makebox[\textwidth]{\hfill}}\\
+2) \uline{\makebox[\textwidth]{\hfill}}\\
+3) \uline{\makebox[\textwidth]{\hfill}}\\
+4) \uline{\makebox[\textwidth]{\hfill}}\\
+5) \uline{\makebox[\textwidth]{\hfill}}\\
+6) \uline{\makebox[\textwidth]{\hfill}}\\
+7) \uline{\makebox[\textwidth]{\hfill}}\\
+8) \uline{\makebox[\textwidth]{\hfill}}\\
+9) \uline{\makebox[\textwidth]{\hfill}}\\
+10) \uline{\makebox[\textwidth]{\hfill}}\\
+11) \uline{\makebox[\textwidth]{\hfill}}\\
+12) \uline{\makebox[\textwidth]{\hfill}}\\
+13) \uline{\makebox[\textwidth]{\hfill}}\\
+14) \uline{\makebox[\textwidth]{\hfill}}\\
+15) \uline{\makebox[\textwidth]{\hfill}}\\
+16) \uline{\makebox[\textwidth]{\hfill}}\\
+17) \uline{\makebox[\textwidth]{\hfill}}\\
+18) \uline{\makebox[\textwidth]{\hfill}}\\
+19) \uline{\makebox[\textwidth]{\hfill}}\\
+20) \uline{\makebox[\textwidth]{\hfill}}\\
+21) \uline{\makebox[\textwidth]{\hfill}}\\
+22) \uline{\makebox[\textwidth]{\hfill}}\\
+23) \uline{\makebox[\textwidth]{\hfill}}\\
+24) \uline{\makebox[\textwidth]{\hfill}}\\
+} \vfill
+\noindent Руководитель работы $\underset{\text{(подпись и дата подписания)}}{\uline{\makebox[6cm]{}}}$
+\hfill
+$\underset{\text{(инициалы и фамилия)}}{\uline{\makebox[5cm]{\VSTUDirectorName}}}$\\
+Консультанты по разделам:\\
+$\underset{\text{(краткое напименование раздела)}}{\uline{\makebox[5.2cm]{}}}$
+\hfill
+$\underset{\text{(подпись и дата подписания)}}{\uline{\makebox[5cm]{}}}$
+\hfill
+$\underset{\text{(инициалы и фамилия)}}{\uline{\makebox[5cm]{}}}$\\
+$\underset{\text{(краткое напименование раздела)}}{\uline{\makebox[5.2cm]{}}}$
+\hfill
+$\underset{\text{(подпись и дата подписания)}}{\uline{\makebox[5cm]{}}}$
+\hfill
+$\underset{\text{(инициалы и фамилия)}}{\uline{\makebox[5cm]{}}}$\\
+$\underset{\text{(краткое напименование раздела)}}{\uline{\makebox[5.2cm]{}}}$
+\hfill
+$\underset{\text{(подпись и дата подписания)}}{\uline{\makebox[5cm]{}}}$
+\hfill
+$\underset{\text{(инициалы и фамилия)}}{\uline{\makebox[5cm]{}}}$
+}
+%---------------PZ_TITLE---------------
+\clearpage
 \thispagestyle{empty}
 \begin{center}
 Министерство образования и науки Российской Федерации\\
