@@ -35,7 +35,7 @@
 \ExecuteOptions{a4paper,14pt,final,utf8}
 \ProcessOptions
 
-%оформление документов по СТП ВолгГТУ
+% Оформление документов по СТП ВолгГТУ
 \newcommand{\VSTUDocumentType}{NONE}
 \newcommand{\VSTUDocumentCode}{THIS IS A ROBBERY-\VSTUDocumentType}
 \newcommand{\VSTUSetPersonalCode}[1] {
@@ -49,22 +49,51 @@
 	\renewcommand{\VSTUTitle}{#1}
 	\renewcommand{\VSTUTitleUL}{\uline{#1}}
 }
-	
-\newcommand{\VSTUDirectorName}{Фамилия\ И.О.}
+
+% ФИО заведующего кафедрой, степень\должность
+\newcommand{\VSTUHeadOfDepartmentFullName}{Фамилия\ Имя\ Отчество}
+\newcommand{\VSTUHeadOfDepartmentName}{И.\ О.\ Фамилия}
+\newcommand{\VSTUHeadOfDepartmentDegree}{кто-то,\ какая-то\ каф.}
+\newcommand{\VSTUHeadOfDepartmentPost}{зав.\ каф.\ XXX}
+\newcommand{\VSTUSetHeadOfDepartment}[4] {
+  \renewcommand{\VSTUHeadOfDepartmentFullName}{#4}
+  \renewcommand{\VSTUHeadOfDepartmentName}{#3}
+  \renewcommand{\VSTUHeadOfDepartmentDegree}{#2}
+  \renewcommand{\VSTUHeadOfDepartmentPost}{#1}
+}
+
+% ФИО руководителя, степень\должность
+\newcommand{\VSTUDirectorFullName}{Фамилия\ Имя\ Отчество}
+\newcommand{\VSTUDirectorName}{И.\ О.\ Фамилия}
 \newcommand{\VSTUDirectorDegree}{кто-то,\ какая-то\ каф.}
-\newcommand{\VSTUSetDirector}[2] {
+\newcommand{\VSTUSetDirector}[3] {
+  \renewcommand{\VSTUDirectorFullName}{#3}
   \renewcommand{\VSTUDirectorName}{#2}
   \renewcommand{\VSTUDirectorDegree}{#1}
 }
-\newcommand{\VSTUStudentName}{Фамилия\ И.О.}
+
+
+% ФИО нормоконтролера, степень\должность
+\newcommand{\VSTUStandardsAdviserFullName}{Фамилия\ Имя\ Отчество}
+\newcommand{\VSTUStandardsAdviserName}{И.\ О.\ Фамилия}
+\newcommand{\VSTUStandardsAdviserDegree}{кто-то,\ какая-то\ каф.}
+\newcommand{\VSTUSetStandardsAdviser}[3] {
+  \renewcommand{\VSTUStandardsAdviserFullName}{#3}
+  \renewcommand{\VSTUStandardsAdviserName}{#2}
+  \renewcommand{\VSTUStandardsAdviserDegree}{#1}
+}
+
+% ФИО студента, группа
+\newcommand{\VSTUStudentFullName}{Фамилия\ Имя\ Отчество}
+\newcommand{\VSTUStudentName}{И.\ О.\ Фамилия}
 \newcommand{\VSTUStudentGroup}{ГРП--000}
-\newcommand{\VSTUSetStudent}[2] {
+\newcommand{\VSTUSetStudent}[3] {
+  \renewcommand{\VSTUStudentFullName}{#3}
   \renewcommand{\VSTUStudentName}{#2}
   \renewcommand{\VSTUStudentGroup}{#1}
 }
 
-%стиль страницы
-
+% Стиль страницы
 \RequirePackage{fancyhdr}
 \fancypagestyle{plain} {
   \setlength\headheight{25pt}
@@ -79,7 +108,7 @@
 \raggedbottom
 \onecolumn
 
-%нечто
+% Нечто
 \newcommand\@pnumwidth{1.55em}
 \renewcommand\baselinestretch{}
 \@lowpenalty   51                     %
@@ -127,7 +156,7 @@
 \setlength\fboxrule{.4\p@}
 \newcommand\appendix{}
 
-% Счётчики общего числа страниц, таблиц, рисунков и источников
+% Счетчики общего числа страниц, таблиц, рисунков и источников
 \newcounter{totalpage}
 \newcounter{totaltable} \setcounter{totaltable} {0}
 \newcounter{totalfigure}\setcounter{totalfigure}{0}
@@ -164,8 +193,8 @@
 
 % 4.1.1 - 4.1.6 Деление документа
 
-%  Команды для подстройки вида заголовков:
-%   расстояние между заголовком и текстом
+% Команды для подстройки вида заголовков
+% Расстояние между заголовком и текстом
 \newlength\GostAfterTitleSkip    \setlength\GostAfterTitleSkip    {15mm}%15mm}
 \newlength\GostBetweenTitleSkip  \setlength\GostBetweenTitleSkip  {8mm}%8mm}
 \newlength\GostBeforTitleSkip    \setlength\GostBeforTitleSkip    {15mm}%\GostAfterTitleSkip}
@@ -177,12 +206,12 @@
 \newlength{\Gost@TitleDropSkip}
  \setlength\Gost@TitleDropSkip{\GostBetweenTitleSkip}
  \addtolength\Gost@TitleDropSkip{-\GostAfterTitleSkip}
-%  стиль всех заголовков
+% Стиль всех заголовков
 \newcommand\GostTitleStyle{\normalfont\mdseries}
 \newcommand\Gost@MainChapterStyle{}
 \newcommand\Gost@ChapterStyle{\Gost@MainChapterStyle}
 
-%  Раздел
+% Раздел
 \newcounter{chapter}
 \renewcommand\thechapter{\@arabic\c@chapter}
 \newcommand\chapter{%
@@ -202,7 +231,7 @@
 \newcommand\cpart[2]{\chapter*{#2\label{#1}}}
 
 
-%  Подраздел
+% Подраздел
 \newcounter{section}[chapter]
 \renewcommand\thesection{\thechapter.\@arabic\c@section}
 \newcommand\section{%
@@ -212,17 +241,17 @@
 }
 \newcommand{\asubpart}[2]{\section{#2\label{#1}}}
 
-%  Пункт
+% Пункт
 \newcounter{subsection}[section]
 \renewcommand\thesubsection{\thesection.\@arabic\c@subsection}
-%  ... попадающий в оглавление
+% ... попадающий в оглавление
 \newcommand\subsection{%
  \@startsection{subsection}{2}%
  {\GostTitleIndent}{\GostBeforTitleSkip}{\GostAfterTitleSkip}%
  {\GostTitleStyle}%
 }
 \newcommand{\apara}[2]{\subsection{#2\label{#1}}}
-%  ... не попадающий в оглавление
+% ... не попадающий в оглавление
 \newcommand\nsubsection{%
  \par\vspace{\GostBeforNoTitleSkip}%
  \refstepcounter{subsection}\thesubsection%
@@ -230,17 +259,17 @@
 }
 \newcommand{\npara}[1]{\nsubsection\label{#1}}
 
-%  Подпункт
+% Подпункт
 \newcounter{subsubsection}[subsection]
 \renewcommand\thesubsubsection{\thesubsection.\@arabic\c@subsubsection}
-%  ... попадающий в оглавление
+% ... попадающий в оглавление
 \newcommand\subsubsection{%
  \@startsection{subsubsection}{4}%
  {\GostTitleIndent}{\GostBeforTitleSkip}{\GostAfterTitleSkip}%
  {\GostTitleStyle}%
 }
 \newcommand\asubpara[2]{\subsubsection{#2\label{#1}}}
-%  ... не попадающий в оглавление
+% ... не попадающий в оглавление
 \newcommand\nsubsubsection{%
  \par\vspace{\GostBeforNoTitleSkip}%
  \refstepcounter{subsubsection}\thesubsubsection%
@@ -249,14 +278,14 @@
 \newcommand\nsubpara[1]{\nsubsubsection\label{#1}}
 
 \newlength{\NirTitleDropSkip}
-%  Эта команда должна вставлятся между двумя заголовками
+% Эта команда должна вставлятся между двумя заголовками
 \newcommand\ttl{\vspace{\Gost@TitleDropSkip}}
 
-%  Нумеруются все заголовки
+% Нумеруются все заголовки
 \setcounter{secnumdepth}{3}
-%  в оглавлении- тоже могут быть все.
+% В оглавлении- тоже могут быть все.
 \setcounter{tocdepth}{4} %% virens: обычно только первый подраздел
-%  перенос в словах-с-дефисом
+% Перенос в словах-с-дефисом
 \lccode`\-=`\-
 \defaulthyphenchar=127
 
@@ -307,21 +336,21 @@
 \setlength\GostItemIndent{\parindent}
 %\addtolength\GostItemIndent{\GostItemGap}
 
-%  ненумерованные перечисления
+% Ненумерованные перечисления
 \newcommand{\labelitemi}{--}
 
-%  нумерованные перечисления
+% Нумерованные перечисления
 \renewcommand\theenumi {\asbuk{enumi}}
 \renewcommand\theenumii{\arabic{enumii}}
 \newcommand\labelenumi{\theenumi)}
 \newcommand\labelenumii{\theenumii)}
 \renewcommand\p@enumii{\theenumi}
 
-%  ссылка на нумерованное перечисление
+% Ссылка на нумерованное перечисление
 \newcommand\pref[2]{%
  перечисление~\ref{#2})~\ref{#1}}
 
-%перечисление типа abbreviation - для списка сокращения
+% Перечисление типа abbreviation - для списка сокращения
 \newenvironment{abbreviation}{%
  \list{}{%
   \labelwidth\z@ \itemindent-\leftmargin \leftmargin 25mm%
@@ -354,7 +383,7 @@
 % пояснения м.б. в виде
 %  \begin{eqrem}
 %   & X~--- неизвестная \\
-%   & Y~--- ещё неизвестная \\
+%   & Y~--- еще неизвестная \\
 %  \end{eqrem}
 
 % ... допускается нумерация формул в пределах раздела
@@ -363,7 +392,7 @@
  \renewcommand{\theequation}{(\thechapter.\arabic{equation})}%
 }
 
-%Перенос формул по =+-
+% Перенос формул по =+-
 %\begingroup
 %\catcode`\+\active\gdef+{\mathchar8235\nobreak\discretionary{}%
 % {\usefont{OT1}{cmr}{m}{n}\char43}{}}
@@ -403,7 +432,7 @@
 \renewcommand\captionlabeldelim{ ---}
 % \renewcommand\captionmargin{0.2cm} %% virens: это приводит к существенному сужению ширины подписи!!!!
 
-%  Подпись к рисунку
+% Подпись к рисунку
 \addto\captionsrussian{\def\figurename{{Рисунок}}}
 
 % ... допускается нумерация рисунков в пределах раздела
@@ -422,7 +451,7 @@
 }
 
 \RequirePackage{longtable}% многостраничные таблицы
-%   Для выравнивания длинных таблиц
+% Для выравнивания длинных таблиц
 \LTleft=\z@
 \LTright=\fill
 \def\LT@makecaption#1#2#3{%
@@ -432,7 +461,7 @@
           \endgraf}%
     \hss}}}
 
-%  4.3.4 - 4.1.14 Приложения
+% 4.3.4 - 4.1.14 Приложения
 \renewcommand\appendix{\par
  \setcounter{secnumdepth}{4}
  \setcounter{chapter}{0}%
@@ -447,28 +476,29 @@
 \RequirePackage[perpage,bottom]{footmisc}
 
 
-% Части документа- для выбора вида заголовков и т.д.
-%  введение, обозначения
+% Части документа - для выбора вида заголовков и т.д.
+% Введение, обозначения
 \newcommand\frontmatter{%
  \setcounter{secnumdepth}{-1}%
  \renewcommand\Gost@ChapterStyle{\centering}%
  \setlength\Gost@ChapterIndent{0mm}%
 }
-%  основная часть
+
+% Основная часть
 \newcommand\mainmatter{
  \setcounter{secnumdepth}{4}
  \renewcommand\Gost@ChapterStyle{\Gost@MainChapterStyle}%
  \setlength\Gost@ChapterIndent{\Gost@MainChapterIndent}%
 }
-%  заключение, библиография
+
+% Заключение, библиография
 \newcommand\backmatter{
  \setcounter{secnumdepth}{-1}
  \renewcommand\Gost@ChapterStyle{\centering}%
  \setlength\Gost@ChapterIndent{0mm}%
 }
 
-%всякие оглавления
-
+% Всякие оглавления
 \newcommand\tableofcontents {
   \renewcommand{\contentsname}{Содержание}
   \chapter*{\contentsname}\@starttoc{toc}
@@ -486,7 +516,7 @@
 \newcommand{\l@subsubsection}{\@dottedtocline{4}{0mm}{4.1em}}
 \newcommand*\l@figure{\@dottedtocline{1}{1.5em}{2.3em}}
 \newcommand*\l@table {\@dottedtocline{1}{1.5em}{2.3em}}
-\newcommand\@tocrmarg{2.55em} %отступ правого края оглавления перенесённых строк
+\newcommand\@tocrmarg{2.55em} %отступ правого края оглавления перенесенных строк
 \newcommand\@dotsep{1000}      %между точками в оглавлении в em
 \linespread{\Gost@LineSpread} %полуторный межстрочный интервал
 
@@ -499,8 +529,7 @@
  \makeatother%
 }
 
-%библиография
-
+% Библиография
 \newdimen\bibindent
 \newenvironment{thebibliography}[1]{
 \renewcommand\bibname{Список использованных источников}
@@ -524,7 +553,7 @@
 \renewcommand\@biblabel{}%
 \setlength\bibindent{1.5em}
 
-%индекс
+% Индекс
 \newenvironment{theindex}{
                 \columnseprule \z@
                 \columnsep 35\p@
@@ -540,14 +569,13 @@
 \newcommand\subsubitem{\@idxitem \hspace*{30\p@}}
 \newcommand\indexspace{\par \vskip 10\p@ \@plus5\p@ \@minus3\p@\relax}
 
-%для русского языка
+% Для русского языка
 \righthyphenmin=2
 \unitlength=1mm
 \clubpenalty=10000
 \widowpenalty=10000
-%что-то, связаннное с разрывом строк
+% Что-то, связаннное с разрывом строк
 \@beginparpenalty -\@lowpenalty
 \@endparpenalty   -\@lowpenalty
 \@itempenalty     -\@lowpenalty
 \skip\@mpfootins = \skip\footins
-
