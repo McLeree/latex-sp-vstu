@@ -15,7 +15,7 @@
 %  caption2     оформление заголовков риснуков и таблиц
 %  icomma       запятая в формулах
 %  longtable    многостраничные таблицы
-%  fancyhdr		кастомные колонтитулы для кода документа
+%  fancyhdr		  кастомные колонтитулы для кода документа
 
 \ProvidesPackage{G2-105}[2003/07/07 v1.00 General reqs. GOST 2.105-95]
 \NeedsTeXFormat{LaTeX2e}
@@ -206,8 +206,9 @@
 \newlength{\Gost@TitleDropSkip}
  \setlength\Gost@TitleDropSkip{\GostBetweenTitleSkip}
  \addtolength\Gost@TitleDropSkip{-\GostAfterTitleSkip}
+
 % Стиль всех заголовков
-\newcommand\GostTitleStyle{\normalfont\mdseries}
+\newcommand\GostTitleStyle{\normalfont\mdseries\parshape 1 0cm \textwidth}
 \newcommand\Gost@MainChapterStyle{}
 \newcommand\Gost@ChapterStyle{\Gost@MainChapterStyle}
 
@@ -229,7 +230,6 @@
 \newcommand*\chaptermark[1]{}
 \newcommand\apart[2]{\chapter {#2\label{#1}}}
 \newcommand\cpart[2]{\chapter*{#2\label{#1}}}
-
 
 % Подраздел
 \newcounter{section}[chapter]
@@ -302,7 +302,7 @@
 \RequirePackage[\Gost@encoding]{inputenc}
 \RequirePackage{flafter}
 
-% Импорт заголовком для ПЗ
+% Импорт заголовков для ПЗ
 
 \input{PZ_title_include.tex}
 \input{TZ_title_include.tex}
@@ -316,8 +316,8 @@
  \setlength{\partopsep}{0mm}%               дополнительный отступ,  если начали абзац
  \setlength{\parsep}{1mm}%                  расстояние между абзацами внутри пункта
  \setlength{\leftmargin}{0mm}%              левый отступ до текста
- \setlength{\itemindent}{\GostItemIndent}%    дополнительный левый отступ первой строчки
- \setlength{\labelsep}{\GostItemGap}%     от метки до текста
+ \setlength{\itemindent}{\GostItemIndent}%  дополнительный левый отступ первой строчки
+ \setlength{\labelsep}{\GostItemGap}%       от метки до текста
 }
 
 \newcommand\Gost@ListII{%
@@ -325,9 +325,9 @@
  \setlength{\topsep}{1mm}%                  отступ от текста до перечня
  \setlength{\partopsep}{0mm}%               дополнительный отступ,  если начали абзац
  \setlength{\parsep}{1mm}%                  расстояние между абзацами внутри пункта
- \setlength{\leftmargin}{\GostItemIndent}%              левый отступ до текста
- \setlength{\itemindent}{\GostItemIndent}%    дополнительный левый отступ первой строчки
- \setlength{\labelsep}{\GostItemGap}%     от метки до текста
+ \setlength{\leftmargin}{\GostItemIndent}%  левый отступ до текста
+ \setlength{\itemindent}{\GostItemIndent}%  дополнительный левый отступ первой строчки
+ \setlength{\labelsep}{\GostItemGap}%       от метки до текста
 }
 
 \renewcommand{\@listI} {\Gost@List}
@@ -517,9 +517,9 @@
 \newcommand{\l@subsubsection}{\@dottedtocline{4}{0mm}{4.1em}}
 \newcommand*\l@figure{\@dottedtocline{1}{1.5em}{2.3em}}
 \newcommand*\l@table {\@dottedtocline{1}{1.5em}{2.3em}}
-\newcommand\@tocrmarg{2.55em} %отступ правого края оглавления перенесенных строк
-\newcommand\@dotsep{1000}      %между точками в оглавлении в em
-\linespread{\Gost@LineSpread} %полуторный межстрочный интервал
+\newcommand\@tocrmarg{2.55em}  % отступ правого края оглавления перенесенных строк
+\newcommand\@dotsep{1000}      % между точками в оглавлении в em
+\linespread{\Gost@LineSpread}  % полуторный межстрочный интервал
 
 \AtBeginDocument{%
  \makeatletter%
