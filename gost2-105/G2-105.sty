@@ -511,10 +511,38 @@
   \chapter*{\listtablename}\@starttoc{lot}
 }
 
-\newcommand{\l@chapter}   {\@dottedtocline{1}{0mm}{1.1em}}
-\newcommand{\l@section}{\@dottedtocline{2}{0mm}{2.1em}}
-\newcommand{\l@subsection}   {\@dottedtocline{3}{0mm}{3.1em}}
-\newcommand{\l@subsubsection}{\@dottedtocline{4}{0mm}{4.1em}}
+\def\l@chapter#1#2{\pagebreak[3]
+   \@tempdima 1.1em       % width of box holding chapter number
+   \begingroup
+     \parindent \z@ \rightskip \@pnumwidth
+     \parfillskip -\@pnumwidth
+     \leavevmode          % TeX command to enter horizontal mode.
+     #1\hfil \hbox to\@pnumwidth{\hss #2}\par%% <= \medskip inserted
+   \endgroup}
+\def\l@section#1#2{\pagebreak[3]
+   \@tempdima 2.1em       % width of box holding chapter number
+   \begingroup
+     \parindent \z@ \rightskip \@pnumwidth
+     \parfillskip -\@pnumwidth
+     \leavevmode          % TeX command to enter horizontal mode.
+     #1\hfil \hbox to\@pnumwidth{\hss #2}\par%% <= \medskip inserted
+   \endgroup}
+\def\l@subsection#1#2{\pagebreak[3]
+   \@tempdima 3.1em       % width of box holding chapter number
+   \begingroup
+     \parindent \z@ \rightskip \@pnumwidth
+     \parfillskip -\@pnumwidth
+     \leavevmode          % TeX command to enter horizontal mode.
+     #1\hfil \hbox to\@pnumwidth{\hss #2}\par%% <= \medskip inserted
+   \endgroup}
+\def\l@subsubsection#1#2{\pagebreak[3]
+   \@tempdima 4.1em       % width of box holding chapter number
+   \begingroup
+     \parindent \z@ \rightskip \@pnumwidth
+     \parfillskip -\@pnumwidth
+     \leavevmode          % TeX command to enter horizontal mode.
+     #1\hfil \hbox to\@pnumwidth{\hss #2}\par%% <= \medskip inserted
+   \endgroup}
 \newcommand*\l@figure{\@dottedtocline{1}{1.5em}{2.3em}}
 \newcommand*\l@table {\@dottedtocline{1}{1.5em}{2.3em}}
 \newcommand\@tocrmarg{2.55em}  % отступ правого края оглавления перенесенных строк
