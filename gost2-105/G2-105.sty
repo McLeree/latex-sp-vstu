@@ -15,7 +15,7 @@
 %  caption2     оформление заголовков риснуков и таблиц
 %  icomma       запятая в формулах
 %  longtable    многостраничные таблицы
-%  fancyhdr		  кастомные колонтитулы для кода документа
+%  fancyhdr     кастомные колонтитулы для кода документа
 
 \ProvidesPackage{G2-105}[2003/07/07 v1.00 General reqs. GOST 2.105-95]
 \NeedsTeXFormat{LaTeX2e}
@@ -46,8 +46,8 @@
 \newcommand{\VSTUTitle}{Title}
 \newcommand{\VSTUTitleUL}{\uline{Title}}
 \newcommand{\VSTUSetTitle}[1] {
-	\renewcommand{\VSTUTitle}{#1}
-	\renewcommand{\VSTUTitleUL}{\uline{#1}}
+    \renewcommand{\VSTUTitle}{#1}
+    \renewcommand{\VSTUTitleUL}{\uline{#1}}
 }
 
 % ФИО заведующего кафедрой, степень\должность
@@ -195,9 +195,9 @@
 
 % Команды для подстройки вида заголовков
 % Расстояние между заголовком и текстом
-\newlength\GostAfterTitleSkip    \setlength\GostAfterTitleSkip    {15mm}%15mm}
-\newlength\GostBetweenTitleSkip  \setlength\GostBetweenTitleSkip  {8mm}%8mm}
-\newlength\GostBeforTitleSkip    \setlength\GostBeforTitleSkip    {15mm}%\GostAfterTitleSkip}
+\newlength\GostAfterTitleSkip    \setlength\GostAfterTitleSkip    {15mm}
+\newlength\GostBetweenTitleSkip  \setlength\GostBetweenTitleSkip  {8mm}
+\newlength\GostBeforTitleSkip    \setlength\GostBeforTitleSkip    {15mm}
 \newlength\GostBeforNoTitleSkip  \setlength\GostBeforNoTitleSkip  {1.0ex}
 \newlength\GostHTitleSpace       \setlength\GostHTitleSpace       {2mm}
 \newlength\GostTitleIndent       \setlength\GostTitleIndent       {\parindent}
@@ -603,6 +603,7 @@
 \unitlength=1mm
 \clubpenalty=10000
 \widowpenalty=10000
+
 % Что-то, связаннное с разрывом строк
 \@beginparpenalty -\@lowpenalty
 \@endparpenalty   -\@lowpenalty
