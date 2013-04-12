@@ -50,6 +50,21 @@
     \renewcommand{\VSTUTitleUL}{\uline{#1}}
 }
 
+% Номер приказа (месяц задается строкой!)
+\newcommand{\VSTUOrderDate}{01}
+\newcommand{\VSTUOrderMonth}{января}
+\newcommand{\VSTUOrderYear}{2013}
+\newcommand{\VSTUOrderNumber}{1000--ст}
+\newcommand{\VSTUSetOrder}[4] {
+  \renewcommand{\VSTUOrderYear}{#4}
+  \renewcommand{\VSTUOrderMonth}{#3}
+  \renewcommand{\VSTUOrderDate}{#2}
+  \renewcommand{\VSTUOrderNumber}{#1}
+}
+
+% Получение строки приказа из параметров выше
+\newcommand{\VSTUOrder}{\No~\VSTUOrderNumber\ от\ \VSTUOrderDate~\VSTUOrderMonth~\VSTUOrderYear~года}
+
 % ФИО заведующего кафедрой, степень\должность
 \newcommand{\VSTUHeadOfDepartmentFullName}{Фамилия\ Имя\ Отчество}
 \newcommand{\VSTUHeadOfDepartmentName}{И.\ О.\ Фамилия}
