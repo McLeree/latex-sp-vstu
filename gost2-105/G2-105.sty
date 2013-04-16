@@ -15,7 +15,7 @@
 %  caption2     оформление заголовков риснуков и таблиц
 %  icomma       запятая в формулах
 %  longtable    многостраничные таблицы
-%  fancyhdr		  кастомные колонтитулы для кода документа
+%  fancyhdr     кастомные колонтитулы для кода документа
 
 \ProvidesPackage{G2-105}[2003/07/07 v1.00 General reqs. GOST 2.105-95]
 \NeedsTeXFormat{LaTeX2e}
@@ -46,9 +46,24 @@
 \newcommand{\VSTUTitle}{Title}
 \newcommand{\VSTUTitleUL}{\uline{Title}}
 \newcommand{\VSTUSetTitle}[1] {
-	\renewcommand{\VSTUTitle}{#1}
-	\renewcommand{\VSTUTitleUL}{\uline{#1}}
+    \renewcommand{\VSTUTitle}{#1}
+    \renewcommand{\VSTUTitleUL}{\uline{#1}}
 }
+
+% Номер приказа (месяц задается строкой!)
+\newcommand{\VSTUOrderDate}{01}
+\newcommand{\VSTUOrderMonth}{января}
+\newcommand{\VSTUOrderYear}{2013}
+\newcommand{\VSTUOrderNumber}{1000--ст}
+\newcommand{\VSTUSetOrder}[4] {
+  \renewcommand{\VSTUOrderYear}{#4}
+  \renewcommand{\VSTUOrderMonth}{#3}
+  \renewcommand{\VSTUOrderDate}{#2}
+  \renewcommand{\VSTUOrderNumber}{#1}
+}
+
+% Получение строки приказа из параметров выше
+\newcommand{\VSTUOrder}{\No~\VSTUOrderNumber\ от\ \VSTUOrderDate~\VSTUOrderMonth~\VSTUOrderYear~года}
 
 % ФИО заведующего кафедрой, степень\должность
 \newcommand{\VSTUHeadOfDepartmentFullName}{Фамилия\ Имя\ Отчество}
@@ -195,9 +210,9 @@
 
 % Команды для подстройки вида заголовков
 % Расстояние между заголовком и текстом
-\newlength\GostAfterTitleSkip    \setlength\GostAfterTitleSkip    {15mm}%15mm}
-\newlength\GostBetweenTitleSkip  \setlength\GostBetweenTitleSkip  {8mm}%8mm}
-\newlength\GostBeforTitleSkip    \setlength\GostBeforTitleSkip    {15mm}%\GostAfterTitleSkip}
+\newlength\GostAfterTitleSkip    \setlength\GostAfterTitleSkip    {15mm}
+\newlength\GostBetweenTitleSkip  \setlength\GostBetweenTitleSkip  {8mm}
+\newlength\GostBeforTitleSkip    \setlength\GostBeforTitleSkip    {15mm}
 \newlength\GostBeforNoTitleSkip  \setlength\GostBeforNoTitleSkip  {1.0ex}
 \newlength\GostHTitleSpace       \setlength\GostHTitleSpace       {2mm}
 \newlength\GostTitleIndent       \setlength\GostTitleIndent       {\parindent}
@@ -511,10 +526,38 @@
   \chapter*{\listtablename}\@starttoc{lot}
 }
 
-\newcommand{\l@chapter}   {\@dottedtocline{1}{0mm}{1.1em}}
-\newcommand{\l@section}{\@dottedtocline{2}{0mm}{2.1em}}
-\newcommand{\l@subsection}   {\@dottedtocline{3}{0mm}{3.1em}}
-\newcommand{\l@subsubsection}{\@dottedtocline{4}{0mm}{4.1em}}
+\def\l@chapter#1#2{\pagebreak[3]
+   \@tempdima 1.1em       % width of box holding chapter number
+   \begingroup
+     \parindent \z@ \rightskip \@pnumwidth
+     \parfillskip -\@pnumwidth
+     \leavevmode          % TeX command to enter horizontal mode.
+     #1\hfil \hbox to\@pnumwidth{\hss #2}\par%% <= \medskip inserted
+   \endgroup}
+\def\l@section#1#2{\pagebreak[3]
+   \@tempdima 2.1em       % width of box holding chapter number
+   \begingroup
+     \parindent \z@ \rightskip \@pnumwidth
+     \parfillskip -\@pnumwidth
+     \leavevmode          % TeX command to enter horizontal mode.
+     #1\hfil \hbox to\@pnumwidth{\hss #2}\par%% <= \medskip inserted
+   \endgroup}
+\def\l@subsection#1#2{\pagebreak[3]
+   \@tempdima 3.1em       % width of box holding chapter number
+   \begingroup
+     \parindent \z@ \rightskip \@pnumwidth
+     \parfillskip -\@pnumwidth
+     \leavevmode          % TeX command to enter horizontal mode.
+     #1\hfil \hbox to\@pnumwidth{\hss #2}\par%% <= \medskip inserted
+   \endgroup}
+\def\l@subsubsection#1#2{\pagebreak[3]
+   \@tempdima 4.1em       % width of box holding chapter number
+   \begingroup
+     \parindent \z@ \rightskip \@pnumwidth
+     \parfillskip -\@pnumwidth
+     \leavevmode          % TeX command to enter horizontal mode.
+     #1\hfil \hbox to\@pnumwidth{\hss #2}\par%% <= \medskip inserted
+   \endgroup}
 \newcommand*\l@figure{\@dottedtocline{1}{1.5em}{2.3em}}
 \newcommand*\l@table {\@dottedtocline{1}{1.5em}{2.3em}}
 \newcommand\@tocrmarg{2.55em}  % отступ правого края оглавления перенесенных строк
@@ -575,6 +618,7 @@
 \unitlength=1mm
 \clubpenalty=10000
 \widowpenalty=10000
+
 % Что-то, связаннное с разрывом строк
 \@beginparpenalty -\@lowpenalty
 \@endparpenalty   -\@lowpenalty
