@@ -169,31 +169,28 @@
 \setlength\tabbingsep{\labelsep}
 \setlength\fboxsep{3\p@}
 \setlength\fboxrule{.4\p@}
-\newcommand\appendix{}
 
 % Счетчики общего числа страниц, таблиц, рисунков и источников
 \newcounter{totalpage}
 \newcounter{totaltable} \setcounter{totaltable} {0}
 \newcounter{totalfigure}\setcounter{totalfigure}{0}
 \newcounter{totalbib}   \setcounter{totalbib}   {0}
-\newif\if@tablesonchapter \@tablesonchapterfalse
-\newif\if@figuresonchapter\@figuresonchapterfalse
 
 % На последней странице ставятся метки с номерами
 %  - последней страницы
 %  - числа таблиц, имеющих caption
 %  - числа рисунков, имеющих caption
 \def\totalobjects@putlabel{%
- \addtocounter{totalpage}  {\c@page}
- \addtocounter{totaltable} {\c@table}
- \addtocounter{totalfigure}{\c@figure}
- \addtocounter{totaltable} {-1}
- \addtocounter{totalfigure}{-1}
- \addtocounter{totalbib}{-1}
- \refstepcounter{totalpage}  \label{reftotalpages}
- \refstepcounter{totaltable} \label{reftotaltables}
- \refstepcounter{totalfigure}\label{reftotalfigures}
- \refstepcounter{totalbib}   \label{reftotalbibs}
+  \addtocounter{totalpage}  {\c@page}
+  \addtocounter{totaltable} {\c@table}
+  \addtocounter{totalfigure}{\c@figure}
+  \addtocounter{totaltable} {-1}
+  \addtocounter{totalfigure}{-1}
+  \addtocounter{totalbib}{-1}
+  \refstepcounter{totalpage}  \label{reftotalpages}
+  \refstepcounter{totaltable} \label{reftotaltables}
+  \refstepcounter{totalfigure}\label{reftotalfigures}
+  \refstepcounter{totalbib}   \label{reftotalbibs}
 }
 \AtEndDocument{\totalobjects@putlabel}
 
@@ -219,8 +216,8 @@
 \newlength\Gost@ChapterIndent    \setlength\Gost@ChapterIndent    {\GostTitleIndent}
 \newlength\Gost@MainChapterIndent\setlength\Gost@MainChapterIndent{\parindent}
 \newlength{\Gost@TitleDropSkip}
- \setlength\Gost@TitleDropSkip{\GostBetweenTitleSkip}
- \addtolength\Gost@TitleDropSkip{-\GostAfterTitleSkip}
+\setlength\Gost@TitleDropSkip{\GostBetweenTitleSkip}
+\addtolength\Gost@TitleDropSkip{-\GostAfterTitleSkip}
 
 % Стиль всех заголовков
 \newcommand\GostTitleStyle{\normalfont\mdseries\parshape 1 0cm \textwidth}
@@ -231,14 +228,10 @@
 \newcounter{chapter}
 \renewcommand\thechapter{\@arabic\c@chapter}
 \newcommand\chapter{%
- \clearpage%
- \if@figuresonchapter%
+  \clearpage%
   \addtocounter{totalfigure}{\c@figure}\setcounter{figure}{0}%
- \fi%
- \if@tablesonchapter%
   \addtocounter{totaltable} {\c@table }\setcounter{table}{0}%
- \fi%
- \@startsection{chapter}{0}%
+  \@startsection{chapter}{0}%
   {\Gost@ChapterIndent}{0mm}{\GostAfterTitleSkip}%
   {\GostTitleStyle\normalfont\Gost@ChapterStyle}%
 }
@@ -250,55 +243,41 @@
 \newcounter{section}[chapter]
 \renewcommand\thesection{\thechapter.\@arabic\c@section}
 \newcommand\section{%
- \@startsection{section}{1}%
- {\GostTitleIndent}{\GostBeforTitleSkip}{\GostAfterTitleSkip}%
- {\GostTitleStyle}%
+  \@startsection{section}{1}%
+  {\GostTitleIndent}{\GostBeforTitleSkip}{\GostAfterTitleSkip}%
+  {\GostTitleStyle}%
 }
 \newcommand{\asubpart}[2]{\section{#2\label{#1}}}
 
 % Пункт
 \newcounter{subsection}[section]
 \renewcommand\thesubsection{\thesection.\@arabic\c@subsection}
-% ... попадающий в оглавление
+
 \newcommand\subsection{%
- \@startsection{subsection}{2}%
- {\GostTitleIndent}{\GostBeforTitleSkip}{\GostAfterTitleSkip}%
- {\GostTitleStyle}%
+  \@startsection{subsection}{2}%
+  {\GostTitleIndent}{\GostBeforTitleSkip}{\GostAfterTitleSkip}%
+  {\GostTitleStyle}%
 }
 \newcommand{\apara}[2]{\subsection{#2\label{#1}}}
-% ... не попадающий в оглавление
-\newcommand\nsubsection{%
- \par\vspace{\GostBeforNoTitleSkip}%
- \refstepcounter{subsection}\thesubsection%
- \hspace{\GostHTitleSpace}%
-}
-\newcommand{\npara}[1]{\nsubsection\label{#1}}
 
 % Подпункт
 \newcounter{subsubsection}[subsection]
 \renewcommand\thesubsubsection{\thesubsection.\@arabic\c@subsubsection}
-% ... попадающий в оглавление
+
 \newcommand\subsubsection{%
- \@startsection{subsubsection}{4}%
- {\GostTitleIndent}{\GostBeforTitleSkip}{\GostAfterTitleSkip}%
- {\GostTitleStyle}%
+  \@startsection{subsubsection}{4}%
+  {\GostTitleIndent}{\GostBeforTitleSkip}{\GostAfterTitleSkip}%
+  {\GostTitleStyle}%
 }
 \newcommand\asubpara[2]{\subsubsection{#2\label{#1}}}
-% ... не попадающий в оглавление
-\newcommand\nsubsubsection{%
- \par\vspace{\GostBeforNoTitleSkip}%
- \refstepcounter{subsubsection}\thesubsubsection%
- \hspace{\GostHTitleSpace}%
-}
-\newcommand\nsubpara[1]{\nsubsubsection\label{#1}}
 
+% Команда ttl должна вставлятся между двумя заголовками
 \newlength{\NirTitleDropSkip}
-% Эта команда должна вставлятся между двумя заголовками
 \newcommand\ttl{\vspace{\Gost@TitleDropSkip}}
 
 % Нумеруются все заголовки
 \setcounter{secnumdepth}{3}
-% В оглавлении- тоже могут быть все.
+% В оглавлении - тоже могут быть все.
 \setcounter{tocdepth}{4} %% virens: обычно только первый подраздел
 % Перенос в словах-с-дефисом
 \lccode`\-=`\-
@@ -306,7 +285,7 @@
 
 % Импорт необходимых пакетов
 \if@usehyperref
- \RequirePackage[unicode]{hyperref}
+  \RequirePackage[unicode]{hyperref}
 \fi
 \if@usepscyr
   \RequirePackage[math]{pscyr}
@@ -326,23 +305,23 @@
 \newlength{\GostItemGap}
 \newlength{\GostItemIndent}
 \newcommand\Gost@List{%
- \setlength{\itemsep}{0mm}%                 пробел между последовательными элементами
- \setlength{\topsep}{1mm}%                  отступ от текста до перечня
- \setlength{\partopsep}{0mm}%               дополнительный отступ,  если начали абзац
- \setlength{\parsep}{1mm}%                  расстояние между абзацами внутри пункта
- \setlength{\leftmargin}{0mm}%              левый отступ до текста
- \setlength{\itemindent}{\GostItemIndent}%  дополнительный левый отступ первой строчки
- \setlength{\labelsep}{\GostItemGap}%       от метки до текста
+  \setlength{\itemsep}{0mm}%                 пробел между последовательными элементами
+  \setlength{\topsep}{1mm}%                  отступ от текста до перечня
+  \setlength{\partopsep}{0mm}%               дополнительный отступ,  если начали абзац
+  \setlength{\parsep}{1mm}%                  расстояние между абзацами внутри пункта
+  \setlength{\leftmargin}{0mm}%              левый отступ до текста
+  \setlength{\itemindent}{\GostItemIndent}%  дополнительный левый отступ первой строчки
+  \setlength{\labelsep}{\GostItemGap}%       от метки до текста
 }
 
 \newcommand\Gost@ListII{%
- \setlength{\itemsep}{0mm}%                 пробел между последовательными элементами
- \setlength{\topsep}{1mm}%                  отступ от текста до перечня
- \setlength{\partopsep}{0mm}%               дополнительный отступ,  если начали абзац
- \setlength{\parsep}{1mm}%                  расстояние между абзацами внутри пункта
- \setlength{\leftmargin}{\GostItemIndent}%  левый отступ до текста
- \setlength{\itemindent}{\GostItemIndent}%  дополнительный левый отступ первой строчки
- \setlength{\labelsep}{\GostItemGap}%       от метки до текста
+  \setlength{\itemsep}{0mm}%                 пробел между последовательными элементами
+  \setlength{\topsep}{1mm}%                  отступ от текста до перечня
+  \setlength{\partopsep}{0mm}%               дополнительный отступ,  если начали абзац
+  \setlength{\parsep}{1mm}%                  расстояние между абзацами внутри пункта
+  \setlength{\leftmargin}{\GostItemIndent}%  левый отступ до текста
+  \setlength{\itemindent}{\GostItemIndent}%  дополнительный левый отступ первой строчки
+  \setlength{\labelsep}{\GostItemGap}%       от метки до текста
 }
 
 \renewcommand{\@listI} {\Gost@List}
@@ -368,12 +347,12 @@
 
 % Перечисление типа abbreviation - для списка сокращения
 \newenvironment{abbreviation}{%
- \list{}{%
-  \labelwidth\z@ \itemindent-\leftmargin \leftmargin 25mm%
-  \let\makelabel\abbreviationlabel%
- }%
+  \list{}{%
+    \labelwidth\z@ \itemindent-\leftmargin \leftmargin 25mm%
+    \let\makelabel\abbreviationlabel%
+  }%
 }{%
- \endlist%
+  \endlist%
 }
 \newcommand*\abbreviationlabel[1]{\hspace\labelsep\normalfont #1~---}
 
@@ -404,8 +383,8 @@
 
 % ... допускается нумерация формул в пределах раздела
 \newcommand\EqInChaper{%
- \@addtoreset{equation}{chapter}%
- \renewcommand{\theequation}{(\thechapter.\arabic{equation})}%
+  \@addtoreset{equation}{chapter}%
+  \renewcommand{\theequation}{(\thechapter.\arabic{equation})}%
 }
 
 % Перенос формул по =+-
@@ -453,17 +432,15 @@
 
 % ... допускается нумерация рисунков в пределах раздела
 \newcommand\PicInChaper{%
- \@addtoreset{figure}{chapter}%
- \@figuresonchaptertrue%
- \renewcommand{\thefigure}{\thechapter.\arabic{figure}}%
+  \@addtoreset{figure}{chapter}%
+  \renewcommand{\thefigure}{\thechapter.\arabic{figure}}%
 }
 
 % 4.4 - таблицы
 % ... допускается нумерация таблиц в пределах раздела
 \newcommand\TableInChaper{%
- \@addtoreset{table}{chapter}%
- \@tablesonchaptertrue%
- \renewcommand{\thetable}{\thechapter.\arabic{table}}%
+  \@addtoreset{table}{chapter}%
+  \renewcommand{\thetable}{\thechapter.\arabic{table}}%
 }
 
 \RequirePackage{longtable}% многостраничные таблицы
@@ -478,14 +455,14 @@
     \hss}}}
 
 % 4.3.4 - 4.1.14 Приложения
-\renewcommand\appendix{\par
- \setcounter{secnumdepth}{4}
- \setcounter{chapter}{0}%
- \EqInChaper\PicInChaper\TableInChaper%
- \gdef\@chapapp{\appendixname}%
- \gdef\thechapter{\@Asbuk\c@chapter}%
- \renewcommand\Gost@ChapterStyle{\Gost@MainChapterStyle}%
- \setlength\Gost@ChapterIndent{\Gost@MainChapterIndent}%
+\newcommand\appendix{\par
+  \setcounter{secnumdepth}{4}
+  \setcounter{chapter}{0}%
+  \EqInChaper\PicInChaper\TableInChaper%
+  \gdef\@chapapp{\appendixname}%
+  \gdef\thechapter{\@Asbuk\c@chapter}%
+  \renewcommand\Gost@ChapterStyle{\Gost@MainChapterStyle}%
+  \setlength\Gost@ChapterIndent{\Gost@MainChapterIndent}%
 }
 
 % 4.5 Сноски
@@ -495,23 +472,23 @@
 % Части документа - для выбора вида заголовков и т.д.
 % Введение, обозначения
 \newcommand\frontmatter{%
- \setcounter{secnumdepth}{-1}%
- \renewcommand\Gost@ChapterStyle{\centering}%
- \setlength\Gost@ChapterIndent{0mm}%
+  \setcounter{secnumdepth}{-1}%
+  \renewcommand\Gost@ChapterStyle{\centering}%
+  \setlength\Gost@ChapterIndent{0mm}%
 }
 
 % Основная часть
 \newcommand\mainmatter{
- \setcounter{secnumdepth}{4}
- \renewcommand\Gost@ChapterStyle{\Gost@MainChapterStyle}%
- \setlength\Gost@ChapterIndent{\Gost@MainChapterIndent}%
+  \setcounter{secnumdepth}{4}
+  \renewcommand\Gost@ChapterStyle{\Gost@MainChapterStyle}%
+  \setlength\Gost@ChapterIndent{\Gost@MainChapterIndent}%
 }
 
 % Заключение, библиография
 \newcommand\backmatter{
- \setcounter{secnumdepth}{-1}
- \renewcommand\Gost@ChapterStyle{\centering}%
- \setlength\Gost@ChapterIndent{0mm}%
+  \setcounter{secnumdepth}{-1}
+  \renewcommand\Gost@ChapterStyle{\centering}%
+  \setlength\Gost@ChapterIndent{0mm}%
 }
 
 % Всякие оглавления
@@ -565,34 +542,34 @@
 \linespread{\Gost@LineSpread}  % полуторный межстрочный интервал
 
 \AtBeginDocument{%
- \makeatletter%
-  %\setlength\Gost@EqRemLen{\textwidth}%
-  %\addtolength\Gost@EqRemLen{-10mm}%
-  %\settowidth\Gost@@EqRemLen{где}%
-  %\addtolength\Gost@EqRemLen{-\Gost@@EqRemLen}%
- \makeatother%
+  \makeatletter%
+    %\setlength\Gost@EqRemLen{\textwidth}%
+    %\addtolength\Gost@EqRemLen{-10mm}%
+    %\settowidth\Gost@@EqRemLen{где}%
+    %\addtolength\Gost@EqRemLen{-\Gost@@EqRemLen}%
+  \makeatother%
 }
 
 % Библиография
 \newdimen\bibindent
 \newenvironment{thebibliography}[1]{
 \renewcommand\bibname{Список использованных источников}
- \chapter*{\bibname}\ttl\addcontentsline{toc}{chapter}{\bibname}%
- \list{\@biblabel{\@arabic\c@enumiv}}%
-      {\settowidth\labelwidth{\@biblabel{#1}}%
-       \leftmargin\labelwidth
-       \advance\leftmargin\labelsep
-       \@openbib@code
-       \usecounter{enumiv}%
-       \let\p@enumiv\@empty
-       \renewcommand\theenumiv{\@arabic\c@enumiv}}%
- \sloppy\clubpenalty4000\widowpenalty4000%
- \sfcode`\.\@m
+  \chapter*{\bibname}\ttl\addcontentsline{toc}{chapter}{\bibname}%
+  \list{\@biblabel{\@arabic\c@enumiv}}%
+       {\settowidth\labelwidth{\@biblabel{#1}}%
+         \leftmargin\labelwidth
+         \advance\leftmargin\labelsep
+         \@openbib@code
+         \usecounter{enumiv}%
+         \let\p@enumiv\@empty
+         \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+  \sloppy\clubpenalty4000\widowpenalty4000%
+  \sfcode`\.\@m
 }{
- \setcounter{totalbib}{\c@enumiv}%
- \def\@noitemerr
- {\@latex@warning{Empty `thebibliography' environment}}%
- \endlist
+  \setcounter{totalbib}{\c@enumiv}%
+  \def\@noitemerr
+  {\@latex@warning{Empty `thebibliography' environment}}%
+  \endlist
 }
 \renewcommand\@biblabel{}%
 \setlength\bibindent{1.5em}
