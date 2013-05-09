@@ -38,6 +38,7 @@
 % Оформление документов по СТП ВолгГТУ
 \newcommand{\VSTUDocumentType}{NONE}
 \newcommand{\VSTUDocumentCode}{THIS IS A ROBBERY-\VSTUDocumentType}
+\newcommand{\VSTUDocumentNumbersPrefix}{PREFIX}
 \newcommand{\VSTUSetPersonalCode}[1] {
   \renewcommand{\VSTUDocumentCode}{#1-\VSTUDocumentType}
 }
@@ -229,8 +230,8 @@
 \renewcommand\thechapter{\@arabic\c@chapter}
 \newcommand\chapter{%
   \clearpage%
-  \addtocounter{totalfigure}{\c@figure}\setcounter{figure}{0}%
-  \addtocounter{totaltable} {\c@table }\setcounter{table}{0}%
+  \addtocounter{totalfigure}{\c@figure}%
+  \addtocounter{totaltable}{\c@table}%
   \@startsection{chapter}{0}%
   {\Gost@ChapterIndent}{0mm}{\GostAfterTitleSkip}%
   {\GostTitleStyle\normalfont\Gost@ChapterStyle}%
@@ -381,11 +382,9 @@
 %   & Y~--- еще неизвестная \\
 %  \end{eqrem}
 
-% ... допускается нумерация формул в пределах раздела
-\newcommand\EqInChaper{%
-  \@addtoreset{equation}{chapter}%
-  \renewcommand{\theequation}{(\thechapter.\arabic{equation})}%
-}
+% Нумерация формул
+\renewcommand{\theequation}{\VSTUDocumentNumbersPrefix\arabic{equation}}
+
 
 % Перенос формул по =+-
 %\begingroup
@@ -417,33 +416,28 @@
 \def\ext@figure{lof}
 \def\fnum@figure{\figurename~\thefigure}
 
-\def\ftype@table{1}
-\def\ext@table{lof}
-\def\fnum@table{\tablename~\thetable}
-
 \newcounter{figure}
-\newenvironment{figure} {\@float   {figure}}{\end@float   }
+\newenvironment{figure} {\@float   {figure}}{\end@float}
 \newenvironment{figure*}{\@dblfloat{figure}}{\end@dblfloat}
 \renewcommand\captionlabeldelim{ ---}
 % \renewcommand\captionmargin{0.2cm} %% virens: это приводит к существенному сужению ширины подписи!!!!
 
-% Подпись к рисунку
+% Подписи и номера рисунков
 \addto\captionsrussian{\def\figurename{{Рисунок}}}
-
-% ... допускается нумерация рисунков в пределах раздела
-\newcommand\PicInChaper{%
-  \@addtoreset{figure}{chapter}%
-  \renewcommand{\thefigure}{\thechapter.\arabic{figure}}%
-}
+\renewcommand{\thefigure}{\VSTUDocumentNumbersPrefix\arabic{figure}}
 
 % 4.4 - таблицы
-% ... допускается нумерация таблиц в пределах раздела
-\newcommand\TableInChaper{%
-  \@addtoreset{table}{chapter}%
-  \renewcommand{\thetable}{\thechapter.\arabic{table}}%
-}
 
 \RequirePackage{longtable}% многостраничные таблицы
+
+
+\def\ftype@table{1}
+\def\ext@table{lof}
+\def\fnum@table{\tablename~\thetable}
+
+% Нумерация таблиц
+\renewcommand{\thetable}{\VSTUDocumentNumbersPrefix\arabic{table}}
+
 % Для выравнивания длинных таблиц
 \LTleft=\z@
 \LTright=\fill
