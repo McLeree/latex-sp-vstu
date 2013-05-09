@@ -35,10 +35,15 @@
 \ExecuteOptions{a4paper,14pt,final,utf8}
 \ProcessOptions
 
-% Оформление документов по СТП ВолгГТУ
+% Префикс, стоящий перед номерами рисунков и таблиц.
+\newcommand{\VSTUDocumentNumbersPrefix}{PREFIX}
+\newcommand{\VSTUSetDocumentNumbersPrefix}[1] {
+  \renewcommand{\VSTUDocumentNumbersPrefix}{#1}
+}
+
+% Тип и код документа
 \newcommand{\VSTUDocumentType}{NONE}
 \newcommand{\VSTUDocumentCode}{THIS IS A ROBBERY-\VSTUDocumentType}
-\newcommand{\VSTUDocumentNumbersPrefix}{PREFIX}
 \newcommand{\VSTUSetPersonalCode}[1] {
   \renewcommand{\VSTUDocumentCode}{#1-\VSTUDocumentType}
 }
