@@ -35,7 +35,10 @@
 \ExecuteOptions{a4paper,14pt,final,utf8}
 \ProcessOptions
 
-% Префикс, стоящий перед номерами рисунков и таблиц.
+\RequirePackage[\Gost@encoding]{inputenc}
+\RequirePackage[normalem]{ulem}
+
+% Префикс, стоящий перед номерами рисунков и таблиц
 \newcommand{\VSTUDocumentNumbersPrefix}{PREFIX}
 \newcommand{\VSTUSetDocumentNumbersPrefix}[1] {
   \renewcommand{\VSTUDocumentNumbersPrefix}{#1}
@@ -47,8 +50,8 @@
 \newcommand{\VSTUSetPersonalCode}[1] {
   \renewcommand{\VSTUDocumentCode}{#1-\VSTUDocumentType}
 }
-\RequirePackage[\Gost@encoding]{inputenc}
-\RequirePackage[normalem]{ulem}
+
+% Название дипломной работы
 \newcommand{\VSTUTitle}{Title}
 \newcommand{\VSTUTitleUL}{\uline{Title}}
 \newcommand{\VSTUSetTitle}[1] {
@@ -92,7 +95,6 @@
   \renewcommand{\VSTUDirectorName}{#2}
   \renewcommand{\VSTUDirectorDegree}{#1}
 }
-
 
 % ФИО нормоконтролера, степень\должность
 \newcommand{\VSTUStandardsAdviserFullName}{Фамилия\ Имя\ Отчество}
@@ -454,15 +456,19 @@
     \hss}}}
 
 % 4.3.4 - 4.1.14 Приложения
-\newcommand\appendix{\par
-  \setcounter{secnumdepth}{4}
-  \setcounter{chapter}{0}%
-  \EqInChaper\PicInChaper\TableInChaper%
-  \gdef\@chapapp{\appendixname}%
-  \gdef\thechapter{\@Asbuk\c@chapter}%
-  \renewcommand\Gost@ChapterStyle{\Gost@MainChapterStyle}%
-  \setlength\Gost@ChapterIndent{\Gost@MainChapterIndent}%
-}
+\newcounter{appendix}
+\renewcommand\theappendix{\@arabic\c@appendix}
+\gdef\theappendix{\@Asbuk\c@appendix}%
+\newcommand\appendix{
+  \clearpage
+  \addtocounter{appendix}{1}
+  \addtocounter{totalfigure}{\c@figure}
+  \addtocounter{totaltable}{\c@table}
+
+  \renewcommand{\thefigure}{\theappendix.\arabic{figure}}%
+  
+  \center{Приложение \theappendix}  
+}%
 
 % 4.5 Сноски
 \RequirePackage[perpage,bottom]{footmisc}
