@@ -5,13 +5,9 @@
 %--------------CHAPTER REDEFINTION----
 \renewcommand\chapter{%
 \vspace{\GostBeforTitleSkip}
- \if@figuresonchapter%
   \addtocounter{totalfigure}{\c@figure}\setcounter{figure}{0}%
- \fi%
- \if@tablesonchapter%
   \addtocounter{totaltable} {\c@table }\setcounter{table}{0}%
- \fi%
- \@startsection{chapter}{0}%
+  \@startsection{chapter}{0}%
   {\Gost@ChapterIndent}{0mm}{\GostAfterTitleSkip}%
   {\GostTitleStyle\normalfont\Gost@ChapterStyle}%
 }
