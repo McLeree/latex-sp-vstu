@@ -472,8 +472,8 @@
 
   % Внешний вид номеров рисунков: сначала номер приложения,
   % за ним номер рисунка\таблицы внутри приложения.
-  \renewcommand{\thefigure}{\theappendix.\arabic{figure}}%
-  \renewcommand{\thetable}{\theappendix.\arabic{table}}%
+  \renewcommand{\thefigure}{\VSTUDocumentNumbersPrefix\theappendix.\arabic{figure}}%
+  \renewcommand{\thetable}{\VSTUDocumentNumbersPrefix\theappendix.\arabic{table}}%
 
   \center{Приложение \theappendix}
 }%

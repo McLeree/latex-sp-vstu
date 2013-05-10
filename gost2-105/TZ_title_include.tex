@@ -2,7 +2,7 @@
 \RequirePackage{ulem}
 \newcommand{\VSTUInitializeTZ} {
 \renewcommand{\VSTUDocumentType}{91}
-%--------------CHAPTER REDEFINTION----
+%--------------CHAPTER AND APPENDIXREDEFINTION----
 \renewcommand\chapter{%
 \vspace{\GostBeforTitleSkip}
   \addtocounter{totalfigure}{\c@figure}\setcounter{figure}{0}%
@@ -11,6 +11,7 @@
   {\Gost@ChapterIndent}{0mm}{\GostAfterTitleSkip}%
   {\GostTitleStyle\normalfont\Gost@ChapterStyle}%
 }
+\gdef\theappendix{\@arabic\c@appendix}%
 {
 \sloppy
 %---------------TZ_TITLE---------------
