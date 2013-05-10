@@ -35,8 +35,13 @@
 \ExecuteOptions{a4paper,14pt,final,utf8}
 \ProcessOptions
 
+% Импорт пакетов
 \RequirePackage[\Gost@encoding]{inputenc}
 \RequirePackage[normalem]{ulem}
+
+% Импорт заголовков для ПЗ и ТЗ
+\input{PZ_title_include.tex}
+\input{TZ_title_include.tex}
 
 % Префикс, стоящий перед номерами рисунков и таблиц
 \newcommand{\VSTUDocumentNumbersPrefix}{PREFIX}
@@ -166,9 +171,9 @@
 \setlength\lineskip{1\p@}
 \setlength\normallineskip{1\p@}
 \setlength\parskip{0\p@ \@plus \p@}
-\setlength\leftmargini {2.5em}
+\setlength\leftmargini{2.5em}
 \setlength\leftmarginii{2.2em}
-\setlength\labelsep  {.5em}
+\setlength\labelsep{.5em}
 \setlength\labelwidth{\leftmargini}\addtolength\labelwidth{-\labelsep}
 \setlength\arraycolsep{5\p@}
 \setlength\tabcolsep{6\p@}
@@ -179,26 +184,26 @@
 \setlength\fboxrule{.4\p@}
 
 % Счетчики общего числа страниц, таблиц, рисунков и источников
-\newcounter{totalpage}
-\newcounter{totaltable} \setcounter{totaltable} {0}
-\newcounter{totalfigure}\setcounter{totalfigure}{0}
-\newcounter{totalbib}   \setcounter{totalbib}   {0}
+\newcounter{totalpage}   \setcounter{totalpage}{0}
+\newcounter{totaltable}  \setcounter{totaltable}{0}
+\newcounter{totalfigure} \setcounter{totalfigure}{0}
+\newcounter{totalbib}    \setcounter{totalbib}{0}
 
 % На последней странице ставятся метки с номерами
 %  - последней страницы
 %  - числа таблиц, имеющих caption
 %  - числа рисунков, имеющих caption
-\def\totalobjects@putlabel{%
+\def\totalobjects@putlabel{
   \addtocounter{totalpage}  {\c@page}
   \addtocounter{totaltable} {\c@table}
   \addtocounter{totalfigure}{\c@figure}
   \addtocounter{totaltable} {-1}
   \addtocounter{totalfigure}{-1}
-  \addtocounter{totalbib}{-1}
-  \refstepcounter{totalpage}  \label{reftotalpages}
-  \refstepcounter{totaltable} \label{reftotaltables}
-  \refstepcounter{totalfigure}\label{reftotalfigures}
-  \refstepcounter{totalbib}   \label{reftotalbibs}
+  \addtocounter{totalbib}   {-1}
+  \refstepcounter{totalpage}   \label{reftotalpages}
+  \refstepcounter{totaltable}  \label{reftotaltables}
+  \refstepcounter{totalfigure} \label{reftotalfigures}
+  \refstepcounter{totalbib}    \label{reftotalbibs}
 }
 \AtEndDocument{\totalobjects@putlabel}
 
@@ -237,8 +242,8 @@
 \renewcommand\thechapter{\@arabic\c@chapter}
 \newcommand\chapter{%
   \clearpage%
-  \addtocounter{totalfigure}{\c@figure}%
-  \addtocounter{totaltable}{\c@table}%
+  %\addtocounter{totalfigure}{\c@figure}%
+  %\addtocounter{totaltable}{\c@table}%
   \@startsection{chapter}{0}%
   {\Gost@ChapterIndent}{0mm}{\GostAfterTitleSkip}%
   {\GostTitleStyle\normalfont\Gost@ChapterStyle}%
@@ -301,13 +306,8 @@
 \RequirePackage[english, russian]{babel}
 \RequirePackage{mathtext}%русские буквы в формулах
 \RequirePackage[T1]{fontenc}
-\RequirePackage[\Gost@encoding]{inputenc}
 \RequirePackage{flafter}
 
-% Импорт заголовков для ПЗ
-
-\input{PZ_title_include.tex}
-\input{TZ_title_include.tex}
 % 4.2.7 Перечисления
 
 \newlength{\GostItemGap}
@@ -366,9 +366,9 @@
 
 % 4.2.15 - 4.2.19 Формулы
 
-\RequirePackage{amssymb} % для русских "меньше или равно" "больше или равно"
-\RequirePackage{icomma}
-\input{leqno.clo}
+%\RequirePackage{amssymb} % для русских "меньше или равно" "больше или равно"
+%\RequirePackage{icomma}
+%\input{leqno.clo}
 
 %\newcommand\eqref[1]{\ref{#1}}
 %\def\@eqnnum{{\normalfont\normalcolor\theequation}}
@@ -390,8 +390,7 @@
 %  \end{eqrem}
 
 % Нумерация формул
-\renewcommand{\theequation}{\VSTUDocumentNumbersPrefix\arabic{equation}}
-
+%\renewcommand{\theequation}{\VSTUDocumentNumbersPrefix\arabic{equation}}
 
 % Перенос формул по =+-
 %\begingroup
@@ -410,8 +409,8 @@
 %\mathcode`\+=32768
 %\mathcode`\-=32768
 
-\renewcommand\leq{\leqslant}
-\renewcommand\geq{\geqslant}
+%\renewcommand\leq{\leqslant}
+%\renewcommand\geq{\geqslant}
 
 % 4.3.1 - 4.3.3 Иллюстрации
 
@@ -462,12 +461,21 @@
 \newcommand\appendix{
   \clearpage
   \addtocounter{appendix}{1}
+
+  % Грязный хак нумерации рисунков\таблиц внутри приложений.
+  % Сначала добавляем figure к totalfigure, а затем сбрасываем figure в 0.
+  % Аналогично и для table.
   \addtocounter{totalfigure}{\c@figure}
   \addtocounter{totaltable}{\c@table}
+  \setcounter{figure}{0}
+  \setcounter{table}{0}
 
+  % Внешний вид номеров рисунков: сначала номер приложения,
+  % за ним номер рисунка\таблицы внутри приложения.
   \renewcommand{\thefigure}{\theappendix.\arabic{figure}}%
-  
-  \center{Приложение \theappendix}  
+  \renewcommand{\thetable}{\theappendix.\arabic{table}}%
+
+  \center{Приложение \theappendix}
 }%
 
 % 4.5 Сноски
