@@ -2,7 +2,7 @@
 \RequirePackage{ulem}
 \newcommand{\VSTUInitializeTZ} {
 \renewcommand{\VSTUDocumentType}{91}
-%--------------CHAPTER AND APPENDIXREDEFINTION----
+%--------------CHAPTER REDEFINTION----
 \renewcommand\chapter{%
 \vspace{\GostBeforTitleSkip}
   \addtocounter{totalfigure}{\c@figure}\setcounter{figure}{0}%
@@ -11,7 +11,28 @@
   {\Gost@ChapterIndent}{0mm}{\GostAfterTitleSkip}%
   {\GostTitleStyle\normalfont\Gost@ChapterStyle}%
 }
-\gdef\theappendix{\@arabic\c@appendix}%
+%--------------APPENDIX REDEFINTION----
+\gdef\theappendix{\VSTUDocumentNumbersPrefix\@arabic\c@appendix}%
+\renewcommand\appendix{
+  \clearpage
+  \addtocounter{appendix}{1}
+
+  % Грязный хак нумерации рисунков\таблиц внутри приложений.
+  % Сначала добавляем figure к totalfigure, а затем сбрасываем figure в 0.
+  % Аналогично и для table.
+  \addtocounter{totalfigure}{\c@figure}
+  \addtocounter{totaltable}{\c@table}
+  \setcounter{figure}{0}
+  \setcounter{table}{0}
+
+  % Внешний вид номеров рисунков: сначала номер приложения,
+  % за ним номер рисунка\таблицы внутри приложения.
+  \renewcommand{\thefigure}{\theappendix.\arabic{figure}}%
+  \renewcommand{\thetable}{\theappendix.\arabic{table}}%
+
+  \center{Приложение \theappendix}
+}%
+
 {
 \sloppy
 %---------------TZ_TITLE---------------
