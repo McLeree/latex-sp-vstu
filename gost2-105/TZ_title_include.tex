@@ -30,7 +30,9 @@
   \renewcommand{\thefigure}{\theappendix.\arabic{figure}}%
   \renewcommand{\thetable}{\theappendix.\arabic{table}}%
 
-  \center{\appendixname~\theappendix~{##1}}%
+  \begin{center}%
+  \appendixname~\theappendix~{##1}%
+  \end{center}%
   \addcontentsline{toc}{chapter}{\appendixname~\theappendix~{##1}}%
 }%
 
