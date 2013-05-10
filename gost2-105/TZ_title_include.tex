@@ -13,24 +13,25 @@
 }
 %--------------APPENDIX REDEFINTION----
 \gdef\theappendix{\VSTUDocumentNumbersPrefix\@arabic\c@appendix}%
-\renewcommand\appendix{
+\renewcommand{\appendix}[1]{
   \clearpage
   \addtocounter{appendix}{1}
 
   % Грязный хак нумерации рисунков\таблиц внутри приложений.
   % Сначала добавляем figure к totalfigure, а затем сбрасываем figure в 0.
   % Аналогично и для table.
-  \addtocounter{totalfigure}{\c@figure}
-  \addtocounter{totaltable}{\c@table}
-  \setcounter{figure}{0}
-  \setcounter{table}{0}
+  \addtocounter{totalfigure}{\c@figure}%
+  \addtocounter{totaltable}{\c@table}%
+  \setcounter{figure}{0}%
+  \setcounter{table}{0}%
 
   % Внешний вид номеров рисунков: сначала номер приложения,
   % за ним номер рисунка\таблицы внутри приложения.
   \renewcommand{\thefigure}{\theappendix.\arabic{figure}}%
   \renewcommand{\thetable}{\theappendix.\arabic{table}}%
 
-  \center{Приложение \theappendix}
+  \center{\appendixname~\theappendix~{##1}}%
+  \addcontentsline{toc}{chapter}{\appendixname~\theappendix~{##1}}%
 }%
 
 {

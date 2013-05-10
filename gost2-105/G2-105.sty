@@ -22,15 +22,15 @@
 
 \newif\if@usehyperref\@usehyperreffalse
 \newif\if@usepscyr   \@usepscyrfalse
-\newcommand\Gost@encoding{}
-\newcommand\Gost@LineSpread{1.3}
+\newcommand{\Gost@encoding}{}
+\newcommand{\Gost@LineSpread}{1.3}
 \DeclareOption{usehyperref}{\@usehyperreftrue}
 \DeclareOption{usepscyr}{\@usepscyrtrue}
-\DeclareOption{koi8-r}{\renewcommand\Gost@encoding{koi8-r}}
-\DeclareOption{cp1251}{\renewcommand\Gost@encoding{cp1251}}
-\DeclareOption{cp866} {\renewcommand\Gost@encoding{cp866} }
-\DeclareOption{utf8}{\renewcommand\Gost@encoding{utf8}}
-\DeclareOption{econommode}{\newcommand\Gost@LineSpread{1.3}\erroqweqwe}
+\DeclareOption{koi8-r}{\renewcommand{\Gost@encoding}{koi8-r}}
+\DeclareOption{cp1251}{\renewcommand{\Gost@encoding}{cp1251}}
+\DeclareOption{cp866}{\renewcommand{\Gost@encoding}{cp866}}
+\DeclareOption{utf8}{\renewcommand{\Gost@encoding}{utf8}}
+\DeclareOption{econommode}{\newcommand{\Gost@LineSpread}{1.3}\erroqweqwe}
 
 \ExecuteOptions{a4paper,14pt,final,utf8}
 \ProcessOptions
@@ -45,21 +45,21 @@
 
 % Префикс, стоящий перед номерами рисунков и таблиц
 \newcommand{\VSTUDocumentNumbersPrefix}{PREFIX}
-\newcommand{\VSTUSetDocumentNumbersPrefix}[1] {
+\newcommand{\VSTUSetDocumentNumbersPrefix}[1]{
   \renewcommand{\VSTUDocumentNumbersPrefix}{#1}
 }
 
 % Тип и код документа
 \newcommand{\VSTUDocumentType}{NONE}
 \newcommand{\VSTUDocumentCode}{THIS IS A ROBBERY-\VSTUDocumentType}
-\newcommand{\VSTUSetPersonalCode}[1] {
+\newcommand{\VSTUSetPersonalCode}[1]{
   \renewcommand{\VSTUDocumentCode}{#1-\VSTUDocumentType}
 }
 
 % Название дипломной работы
 \newcommand{\VSTUTitle}{Title}
 \newcommand{\VSTUTitleUL}{\uline{Title}}
-\newcommand{\VSTUSetTitle}[1] {
+\newcommand{\VSTUSetTitle}[1]{
     \renewcommand{\VSTUTitle}{#1}
     \renewcommand{\VSTUTitleUL}{\uline{#1}}
 }
@@ -69,7 +69,7 @@
 \newcommand{\VSTUOrderMonth}{января}
 \newcommand{\VSTUOrderYear}{2013}
 \newcommand{\VSTUOrderNumber}{1000--ст}
-\newcommand{\VSTUSetOrder}[4] {
+\newcommand{\VSTUSetOrder}[4]{
   \renewcommand{\VSTUOrderYear}{#4}
   \renewcommand{\VSTUOrderMonth}{#3}
   \renewcommand{\VSTUOrderDate}{#2}
@@ -84,7 +84,7 @@
 \newcommand{\VSTUHeadOfDepartmentName}{И.\ О.\ Фамилия}
 \newcommand{\VSTUHeadOfDepartmentDegree}{кто-то,\ какая-то\ каф.}
 \newcommand{\VSTUHeadOfDepartmentPost}{зав.\ каф.\ XXX}
-\newcommand{\VSTUSetHeadOfDepartment}[4] {
+\newcommand{\VSTUSetHeadOfDepartment}[4]{
   \renewcommand{\VSTUHeadOfDepartmentFullName}{#4}
   \renewcommand{\VSTUHeadOfDepartmentName}{#3}
   \renewcommand{\VSTUHeadOfDepartmentDegree}{#2}
@@ -95,7 +95,7 @@
 \newcommand{\VSTUDirectorFullName}{Фамилия\ Имя\ Отчество}
 \newcommand{\VSTUDirectorName}{И.\ О.\ Фамилия}
 \newcommand{\VSTUDirectorDegree}{кто-то,\ какая-то\ каф.}
-\newcommand{\VSTUSetDirector}[3] {
+\newcommand{\VSTUSetDirector}[3]{
   \renewcommand{\VSTUDirectorFullName}{#3}
   \renewcommand{\VSTUDirectorName}{#2}
   \renewcommand{\VSTUDirectorDegree}{#1}
@@ -105,7 +105,7 @@
 \newcommand{\VSTUStandardsAdviserFullName}{Фамилия\ Имя\ Отчество}
 \newcommand{\VSTUStandardsAdviserName}{И.\ О.\ Фамилия}
 \newcommand{\VSTUStandardsAdviserDegree}{кто-то,\ какая-то\ каф.}
-\newcommand{\VSTUSetStandardsAdviser}[3] {
+\newcommand{\VSTUSetStandardsAdviser}[3]{
   \renewcommand{\VSTUStandardsAdviserFullName}{#3}
   \renewcommand{\VSTUStandardsAdviserName}{#2}
   \renewcommand{\VSTUStandardsAdviserDegree}{#1}
@@ -115,7 +115,7 @@
 \newcommand{\VSTUStudentFullName}{Фамилия\ Имя\ Отчество}
 \newcommand{\VSTUStudentName}{И.\ О.\ Фамилия}
 \newcommand{\VSTUStudentGroup}{ГРП--000}
-\newcommand{\VSTUSetStudent}[3] {
+\newcommand{\VSTUSetStudent}[3]{
   \renewcommand{\VSTUStudentFullName}{#3}
   \renewcommand{\VSTUStudentName}{#2}
   \renewcommand{\VSTUStudentGroup}{#1}
@@ -137,17 +137,17 @@
 \onecolumn
 
 % Нечто
-\newcommand\@pnumwidth{1.55em}
-\renewcommand\baselinestretch{}
+\newcommand{\@pnumwidth}{1.55em}
+\renewcommand{\baselinestretch}{}
 \@lowpenalty   51                     %
 \@medpenalty  151                     %
 \@highpenalty 301                     %
-\renewcommand\topfraction{.7}         %
-\renewcommand\bottomfraction{.3}      %
-\renewcommand\textfraction{.2}        %
-\renewcommand\floatpagefraction{.5}   %
-\renewcommand\dbltopfraction{.7}      %
-\renewcommand\dblfloatpagefraction{.5}%
+\renewcommand{\topfraction}{.7}         %
+\renewcommand{\bottomfraction}{.3}      %
+\renewcommand{\textfraction}{.2}        %
+\renewcommand{\floatpagefraction}{.5}   %
+\renewcommand{\dbltopfraction}{.7}      %
+\renewcommand{\dblfloatpagefraction}{.5}%
   \def\ps@headings{%
     \let\@oddfoot\@empty
     \def\@oddhead{{\slshape\rightmark}\hfil\thepage}%
@@ -208,10 +208,10 @@
 \AtEndDocument{\totalobjects@putlabel}
 
 % Команды отображение общего числа ...
-\newcommand\totalpages  {\pageref{reftotalpages}}
-\newcommand\totaltables {\ref{reftotaltables}}
-\newcommand\totalfigures{\ref{reftotalfigures}}
-\newcommand\totalbibs   {\ref{reftotalbibs}}
+\newcommand{\totalpages}  {\pageref{reftotalpages}}
+\newcommand{\totaltables} {\ref{reftotaltables}}
+\newcommand{\totalfigures}{\ref{reftotalfigures}}
+\newcommand{\totalbibs}   {\ref{reftotalbibs}}
 
 % 3.6 Абзацный отступ - 15..17 мм
 \setlength\parindent{15mm}
@@ -233,14 +233,14 @@
 \addtolength\Gost@TitleDropSkip{-\GostAfterTitleSkip}
 
 % Стиль всех заголовков
-\newcommand\GostTitleStyle{\normalfont\mdseries\parshape 1 0cm \textwidth}
-\newcommand\Gost@MainChapterStyle{}
-\newcommand\Gost@ChapterStyle{\Gost@MainChapterStyle}
+\newcommand{\GostTitleStyle}{\normalfont\mdseries\parshape 1 0cm \textwidth}
+\newcommand{\Gost@MainChapterStyle}{}
+\newcommand{\Gost@ChapterStyle}{\Gost@MainChapterStyle}
 
 % Раздел
 \newcounter{chapter}
-\renewcommand\thechapter{\@arabic\c@chapter}
-\newcommand\chapter{%
+\renewcommand{\thechapter}{\@arabic\c@chapter}
+\newcommand{\chapter}{%
   \clearpage%
   %\addtocounter{totalfigure}{\c@figure}%
   %\addtocounter{totaltable}{\c@table}%
@@ -248,14 +248,14 @@
   {\Gost@ChapterIndent}{0mm}{\GostAfterTitleSkip}%
   {\GostTitleStyle\normalfont\Gost@ChapterStyle}%
 }
-\newcommand*\chaptermark[1]{}
-\newcommand\apart[2]{\chapter {#2\label{#1}}}
-\newcommand\cpart[2]{\chapter*{#2\label{#1}}}
+\newcommand*{\chaptermark}[1]{}
+\newcommand{\apart}[2]{\chapter {#2\label{#1}}}
+\newcommand{\cpart}[2]{\chapter*{#2\label{#1}}}
 
 % Подраздел
 \newcounter{section}[chapter]
-\renewcommand\thesection{\thechapter.\@arabic\c@section}
-\newcommand\section{%
+\renewcommand{\thesection}{\thechapter.\@arabic\c@section}
+\newcommand{\section}{%
   \@startsection{section}{1}%
   {\GostTitleIndent}{\GostBeforTitleSkip}{\GostAfterTitleSkip}%
   {\GostTitleStyle}%
@@ -264,9 +264,9 @@
 
 % Пункт
 \newcounter{subsection}[section]
-\renewcommand\thesubsection{\thesection.\@arabic\c@subsection}
+\renewcommand{\thesubsection}{\thesection.\@arabic\c@subsection}
 
-\newcommand\subsection{%
+\newcommand{\subsection}{%
   \@startsection{subsection}{2}%
   {\GostTitleIndent}{\GostBeforTitleSkip}{\GostAfterTitleSkip}%
   {\GostTitleStyle}%
@@ -275,18 +275,18 @@
 
 % Подпункт
 \newcounter{subsubsection}[subsection]
-\renewcommand\thesubsubsection{\thesubsection.\@arabic\c@subsubsection}
+\renewcommand{\thesubsubsection}{\thesubsection.\@arabic\c@subsubsection}
 
-\newcommand\subsubsection{%
+\newcommand{\subsubsection}{%
   \@startsection{subsubsection}{4}%
   {\GostTitleIndent}{\GostBeforTitleSkip}{\GostAfterTitleSkip}%
   {\GostTitleStyle}%
 }
-\newcommand\asubpara[2]{\subsubsection{#2\label{#1}}}
+\newcommand{\asubpara}[2]{\subsubsection{#2\label{#1}}}
 
 % Команда ttl должна вставлятся между двумя заголовками
 \newlength{\NirTitleDropSkip}
-\newcommand\ttl{\vspace{\Gost@TitleDropSkip}}
+\newcommand{\ttl}{\vspace{\Gost@TitleDropSkip}}
 
 % Нумеруются все заголовки
 \setcounter{secnumdepth}{3}
@@ -312,7 +312,7 @@
 
 \newlength{\GostItemGap}
 \newlength{\GostItemIndent}
-\newcommand\Gost@List{%
+\newcommand{\Gost@List}{%
   \setlength{\itemsep}{0mm}%                 пробел между последовательными элементами
   \setlength{\topsep}{1mm}%                  отступ от текста до перечня
   \setlength{\partopsep}{0mm}%               дополнительный отступ,  если начали абзац
@@ -322,7 +322,7 @@
   \setlength{\labelsep}{\GostItemGap}%       от метки до текста
 }
 
-\newcommand\Gost@ListII{%
+\newcommand{\Gost@ListII}{%
   \setlength{\itemsep}{0mm}%                 пробел между последовательными элементами
   \setlength{\topsep}{1mm}%                  отступ от текста до перечня
   \setlength{\partopsep}{0mm}%               дополнительный отступ,  если начали абзац
@@ -343,14 +343,14 @@
 \newcommand{\labelitemi}{--}
 
 % Нумерованные перечисления
-\renewcommand\theenumi {\asbuk{enumi}}
-\renewcommand\theenumii{\arabic{enumii}}
-\newcommand\labelenumi{\theenumi)}
-\newcommand\labelenumii{\theenumii)}
-\renewcommand\p@enumii{\theenumi}
+\renewcommand{\theenumi}{\asbuk{enumi}}
+\renewcommand{\theenumii}{\arabic{enumii}}
+\newcommand{\labelenumi}{\theenumi)}
+\newcommand{\labelenumii}{\theenumii)}
+\renewcommand{\p@enumii}{\theenumi}
 
 % Ссылка на нумерованное перечисление
-\newcommand\pref[2]{%
+\newcommand{\pref}[2]{%
  перечисление~\ref{#2})~\ref{#1}}
 
 % Перечисление типа abbreviation - для списка сокращения
@@ -362,7 +362,7 @@
 }{%
   \endlist%
 }
-\newcommand*\abbreviationlabel[1]{\hspace\labelsep\normalfont #1~---}
+\newcommand*{\abbreviationlabel}[1]{\hspace\labelsep\normalfont #1~---}
 
 % 4.2.15 - 4.2.19 Формулы
 
@@ -370,7 +370,7 @@
 %\RequirePackage{icomma}
 %\input{leqno.clo}
 
-%\newcommand\eqref[1]{\ref{#1}}
+%\newcommand{\eqref}[1]{\ref{#1}}
 %\def\@eqnnum{{\normalfont\normalcolor\theequation}}
 %\newenvironment{table} {\@float   {table}}{\end@float   }
 %\newenvironment{table*}{\@dblfloat{table}}{\end@dblfloat}
@@ -409,12 +409,12 @@
 %\mathcode`\+=32768
 %\mathcode`\-=32768
 
-%\renewcommand\leq{\leqslant}
-%\renewcommand\geq{\geqslant}
+%\renewcommand{\leq}{\leqslant}
+%\renewcommand{\geq}{\geqslant}
 
 % 4.3.1 - 4.3.3 Иллюстрации
 
-\newcommand\@makecaption{}
+\newcommand{\@makecaption}{}
 \RequirePackage[center]{caption2}
 
 \def\fps@figure{bph}
@@ -425,8 +425,8 @@
 \newcounter{figure}
 \newenvironment{figure} {\@float   {figure}}{\end@float}
 \newenvironment{figure*}{\@dblfloat{figure}}{\end@dblfloat}
-\renewcommand\captionlabeldelim{ ---}
-% \renewcommand\captionmargin{0.2cm} %% virens: это приводит к существенному сужению ширины подписи!!!!
+\renewcommand{\captionlabeldelim}{ ---}
+% \renewcommand{\captionmargin}{0.2cm} %% virens: это приводит к существенному сужению ширины подписи!!!!
 
 % Подписи и номера рисунков
 \addto\captionsrussian{\def\figurename{{Рисунок}}}
@@ -457,9 +457,9 @@
 % 4.3.4 - 4.1.14 Приложения
 \newcounter{appendix}
 \gdef\theappendix{\@Asbuk\c@appendix}%
-\newcommand{\appendix}{
+\newcommand{\appendix}[1]{
   \clearpage
-  %\addtocounter{appendix}{1}
+  \addtocounter{appendix}{1}
 
   % Грязный хак нумерации рисунков\таблиц внутри приложений.
   % Сначала добавляем figure к totalfigure, а затем сбрасываем figure в 0.
@@ -468,16 +468,15 @@
   \addtocounter{totaltable}{\c@table}%
   \setcounter{figure}{0}%
   \setcounter{table}{0}%
-  %
+
   % Внешний вид номеров рисунков: сначала номер приложения,
   % за ним номер рисунка\таблицы внутри приложения.
   \renewcommand{\thefigure}{\VSTUDocumentNumbersPrefix\theappendix.\arabic{figure}}%
   \renewcommand{\thetable}{\VSTUDocumentNumbersPrefix\theappendix.\arabic{table}}%
-  \@startsection{appendix}{0}%
-  {0mm}{0mm}{\GostAfterTitleSkip}%
-  {\center\normalfont\appendixname~}%
-  {\textbf{WTF APPENDIX, Y U NO WORK}}
-}
+
+  \center{\appendixname~\theappendix~{#1}}%
+  \addcontentsline{toc}{chapter}{\appendixname~\theappendix~{#1}}%
+}%
 
 % 4.5 Сноски
 \RequirePackage[perpage,bottom]{footmisc}
@@ -485,35 +484,35 @@
 
 % Части документа - для выбора вида заголовков и т.д.
 % Введение, обозначения
-\newcommand\frontmatter{%
+\newcommand{\frontmatter}{%
   \setcounter{secnumdepth}{-1}%
-  \renewcommand\Gost@ChapterStyle{\centering}%
+  \renewcommand{\Gost@ChapterStyle}{\centering}%
   \setlength\Gost@ChapterIndent{0mm}%
 }
 
 % Основная часть
-\newcommand\mainmatter{
+\newcommand{\mainmatter}{
   \setcounter{secnumdepth}{4}
-  \renewcommand\Gost@ChapterStyle{\Gost@MainChapterStyle}%
+  \renewcommand{\Gost@ChapterStyle}{\Gost@MainChapterStyle}%
   \setlength\Gost@ChapterIndent{\Gost@MainChapterIndent}%
 }
 
 % Заключение, библиография
-\newcommand\backmatter{
+\newcommand{\backmatter}{
   \setcounter{secnumdepth}{-1}
-  \renewcommand\Gost@ChapterStyle{\centering}%
+  \renewcommand{\Gost@ChapterStyle}{\centering}%
   \setlength\Gost@ChapterIndent{0mm}%
 }
 
 % Всякие оглавления
-\newcommand\tableofcontents {
+\newcommand{\tableofcontents}{
   \renewcommand{\contentsname}{Содержание}
   \chapter*{\contentsname}\@starttoc{toc}
 }
-\newcommand\listoffigures {
+\newcommand{\listoffigures}{
   \chapter*{\listfigurename}\@starttoc{lof}
 }
-\newcommand\listoftables{
+\newcommand{\listoftables}{
   \chapter*{\listtablename}\@starttoc{lot}
 }
 
@@ -549,10 +548,10 @@
      \leavevmode          % TeX command to enter horizontal mode.
      #1\hfil \hbox to\@pnumwidth{\hss #2}\par%% <= \medskip inserted
    \endgroup}
-\newcommand*\l@figure{\@dottedtocline{1}{1.5em}{2.3em}}
-\newcommand*\l@table {\@dottedtocline{1}{1.5em}{2.3em}}
-\newcommand\@tocrmarg{2.55em}  % отступ правого края оглавления перенесенных строк
-\newcommand\@dotsep{1000}      % между точками в оглавлении в em
+\newcommand*{\l@figure}{\@dottedtocline{1}{1.5em}{2.3em}}
+\newcommand*{\l@table}{\@dottedtocline{1}{1.5em}{2.3em}}
+\newcommand{\@tocrmarg}{2.55em}  % отступ правого края оглавления перенесенных строк
+\newcommand{\@dotsep}{1000}      % между точками в оглавлении в em
 \linespread{\Gost@LineSpread}  % полуторный межстрочный интервал
 
 \AtBeginDocument{%
@@ -567,7 +566,7 @@
 % Библиография
 \newdimen\bibindent
 \newenvironment{thebibliography}[1]{
-\renewcommand\bibname{Список использованных источников}
+\renewcommand{\bibname}{Список использованных источников}
   \chapter*{\bibname}\ttl\addcontentsline{toc}{chapter}{\bibname}%
   \list{\@biblabel{\@arabic\c@enumiv}}%
        {\settowidth\labelwidth{\@biblabel{#1}}%
@@ -576,7 +575,7 @@
          \@openbib@code
          \usecounter{enumiv}%
          \let\p@enumiv\@empty
-         \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+         \renewcommand{\theenumiv}{\@arabic\c@enumiv}}%
   \sloppy\clubpenalty4000\widowpenalty4000%
   \sfcode`\.\@m
 }{
@@ -585,7 +584,7 @@
   {\@latex@warning{Empty `thebibliography' environment}}%
   \endlist
 }
-\renewcommand\@biblabel{}%
+\renewcommand{\@biblabel}{}%
 \setlength\bibindent{1.5em}
 
 % Индекс
@@ -597,12 +596,12 @@
                 \parskip\z@ \@plus .3\p@\relax
                 \let\item\@idxitem}
                {\onecolumn}
-\newcommand\newblock{\hskip .11em\@plus.33em\@minus.07em}
+\newcommand{\newblock}{\hskip .11em\@plus.33em\@minus.07em}
 \let\@openbib@code\@empty
-\newcommand\@idxitem{\par\hangindent 40\p@}
-\newcommand\subitem{\@idxitem \hspace*{20\p@}}
-\newcommand\subsubitem{\@idxitem \hspace*{30\p@}}
-\newcommand\indexspace{\par \vskip 10\p@ \@plus5\p@ \@minus3\p@\relax}
+\newcommand{\@idxitem}{\par\hangindent 40\p@}
+\newcommand{\subitem}{\@idxitem \hspace*{20\p@}}
+\newcommand{\subsubitem}{\@idxitem \hspace*{30\p@}}
+\newcommand{\indexspace}{\par \vskip 10\p@ \@plus5\p@ \@minus3\p@\relax}
 
 % Для русского языка
 \righthyphenmin=2
