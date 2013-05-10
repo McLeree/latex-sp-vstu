@@ -458,25 +458,27 @@
 \newcounter{appendix}
 \renewcommand\theappendix{\@arabic\c@appendix}
 \gdef\theappendix{\@Asbuk\c@appendix}%
-\newcommand\appendix{
+\newcommand{\appendix}{
   \clearpage
-  \addtocounter{appendix}{1}
+  %\addtocounter{appendix}{1}
 
   % Грязный хак нумерации рисунков\таблиц внутри приложений.
   % Сначала добавляем figure к totalfigure, а затем сбрасываем figure в 0.
   % Аналогично и для table.
-  \addtocounter{totalfigure}{\c@figure}
-  \addtocounter{totaltable}{\c@table}
-  \setcounter{figure}{0}
-  \setcounter{table}{0}
-
+  \addtocounter{totalfigure}{\c@figure}%
+  \addtocounter{totaltable}{\c@table}%
+  \setcounter{figure}{0}%
+  \setcounter{table}{0}%
+  %
   % Внешний вид номеров рисунков: сначала номер приложения,
   % за ним номер рисунка\таблицы внутри приложения.
   \renewcommand{\thefigure}{\VSTUDocumentNumbersPrefix\theappendix.\arabic{figure}}%
   \renewcommand{\thetable}{\VSTUDocumentNumbersPrefix\theappendix.\arabic{table}}%
-
-  \center{Приложение \theappendix}
-}%
+  \@startsection{appendix}{0}%
+  {0mm}{0mm}{\GostAfterTitleSkip}%
+  {\center\normalfont\appendixname~}%
+  {\textbf{WTF APPENDIX, Y U NO WORK}}
+}
 
 % 4.5 Сноски
 \RequirePackage[perpage,bottom]{footmisc}
