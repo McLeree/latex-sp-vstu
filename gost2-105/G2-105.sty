@@ -44,7 +44,7 @@
 \input{TZ_title_include.tex}
 
 % Префикс, стоящий перед номерами рисунков и таблиц
-\newcommand{\VSTUDocumentNumbersPrefix}{PREFIX}
+\newcommand{\VSTUDocumentNumbersPrefix}{}
 \newcommand{\VSTUSetDocumentNumbersPrefix}[1]{
   \renewcommand{\VSTUDocumentNumbersPrefix}{#1}
 }
@@ -62,6 +62,14 @@
 \newcommand{\VSTUSetTitle}[1]{
     \renewcommand{\VSTUTitle}{#1}
     \renewcommand{\VSTUTitleUL}{\uline{#1}}
+}
+
+% Название дипломной работы на английском языке
+\newcommand{\VSTUTitleEng}{TitleEng}
+\newcommand{\VSTUTitleULEng}{\uline{TitleEng}}
+\newcommand{\VSTUSetTitleEng}[1]{
+    \renewcommand{\VSTUTitleEng}{#1}
+    \renewcommand{\VSTUTitleULEng}{\uline{#1}}
 }
 
 % Номер приказа (месяц задается строкой!)
