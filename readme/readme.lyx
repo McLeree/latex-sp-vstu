@@ -471,11 +471,33 @@ VSTUInitializeTZ.
 \end_layout
 
 \begin_layout Standard
+Напоследок два важных момента, которые не удалось полностью автоматизировать:
+\end_layout
+
+\begin_layout Itemize
+если подряд идут два заголовка, между ними нужно нажать Ctrl+L и написать
+ 
+\backslash
+ttl --- это сделает расстояние между ними меньше, как нужно по ГОСТу;
+\end_layout
+
+\begin_layout Itemize
+после последнего пункта перечислений может не быть абзацного отступа, это
+ лечится добавлением пустой вставки Ctrl+L.
+ После пункта, который вы сейчас читаете, эта вставка намеренно не добавлена,
+ поэтому следующая строка не имеет абзацного отступа :)
+\end_layout
+
+\begin_layout Standard
 По вопросам обращаться:
 \end_layout
 
 \begin_layout Standard
-Алексей --- mcleree@gmail.com; Валерий --- vostreltsov@gmail.com 
+Алексей --- mcleree@gmail.com
+\end_layout
+
+\begin_layout Standard
+Валерий --- vostreltsov@gmail.com 
 \end_layout
 
 \end_body
