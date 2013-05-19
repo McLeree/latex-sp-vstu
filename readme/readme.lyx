@@ -241,7 +241,7 @@ status open
 
 \end_layout
 
-\begin_layout Enumerate
+\begin_layout Standard
 
 \family typewriter
 \size scriptsize
@@ -250,7 +250,7 @@ status open
 VSTUSetDocumentNumbersPrefix{}
 \end_layout
 
-\begin_layout Enumerate
+\begin_layout Standard
 
 \family typewriter
 \size scriptsize
@@ -259,7 +259,7 @@ VSTUSetDocumentNumbersPrefix{}
 VSTUSetPersonalCode{ВРБ-40-461-806-10.19-230100-3-13}
 \end_layout
 
-\begin_layout Enumerate
+\begin_layout Standard
 
 \family typewriter
 \size scriptsize
@@ -268,7 +268,7 @@ VSTUSetPersonalCode{ВРБ-40-461-806-10.19-230100-3-13}
 VSTUSetOrder{590--ст}{26}{апреля}{2013}
 \end_layout
 
-\begin_layout Enumerate
+\begin_layout Standard
 
 \family typewriter
 \size scriptsize
@@ -287,7 +287,7 @@ VSTUSetHeadOfDepartment{Зав.
  Дворянкин}{Дворянкин Александр Михайлович}
 \end_layout
 
-\begin_layout Enumerate
+\begin_layout Standard
 
 \family typewriter
 \size scriptsize
@@ -306,7 +306,7 @@ VSTUSetDirector{к.т.н.,
  Сычев}{Сычев Олег Александрович}
 \end_layout
 
-\begin_layout Enumerate
+\begin_layout Standard
 
 \family typewriter
 \size scriptsize
@@ -323,7 +323,7 @@ VSTUSetStandardsAdviser{асс.
  Ляпина}{Ляпина Ольга Николаевна}
 \end_layout
 
-\begin_layout Enumerate
+\begin_layout Standard
 
 \family typewriter
 \size scriptsize
@@ -336,7 +336,7 @@ VSTUSetStudent{ИВТ-460}{В.
  Стрельцов}{Стрельцов Валерий Олегович}
 \end_layout
 
-\begin_layout Enumerate
+\begin_layout Standard
 
 \family typewriter
 \size scriptsize
@@ -345,7 +345,7 @@ VSTUSetStudent{ИВТ-460}{В.
 VSTUSetTitle{Русское название работы}
 \end_layout
 
-\begin_layout Enumerate
+\begin_layout Standard
 
 \family typewriter
 \size scriptsize
@@ -354,7 +354,7 @@ VSTUSetTitle{Русское название работы}
 VSTUSetTitleEng{English title}
 \end_layout
 
-\begin_layout Enumerate
+\begin_layout Standard
 
 \family typewriter
 \size scriptsize
@@ -458,13 +458,30 @@ VSTUInitializeTZ.
 \end_inset
 
 .
- Чтобы рисунки были по центру, нужно правой кнопкой нажать на абзац с рисунком,
+\end_layout
+
+\begin_layout Standard
+Чтобы рисунки были по центру, нужно правой кнопкой нажать на абзац с рисунком,
  выбрать в меню его свойства, и там задать выравнивание по центру.
 \end_layout
 
 \begin_layout Standard
-К рисункам и таблицам можно проставлять метки путем Вставка -> Метка, а
- затем ссылаться на них Вставка -> Перекрестная ссылка.
+Для тех невезучих людей, кому требуется альбомная ориентация (например,
+ таблиц), есть решение.
+ В свойствах документа, в преамбулу, нужно дописать строчку 
+\backslash
+RequirePackage{lscape}.
+ Теперь до и после участка, который нужно сделать альбомным, нужно сделать
+ Ctrl+L вставки 
+\backslash
+begin{landscape} и 
+\backslash
+end{landscape} соответственно.
+\end_layout
+
+\begin_layout Standard
+К рисункам и таблицам можно (нужно!) проставлять метки путем Вставка ->
+ Метка, а затем ссылаться на них Вставка -> Перекрестная ссылка.
  Таким образом всё будет автоматически перенумеровано в случае вставки новых
  рисунков и таблиц.
  Аналогично со списком использованной литературы.
