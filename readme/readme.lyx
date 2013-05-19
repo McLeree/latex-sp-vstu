@@ -197,21 +197,21 @@ status open
 
 
 \backslash
-sloppy
+sloppy % запрет выхода за поля
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-hyphenpenalty 10000
+hyphenpenalty 10000 % отключение переносов раз
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-exhyphenpenalty 10000
+exhyphenpenalty 10000 % отключение переносов два
 \end_layout
 
 \end_inset
