@@ -36,4 +36,3 @@ Input lyxmacros.inc
 Input g2_105counters.inc
 Input g2_105lists.inc
 Input g2_105sections.inc
-Input g2_105struct.inc

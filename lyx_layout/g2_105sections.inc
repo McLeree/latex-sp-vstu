@@ -1,9 +1,9 @@
-﻿# This include file contains all sectionning-related commands.
+﻿# This include file contains all sectioning-related commands.
 
 Format 11
 
 Style "Раздел"
-    Category              "Раздел
+    Category              "Раздел"
     Margin                Dynamic
     LabelType             Counter
     LabelCounter          section
@@ -33,7 +33,6 @@ Style Section*
     LatexName             ESKDstarsection
     LabelType             No_Label
     LabelCounter          ""    
-    OptionalArgs          0
     OptionalArgs          0
 
     Preamble
@@ -123,6 +122,39 @@ Style "Приложение"
     AlignPossible         Block, Left
     OptionalArgs          2
     Font
+      Series              Bold
+      Size                Larger
+    EndFont
+End
+
+Style Abstract
+    CopyStyle             "Раздел"
+    Category              FrontMatter
+    Margin                Static
+    LatexName             chapter*
+    LabelType             No_Label
+    LabelCounter          ""    
+    OptionalArgs          0
+End
+
+Style Bibliography
+    Margin                First_Dynamic
+    LatexType             Bib_Environment
+    LatexName             thebibliography
+    Category              BackMatter
+    NextNoIndent          1
+    LeftMargin            MM
+    ParSkip               0.4
+    ItemSep               0
+    TopSep                0.7
+    BottomSep             0.7
+    ParSep                0.5
+    Align                 Block
+    AlignPossible         Block, Left
+    LabelType             Bibliography
+    LabelString           "Список использованных источников"
+    LabelBottomSep        1.2
+    LabelFont
       Series              Bold
       Size                Larger
     EndFont
