@@ -83,20 +83,20 @@ Style "Заключение"
 End
 
 Style Section*
-	CopyStyle             "Раздел"
-	Category              Unnumbered
-	Margin                Static
-	LatexName             ESKDstarsection
-	LabelType             No_Label
-	LabelCounter	      ""	
-	OptionalArgs          0
-	OptionalArgs          0
+    CopyStyle             "Раздел"
+    Category              Unnumbered
+    Margin                Static
+    LatexName             ESKDstarsection
+    LabelType             No_Label
+    LabelCounter          ""    
+    OptionalArgs          0
+    OptionalArgs          0
 
-	Preamble
-		\newcommand{\ESKDstarsection}[1]{
-			\addcontentsline{toc}{section}{#1}
-			\section*{#1}
-		} 
-	EndPreamble
+    Preamble
+        \newcommand{\ESKDstarsection}[1]{
+            \addcontentsline{toc}{section}{#1}
+            \section*{#1}
+        } 
+    EndPreamble
 
 End

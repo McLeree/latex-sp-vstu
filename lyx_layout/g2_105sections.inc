@@ -35,17 +35,17 @@ End
 
 
 Style "Подраздел"
-	CopyStyle             "Раздел"
-	LabelCounter	      subsection
-	TocLevel              1
-	LatexName             section
-	TopSep                0.9
-	BottomSep             0.5
-	ParSep                0.5
-	Font
-	  Series              Bold
-	  Size                Large
-	EndFont
+    CopyStyle             "Раздел"
+    LabelCounter          subsection
+    TocLevel              1
+    LatexName             section
+    TopSep                0.9
+    BottomSep             0.5
+    ParSep                0.5
+    Font
+      Series              Bold
+      Size                Large
+    EndFont
 End
 
 Style "Пункт"

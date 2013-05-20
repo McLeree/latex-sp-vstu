@@ -17,36 +17,31 @@ DefaultStyle            Standard
 # This is just to show how to declare the default font.
 # The defaults are exactly those shown here.
 DefaultFont
-	Family                Roman
-	Series                Medium
-	Shape                 Up
-	Size                  Normal
-	Color                 None
+    Family                Roman
+    Series                Medium
+    Shape                 Up
+    Size                  Normal
+    Color                 None
 EndFont
 
-
 Style Standard
-	Category              MainText
-	Margin                Static
-	LatexType             Paragraph
-	LatexName             dummy
-	ParIndent             MM
-	ParSkip               0.4
-	Align                 Block
-	AlignPossible         Block, Left, Right, Center
-	LabelType             No_Label
+    Category              MainText
+    Margin                Static
+    LatexType             Paragraph
+    LatexName             dummy
+    ParIndent             MM
+    ParSkip               0.4
+    Align                 Block
+    AlignPossible         Block, Left, Right, Center
+    LabelType             No_Label
 End
 
-#Input stdcharstyles.inc
-#Input stdcustom.inc
 Input stdfloats.inc
-Input g2_105counters.inc
 Input stdinsets.inc
+Input stdlayouts.inc
+Input lyxmacros.inc
+Input g2_105counters.inc
 Input g2_105lists.inc
 Input g2_105sections.inc
 Input g2_105starsections.inc
-#Input stdtitle.inc
 Input g2_105struct.inc
-Input lyxmacros.inc
-Input stdlayouts.inc
-

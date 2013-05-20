@@ -6,18 +6,18 @@
 
 Format 11
 #Counter part
-#	LabelString	      "\Roman{part}"
+#    LabelString          "\Roman{part}"
 #End
 
 Counter chapter
 End
 
 Counter section
-	#Within               chapter
+    #Within               chapter
 End
 
 Counter subsection
-	Within               section
+    Within               section
 End
 
 Counter point
@@ -36,15 +36,15 @@ Counter enumi
 End
 
 Counter enumii
-	Within               enumi
+    Within               enumi
 End
 
 Counter enumiii
-	Within               enumii
+    Within               enumii
 End
 
 Counter enumiv
-	Within               enumiii
+    Within               enumiii
 End
 
 Counter bibitem
