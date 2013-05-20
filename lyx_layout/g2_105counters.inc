@@ -1,10 +1,7 @@
-# Author : Lars Gullik Bjønnes <larsbj@lyx.org>
-
-# This include file contains all the counters that are defined as standard
-# in most LyX layouts.
-
+# This include file contains all the counters that are defined as standard in most LyX layouts.
 
 Format 11
+
 #Counter part
 #    LabelString          "\Roman{part}"
 #End

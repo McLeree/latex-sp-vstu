@@ -1,11 +1,4 @@
-# Standard textclass definition file. Taken from initial LyX source code
-# Author : Matthias Ettrich <ettrich@informatik.uni-tuebingen.de>
-# Transposed by Pascal André <andre@via.ecp.fr>
-# Heavily modifed and enhanced by several developers.
-
-# This is a base layout which is designed to be included from other
-# ``standard'' layouts, like article and friends.
-
+# This is a base layout which is designed to be included from other standard layouts, like article and friends.
 
 Format 11
 Columns                 1
@@ -43,5 +36,4 @@ Input lyxmacros.inc
 Input g2_105counters.inc
 Input g2_105lists.inc
 Input g2_105sections.inc
-Input g2_105starsections.inc
 Input g2_105struct.inc

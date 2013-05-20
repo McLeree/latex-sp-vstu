@@ -1,11 +1,4 @@
-
-# Standard textclass definition file. Taken from initial LyX source code
-# Author : Matthias Ettrich <ettrich@informatik.uni-tuebingen.de>
-# Transposed by Pascal André <andre@via.ecp.fr>
-# Heavily modifed and enhanced by several developers.
-
-# This include files contains various standard environments for lists.
-
+# This include file contains various standard environments for lists.
 
 Format 11
 Style Itemize

@@ -1,11 +1,4 @@
-﻿# Standard textclass definition file. Taken from initial LyX source code
-# Author : Matthias Ettrich <ettrich@informatik.uni-tuebingen.de>
-# Transposed by Pascal André <andre@via.ecp.fr>
-# Heavily modifed and enhanced by several developers.
-
-# This include files contains all numbered sectionning-related
-# commands that are useful for article-like document classes, but not
-# for letters.
+﻿# This include file contains all sectionning-related commands.
 
 Format 11
 
@@ -33,6 +26,23 @@ Style "Раздел"
     EndFont
 End
 
+Style Section*
+    CopyStyle             "Раздел"
+    Category              Unnumbered
+    Margin                Static
+    LatexName             ESKDstarsection
+    LabelType             No_Label
+    LabelCounter          ""    
+    OptionalArgs          0
+    OptionalArgs          0
+
+    Preamble
+        \newcommand{\ESKDstarsection}[1]{
+            \addcontentsline{toc}{section}{#1}
+            \section*{#1}
+        } 
+    EndPreamble
+End
 
 Style "Подраздел"
     CopyStyle             "Раздел"
@@ -70,7 +80,6 @@ Style "Пункт"
     Align                 Block
     AlignPossible         Block, Left
 End
-
 
 Style "Подпункт"
     Category              "Раздел"
