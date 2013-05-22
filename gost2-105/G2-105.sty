@@ -394,8 +394,10 @@
 \renewcommand{\thetable}{\VSTUDocumentNumbersPrefix\arabic{table}}
 
 % Для выравнивания таблиц
-\LTleft=\z@
-\LTright=\fill
+\LTpre = 10pt
+\LTpost = 24pt
+\LTleft = \z@
+\LTright = \fill
 \def\LT@makecaption#1#2#3{%
   \LT@mcol\LT@cols l{\hbox to\z@{\parbox[t]\LTcapwidth{%
       \sbox\@tempboxa{#1{#2\captionlabeldelim{} }#3}%

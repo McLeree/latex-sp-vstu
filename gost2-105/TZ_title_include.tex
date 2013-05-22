@@ -2,6 +2,7 @@
 \RequirePackage{ulem}
 \newcommand{\VSTUInitializeTZ} {
 \renewcommand{\VSTUDocumentCodeSuffix}{91}
+\newcommand{\VSTULUCode}{А.В.00001-01\ \VSTUDocumentCodeSuffix\ 01-1}
 %--------------CHAPTER REDEFINTION----
 \renewcommand\chapter{%
 \vspace{\GostBeforTitleSkip}
@@ -62,9 +63,10 @@
 \VSTUTitle\\
 \vspace{8mm}
 ТЕХНИЧЕСКОЕ ЗАДАНИЕ\\
+ЛИСТ УТВЕРЖДЕНИЯ\\
 \VSTUDocumentCode{}\\
-А.В.00001-01\ 91\ 01-1-ЛУ\\
-Листов \totalpages\\
+\VSTULUCode-ЛУ\\
+Листов 1\\
 \vfill
 \end{center}
 \begin{flushright}
@@ -98,15 +100,17 @@
 \newpage
 %---------------Второй титульник ТЗ---------------
 \clearpage
+\setcounter{page}{1}
 \thispagestyle{empty}
-УТВЕРЖДЕНО\\
+\parУТВЕРЖДЕНО\\
+\par{\small \VSTULUCode-ЛУ\\}
 \vfill
 \begin{center}
 \VSTUTitle\\
 \vspace{8mm}
 ТЕХНИЧЕСКОЕ ЗАДАНИЕ\\
 \VSTUDocumentCode{}\\
-А.В.00001-01\ 91\ 01-1-ЛУ\\
+\VSTULUCode\\
 Листов \totalpages\\
 \end{center}
 \vfill
