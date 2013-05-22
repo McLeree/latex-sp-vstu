@@ -5,8 +5,6 @@
 %--------------CHAPTER REDEFINTION----
 \renewcommand\chapter{%
 \vspace{\GostBeforTitleSkip}
-  \addtocounter{totalfigure}{\c@figure}\setcounter{figure}{0}%
-  \addtocounter{totaltable} {\c@table }\setcounter{table}{0}%
   \@startsection{chapter}{0}%
   {\Gost@ChapterIndent}{0mm}{\GostAfterTitleSkip}%
   {\GostTitleStyle\normalfont\Gost@ChapterStyle}%
@@ -16,12 +14,13 @@
 \renewcommand{\appendix}[1]{
   \clearpage
   \addtocounter{appendix}{1}
+  \addtocounter{totalappendices}{1}
 
   % Грязный хак нумерации рисунков\таблиц внутри приложений.
-  % Сначала добавляем figure к totalfigure, а затем сбрасываем figure в 0.
+  % Сначала добавляем figure к totalfigures, а затем сбрасываем figure в 0.
   % Аналогично и для table.
-  \addtocounter{totalfigure}{\c@figure}%
-  \addtocounter{totaltable}{\c@table}%
+  \addtocounter{totalfigures}{\c@figure}%
+  \addtocounter{totaltables}{\c@table}%
   \setcounter{figure}{0}%
   \setcounter{table}{0}%
 
