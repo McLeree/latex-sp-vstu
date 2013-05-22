@@ -12,6 +12,7 @@
 %  footmisc.sty для сносок снизу и нумерации на каждой странице
 %  amssymb      для русских "меньше или равно" "больше или равно"
 %  leqno.clo    формулы правильно
+%  mathtext     русские буквы в формулах
 %  caption2     оформление заголовков риснуков и таблиц
 %  icomma       запятая в формулах
 %  longtable    многостраничные таблицы
@@ -20,17 +21,12 @@
 \ProvidesPackage{G2-105}[2003/07/07 v1.00 General reqs. GOST 2.105-95]
 \NeedsTeXFormat{LaTeX2e}
 
-\newif\if@usehyperref\@usehyperreffalse
-\newif\if@usepscyr   \@usepscyrfalse
 \newcommand{\Gost@encoding}{}
 \newcommand{\Gost@LineSpread}{1.3}
-\DeclareOption{usehyperref}{\@usehyperreftrue}
-\DeclareOption{usepscyr}{\@usepscyrtrue}
 \DeclareOption{koi8-r}{\renewcommand{\Gost@encoding}{koi8-r}}
 \DeclareOption{cp1251}{\renewcommand{\Gost@encoding}{cp1251}}
 \DeclareOption{cp866}{\renewcommand{\Gost@encoding}{cp866}}
 \DeclareOption{utf8}{\renewcommand{\Gost@encoding}{utf8}}
-\DeclareOption{econommode}{\newcommand{\Gost@LineSpread}{1.3}\erroqweqwe}
 
 \ExecuteOptions{a4paper,14pt,final,utf8}
 \ProcessOptions
@@ -38,6 +34,10 @@
 % Импорт пакетов
 \RequirePackage[\Gost@encoding]{inputenc}
 \RequirePackage[normalem]{ulem}
+\RequirePackage[english, russian]{babel}
+\RequirePackage{mathtext}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{flafter}
 
 % Импорт заголовков для ПЗ и ТЗ
 \input{PZ_title_include.tex}
@@ -150,7 +150,7 @@
   \fancyhf{}
   \fancyhf[HCO,HCE]{\mdseries{\VSTUDocumentCode{}\vspace{2mm}}}
   \fancyhf[FCO,FCE]{\thepage}
-  \renewcommand{\headrulewidth}{0pt} % remove lines as well
+  \renewcommand{\headrulewidth}{0pt}
   \renewcommand{\footrulewidth}{0pt}
 }
 \pagestyle{plain}
@@ -206,10 +206,11 @@
 \setlength\fboxrule{.4\p@}
 
 % Счетчики общего числа страниц, таблиц, рисунков и источников
-\newcounter{totalpages}    \setcounter{totalpages}{0}
-\newcounter{totaltables}   \setcounter{totaltables}{0}
-\newcounter{totalfigures}  \setcounter{totalfigures}{0}
-\newcounter{totalbibs}     \setcounter{totalbibs}{0}
+\newcounter{totalpages}     \setcounter{totalpages}{0}
+\newcounter{totalfigures}   \setcounter{totalfigures}{0}
+\newcounter{totaltables}    \setcounter{totaltables}{0}
+\newcounter{totalequations} \setcounter{totalequations}{0}
+\newcounter{totalbibs}      \setcounter{totalbibs}{0}
 \newcounter{totalappendices}\setcounter{totalappendices}{0}
 
 % На последней странице ставятся метки с номерами
@@ -218,27 +219,32 @@
 %  - числа рисунков, имеющих caption
 \def\totalobjects@putlabel{
   \addtocounter{totalpages}    {\c@page}
-  \addtocounter{totaltables}   {\c@table}
   \addtocounter{totalfigures}  {\c@figure}
-  \addtocounter{totaltables}   {-1}
-  \addtocounter{totalfigures}  {-1}
-  \addtocounter{totalbibs}     {-1}
+  \addtocounter{totaltables}   {\c@table}
+  \addtocounter{totalequations}{\c@equation}
+  
+  \addtocounter{totalfigures}   {-1}
+  \addtocounter{totaltables}    {-1}
+  \addtocounter{totalequations} {-1}
+  \addtocounter{totalbibs}      {-1}
   \addtocounter{totalappendices}{-1}
 
-  \refstepcounter{totalpages}   \label{reftotalpages}
-  \refstepcounter{totaltables}  \label{reftotaltables}
-  \refstepcounter{totalfigures} \label{reftotalfigures}
-  \refstepcounter{totalbibs}    \label{reftotalbibs}
-  \refstepcounter{totalappendices}    \label{reftotalappendices}
+  \refstepcounter{totalpages}     \label{reftotalpages}
+  \refstepcounter{totalfigures}   \label{reftotalfigures}
+  \refstepcounter{totaltables}    \label{reftotaltables}
+  \refstepcounter{totalequations} \label{reftotalequations}  
+  \refstepcounter{totalbibs}      \label{reftotalbibs}
+  \refstepcounter{totalappendices}\label{reftotalappendices}
 }
 \AtEndDocument{\totalobjects@putlabel}
 
 % Команды отображение общего числа ...
-\newcommand{\totalpages}  {\pageref{reftotalpages}}
-\newcommand{\totaltables} {\ref{reftotaltables}}
-\newcommand{\totalfigures}{\ref{reftotalfigures}}
-\newcommand{\totalbibs}   {\ref{reftotalbibs}}
-\newcommand{\totalappendices}   {\ref{reftotalappendices}}
+\newcommand{\totalpages}     {\pageref{reftotalpages}}
+\newcommand{\totalfigures}   {\ref{reftotalfigures}}
+\newcommand{\totaltables}    {\ref{reftotaltables}}
+\newcommand{\totalequations} {\ref{reftotalequations}}
+\newcommand{\totalbibs}      {\ref{reftotalbibs}}
+\newcommand{\totalappendices}{\ref{reftotalappendices}}
 
 % 3.6 Абзацный отступ - 15..17 мм
 \setlength\parindent{15mm}
@@ -321,19 +327,7 @@
 \lccode`\-=`\-
 \defaulthyphenchar=127
 
-% Импорт необходимых пакетов
-\if@usehyperref
-  \RequirePackage[unicode]{hyperref}
-\fi
-\if@usepscyr
-  \RequirePackage[math]{pscyr}
-\fi
-\RequirePackage[english, russian]{babel}
-\RequirePackage{mathtext}%русские буквы в формулах
-\RequirePackage[T1]{fontenc}
-\RequirePackage{flafter}
-
-% 4.2.7 Перечисления
+% Перечисления
 
 \newlength{\GostItemGap}
 \newlength{\GostItemIndent}
@@ -389,55 +383,7 @@
 }
 \newcommand*{\abbreviationlabel}[1]{\hspace\labelsep\normalfont #1~---}
 
-% 4.2.15 - 4.2.19 Формулы
-
-%\RequirePackage{amssymb} % для русских "меньше или равно" "больше или равно"
-%\RequirePackage{icomma}
-%\input{leqno.clo}
-
-%\newcommand{\eqref}[1]{\ref{#1}}
-%\def\@eqnnum{{\normalfont\normalcolor\theequation}}
-%\newenvironment{table} {\@float   {table}}{\end@float   }
-%\newenvironment{table*}{\@dblfloat{table}}{\end@dblfloat}
-%\renewcommand{\theequation}{(\arabic{equation})}%
-%\newlength\Gost@EqRemLen
-%\newlength\Gost@@EqRemLen
-%\newenvironment{eqrem}{%
-% \begin{tabular}{p{\Gost@@EqRemLen}p{\Gost@EqRemLen}}
-%  где
-%}{
-% \end{tabular}
-%}
-% пояснения м.б. в виде
-%  \begin{eqrem}
-%   & X~--- неизвестная \\
-%   & Y~--- еще неизвестная \\
-%  \end{eqrem}
-
-% Нумерация формул
-%\renewcommand{\theequation}{\VSTUDocumentNumbersPrefix\arabic{equation}}
-
-% Перенос формул по =+-
-%\begingroup
-%\catcode`\+\active\gdef+{\mathchar8235\nobreak\discretionary{}%
-% {\usefont{OT1}{cmr}{m}{n}\char43}{}}
-%\catcode`\-\active\gdef-{\mathchar8704\nobreak\discretionary{}%
-% {\usefont{OMS}{cmsy}{m}{n}\char0}{}}
-%\catcode`\=\active\gdef={\mathchar12349\nobreak\discretionary{}%
-% {\usefont{OT1}{cmr}{m}{n}\char61}{}}
-%\endgroup
-%\def\cdot{\mathchar8705\nobreak\discretionary{}%
-% {\usefont{OMS}{cmsу}{m}{n}\char1}{}}
-%\def\times{\mathchar8706\nobreak\discretionary{}%
-% {\usefont{OMS}{cmsy}{m}{n}\char2}{}}
-%\mathcode`\==32768
-%\mathcode`\+=32768
-%\mathcode`\-=32768
-
-%\renewcommand{\leq}{\leqslant}
-%\renewcommand{\geq}{\geqslant}
-
-% 4.3.1 - 4.3.3 Иллюстрации
+% Иллюстрации
 
 \newcommand{\@makecaption}{}
 \RequirePackage[center]{caption2}
@@ -451,16 +397,14 @@
 \newenvironment{figure} {\@float   {figure}}{\end@float}
 \newenvironment{figure*}{\@dblfloat{figure}}{\end@dblfloat}
 \renewcommand{\captionlabeldelim}{ ---}
-% \renewcommand{\captionmargin}{0.2cm} %% virens: это приводит к существенному сужению ширины подписи!!!!
 
 % Подписи и номера рисунков
 \addto\captionsrussian{\def\figurename{{Рисунок}}}
 \renewcommand{\thefigure}{\VSTUDocumentNumbersPrefix\arabic{figure}}
 
-% 4.4 - таблицы
+% Таблицы
 
-\RequirePackage{longtable}% многостраничные таблицы
-
+\RequirePackage{longtable}
 
 \def\ftype@table{1}
 \def\ext@table{lof}
@@ -469,7 +413,7 @@
 % Нумерация таблиц
 \renewcommand{\thetable}{\VSTUDocumentNumbersPrefix\arabic{table}}
 
-% Для выравнивания длинных таблиц
+% Для выравнивания таблиц
 \LTleft=\z@
 \LTright=\fill
 \def\LT@makecaption#1#2#3{%
@@ -479,7 +423,17 @@
           \endgraf}%
     \hss}}}
 
-% 4.3.4 - 4.1.14 Приложения
+% Формулы
+
+\RequirePackage{amssymb} % для русских "меньше или равно" "больше или равно"
+\RequirePackage{icomma}
+\input{leqno.clo}
+
+% Нумерация формул
+\renewcommand{\theequation}{\VSTUDocumentNumbersPrefix\arabic{equation}}
+
+% Приложения
+
 \newcounter{appendix}
 \gdef\theappendix{\@Asbuk\c@appendix}%
 \newcommand{\appendix}[1]{
@@ -487,49 +441,27 @@
   \addtocounter{appendix}{1}
   \addtocounter{totalappendices}{1}
 
-  % Грязный хак нумерации рисунков\таблиц внутри приложений.
+  % Грязный хак нумерации рисунков\таблиц\формул внутри приложений.
   % Сначала добавляем figure к totalfigures, а затем сбрасываем figure в 0.
   % Аналогично и для table.
   \addtocounter{totalfigures}{\c@figure}%
   \addtocounter{totaltables}{\c@table}%
+  \addtocounter{totalequations}{\c@equation}%
   \setcounter{figure}{0}%
   \setcounter{table}{0}%
+  \setcounter{equation}{0}%
 
   % Внешний вид номеров рисунков: сначала номер приложения,
   % за ним номер рисунка\таблицы внутри приложения.
   \renewcommand{\thefigure}{\VSTUDocumentNumbersPrefix\theappendix.\arabic{figure}}%
   \renewcommand{\thetable}{\VSTUDocumentNumbersPrefix\theappendix.\arabic{table}}%
+  \renewcommand{\theequation}{\VSTUDocumentNumbersPrefix\theappendix.\arabic{equation}}
 
   \begin{center}%
   \appendixname~\theappendix~---~{#1}%
   \end{center}%
   \addcontentsline{toc}{chapter}{\appendixname~\theappendix~---~{#1}}%
 }%
-
-% 4.5 Сноски
-\RequirePackage[perpage,bottom]{footmisc}
-
-% Части документа - для выбора вида заголовков и т.д.
-% Введение, обозначения
-\newcommand{\frontmatter}{%
-  \setcounter{secnumdepth}{-1}%
-  \renewcommand{\Gost@ChapterStyle}{\centering}%
-  \setlength\Gost@ChapterIndent{0mm}%
-}
-
-% Основная часть
-\newcommand{\mainmatter}{
-  \setcounter{secnumdepth}{4}
-  \renewcommand{\Gost@ChapterStyle}{\Gost@MainChapterStyle}%
-  \setlength\Gost@ChapterIndent{\Gost@MainChapterIndent}%
-}
-
-% Заключение, библиография
-\newcommand{\backmatter}{
-  \setcounter{secnumdepth}{-1}
-  \renewcommand{\Gost@ChapterStyle}{\centering}%
-  \setlength\Gost@ChapterIndent{0mm}%
-}
 
 % Всякие оглавления
 \newcommand{\tableofcontents}{

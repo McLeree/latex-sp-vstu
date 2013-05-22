@@ -21,13 +21,16 @@
   % Аналогично и для table.
   \addtocounter{totalfigures}{\c@figure}%
   \addtocounter{totaltables}{\c@table}%
+  \addtocounter{totalequations}{\c@equation}%
   \setcounter{figure}{0}%
   \setcounter{table}{0}%
+  \setcounter{equation}{0}%
 
   % Внешний вид номеров рисунков: сначала номер приложения,
   % за ним номер рисунка\таблицы внутри приложения.
   \renewcommand{\thefigure}{\theappendix.\arabic{figure}}%
   \renewcommand{\thetable}{\theappendix.\arabic{table}}%
+  \renewcommand{\theequation}{\theappendix.\arabic{equation}}
 
   \begin{center}%
   \appendixname~\theappendix~{##1}%
