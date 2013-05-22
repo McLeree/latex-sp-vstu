@@ -162,36 +162,12 @@
 \raggedbottom
 \onecolumn
 
-% Нечто
+% Всякие разные длины
 \newcommand{\@pnumwidth}{1.55em}
 \renewcommand{\baselinestretch}{}
-\@lowpenalty   51                     %
-\@medpenalty  151                     %
-\@highpenalty 301                     %
-\renewcommand{\topfraction}{.7}         %
-\renewcommand{\bottomfraction}{.3}      %
-\renewcommand{\textfraction}{.2}        %
-\renewcommand{\floatpagefraction}{.5}   %
-\renewcommand{\dbltopfraction}{.7}      %
-\renewcommand{\dblfloatpagefraction}{.5}%
-  \def\ps@headings{%
-    \let\@oddfoot\@empty
-    \def\@oddhead{{\slshape\rightmark}\hfil\thepage}%
-    \let\@mkboth\markboth
-    \def\chaptermark##1{%
-      \markright {\MakeUppercase{%
-        \ifnum \c@secnumdepth >\m@ne
-            \@chapapp\ \thechapter. \ %
-        \fi
-        ##1}}}}
-  \def\ps@myheadings{%
-      \let\@oddfoot\@empty\let\@evenfoot\@empty
-      \def\@evenhead{\thepage\hfil\slshape\leftmark}%
-      \def\@oddhead{{\slshape\rightmark}\hfil\thepage}%
-      \let\@mkboth\@gobbletwo
-      \let\chaptermark\@gobble
-      \let\sectionmark\@gobble
-  }
+\@lowpenalty 51
+\@medpenalty 151
+\@highpenalty 301
 \setlength\columnsep{10\p@}
 \setlength\columnseprule{0\p@}
 \setlength\lineskip{1\p@}
@@ -226,7 +202,7 @@
   \addtocounter{totalfigures}  {\c@figure}
   \addtocounter{totaltables}   {\c@table}
   \addtocounter{totalequations}{\c@equation}
-  
+
   \addtocounter{totalfigures}   {-1}
   \addtocounter{totaltables}    {-1}
   \addtocounter{totalequations} {-1}
@@ -236,7 +212,7 @@
   \refstepcounter{totalpages}     \label{reftotalpages}
   \refstepcounter{totalfigures}   \label{reftotalfigures}
   \refstepcounter{totaltables}    \label{reftotaltables}
-  \refstepcounter{totalequations} \label{reftotalequations}  
+  \refstepcounter{totalequations} \label{reftotalequations}
   \refstepcounter{totalbibs}      \label{reftotalbibs}
   \refstepcounter{totalappendices}\label{reftotalappendices}
 }
@@ -566,14 +542,13 @@
 \newcommand{\subsubitem}{\@idxitem \hspace*{30\p@}}
 \newcommand{\indexspace}{\par \vskip 10\p@ \@plus5\p@ \@minus3\p@\relax}
 
-% Для русского языка
-\righthyphenmin=2
-\unitlength=1mm
-\clubpenalty=10000
-\widowpenalty=10000
+% Штуки для русского языка и переносов
+\righthyphenmin = 2
+\unitlength = 1mm
+\clubpenalty = 10000
+\widowpenalty = 10000
 
-% Что-то, связаннное с разрывом строк
 \@beginparpenalty -\@lowpenalty
-\@endparpenalty   -\@lowpenalty
-\@itempenalty     -\@lowpenalty
+\@endparpenalty -\@lowpenalty
+\@itempenalty -\@lowpenalty
 \skip\@mpfootins = \skip\footins
