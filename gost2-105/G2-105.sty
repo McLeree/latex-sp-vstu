@@ -87,6 +87,20 @@
 % Получение строки приказа из параметров выше
 \newcommand{\VSTUOrder}{\No~\VSTUOrderNumber\ от\ \VSTUOrderDate~\VSTUOrderMonth~\VSTUOrderYear~года}
 
+% Факультет, кафедра и направление
+\newcommand{\VSTUFaculty}{Электроники\ и\ вычислительной\ техники}
+\newcommand{\VSTUDepartment}{Программное\ обеспечение\ автоматизированных\ систем}
+\newcommand{\VSTUDirection}{230100\ Информатика\ и\ вычислительная\ техника}
+\newcommand{\VSTUSetFaculty}[1]{
+  \renewcommand{\VSTUFaculty}{#1}
+}
+\newcommand{\VSTUSetDepartment}[1]{
+  \renewcommand{\VSTUDepartment}{#1}
+}
+\newcommand{\VSTUSetDirection}[1]{
+  \renewcommand{\VSTUDirection}{#1}
+}
+
 % ФИО заведующего кафедрой, степень\должность
 \newcommand{\VSTUHeadOfDepartmentFullName}{Фамилия\ Имя\ Отчество}
 \newcommand{\VSTUHeadOfDepartmentName}{И.\ О.\ Фамилия}
@@ -192,26 +206,30 @@
 \setlength\fboxrule{.4\p@}
 
 % Счетчики общего числа страниц, таблиц, рисунков и источников
-\newcounter{totalpage}   \setcounter{totalpage}{0}
-\newcounter{totaltable}  \setcounter{totaltable}{0}
-\newcounter{totalfigure} \setcounter{totalfigure}{0}
-\newcounter{totalbib}    \setcounter{totalbib}{0}
+\newcounter{totalpages}    \setcounter{totalpages}{0}
+\newcounter{totaltables}   \setcounter{totaltables}{0}
+\newcounter{totalfigures}  \setcounter{totalfigures}{0}
+\newcounter{totalbibs}     \setcounter{totalbibs}{0}
+\newcounter{totalappendices}\setcounter{totalappendices}{0}
 
 % На последней странице ставятся метки с номерами
 %  - последней страницы
 %  - числа таблиц, имеющих caption
 %  - числа рисунков, имеющих caption
 \def\totalobjects@putlabel{
-  \addtocounter{totalpage}  {\c@page}
-  \addtocounter{totaltable} {\c@table}
-  \addtocounter{totalfigure}{\c@figure}
-  \addtocounter{totaltable} {-1}
-  \addtocounter{totalfigure}{-1}
-  \addtocounter{totalbib}   {-1}
-  \refstepcounter{totalpage}   \label{reftotalpages}
-  \refstepcounter{totaltable}  \label{reftotaltables}
-  \refstepcounter{totalfigure} \label{reftotalfigures}
-  \refstepcounter{totalbib}    \label{reftotalbibs}
+  \addtocounter{totalpages}    {\c@page}
+  \addtocounter{totaltables}   {\c@table}
+  \addtocounter{totalfigures}  {\c@figure}
+  \addtocounter{totaltables}   {-1}
+  \addtocounter{totalfigures}  {-1}
+  \addtocounter{totalbibs}     {-1}
+  \addtocounter{totalappendices}{-1}
+
+  \refstepcounter{totalpages}   \label{reftotalpages}
+  \refstepcounter{totaltables}  \label{reftotaltables}
+  \refstepcounter{totalfigures} \label{reftotalfigures}
+  \refstepcounter{totalbibs}    \label{reftotalbibs}
+  \refstepcounter{totalappendices}    \label{reftotalappendices}
 }
 \AtEndDocument{\totalobjects@putlabel}
 
@@ -220,6 +238,7 @@
 \newcommand{\totaltables} {\ref{reftotaltables}}
 \newcommand{\totalfigures}{\ref{reftotalfigures}}
 \newcommand{\totalbibs}   {\ref{reftotalbibs}}
+\newcommand{\totalappendices}   {\ref{reftotalappendices}}
 
 % 3.6 Абзацный отступ - 15..17 мм
 \setlength\parindent{15mm}
@@ -250,8 +269,6 @@
 \renewcommand{\thechapter}{\@arabic\c@chapter}
 \newcommand{\chapter}{%
   \clearpage%
-  %\addtocounter{totalfigure}{\c@figure}%
-  %\addtocounter{totaltable}{\c@table}%
   \@startsection{chapter}{0}%
   {\Gost@ChapterIndent}{0mm}{\GostAfterTitleSkip}%
   {\GostTitleStyle\normalfont\Gost@ChapterStyle}%
@@ -468,12 +485,13 @@
 \newcommand{\appendix}[1]{
   \clearpage
   \addtocounter{appendix}{1}
+  \addtocounter{totalappendices}{1}
 
   % Грязный хак нумерации рисунков\таблиц внутри приложений.
-  % Сначала добавляем figure к totalfigure, а затем сбрасываем figure в 0.
+  % Сначала добавляем figure к totalfigures, а затем сбрасываем figure в 0.
   % Аналогично и для table.
-  \addtocounter{totalfigure}{\c@figure}%
-  \addtocounter{totaltable}{\c@table}%
+  \addtocounter{totalfigures}{\c@figure}%
+  \addtocounter{totaltables}{\c@table}%
   \setcounter{figure}{0}%
   \setcounter{table}{0}%
 
@@ -483,14 +501,13 @@
   \renewcommand{\thetable}{\VSTUDocumentNumbersPrefix\theappendix.\arabic{table}}%
 
   \begin{center}%
-  \appendixname~\theappendix~{#1}%
+  \appendixname~\theappendix~---~{#1}%
   \end{center}%
-  \addcontentsline{toc}{chapter}{\appendixname~\theappendix~{#1}}%
+  \addcontentsline{toc}{chapter}{\appendixname~\theappendix~---~{#1}}%
 }%
 
 % 4.5 Сноски
 \RequirePackage[perpage,bottom]{footmisc}
-
 
 % Части документа - для выбора вида заголовков и т.д.
 % Введение, обозначения
@@ -589,7 +606,7 @@
   \sloppy\clubpenalty4000\widowpenalty4000%
   \sfcode`\.\@m
 }{
-  \setcounter{totalbib}{\c@enumiv}%
+  \setcounter{totalbibs}{\c@enumiv}%
   \def\@noitemerr
   {\@latex@warning{Empty `thebibliography' environment}}%
   \endlist
