@@ -1,7 +1,7 @@
 \RequirePackage{amsmath}
 \RequirePackage{ulem}
 \newcommand{\VSTUInitializePZ} {
-\renewcommand{\VSTUDocumentType}{81}
+\renewcommand{\VSTUDocumentCodeSuffix}{81}
 {
 \sloppy
 %---------------PZ_TASK---------------
@@ -31,7 +31,7 @@ $\underset{\text{(инициалы, фамилия)}}{\uline{\makebox[6.5cm]{\te
 \begin{center}
 ПОЯСНИТЕЛЬНАЯ ЗАПИСКА
 \end{center}
-к\hfill $\underset{\text{(наименование вида работы)}}{\uline{\makebox[28em]{\text{выпускной работе бакалавра}}}}$
+к\hfill $\underset{\text{(наименование вида работы)}}{\uline{\makebox[28em]{\VSTUDocumentTypeDative}}}$
 \hfill
 на тему\\
 \VSTUTitleUL\uline{\hfill}\\
@@ -40,7 +40,7 @@ $\underset{\text{(инициалы, фамилия)}}{\uline{\makebox[6.5cm]{\te
 $\underset{\text{(фамилия, имя, отчество)}}{\uline{\makebox[8cm]{\VSTUStudentFullName}}}$\\
 Обозначение $\underset{\text{(код документа)}}{\uline{\makebox[\width]{\VSTUDocumentCode}}}$\\
 Группа $\underset{\text{(шифр группы)}}{\uline{\makebox[3cm]{\VSTUStudentGroup}}}$\\
-Направление\hfill $\underset{\text{(код по ОКСО, наименование направления, программы)}}{\uline{\makebox[27em]{230100 Информатика и вычислительная техника}}}$\\
+Направление\hfill $\underset{\text{(код по ОКСО, наименование направления, программы)}}{\uline{\makebox[27em]{\VSTUDirection}}}$\\
 \uline{\makebox[\textwidth]{\hfill}}\\
 Руководитель работы $\underset{\text{(подпись и дата подписания)}}{\uline{\makebox[6cm]{}}}$
 \hfill
@@ -79,7 +79,7 @@ $\underset{\text{(инициалы и фамилия)}}{\uline{\makebox[5cm]{\VS
 Федеральное государственное бюджетное образовательное учреждение высшего профессионального образования\\
 <<Волгоградский государственный технический университет>>\\
 \end{center}
-Кафедра\hfill \uline{\makebox[28em][l]{Программное обеспечение автоматизированных систем}}\\
+Кафедра\hfill \uline{\makebox[28em][l]{\VSTUDepartment}}\\
 \begin{flushright}
 \begin{minipage}[c]{18em}
 Утверждаю\\
@@ -93,9 +93,9 @@ $\underset{\text{(инициалы, фамилия)}}{\uline{\makebox[6.5cm]{\te
 <<\makebox[1.5cm]{\hrulefill}>>\makebox[3.5cm]{\hrulefill}\the\year
 \end{minipage}
 \end{flushright}
-Задание на \hfill $\underset{\text{(наименование вида работы)}}{\uline{\makebox[28em]{\text{выпускную работу бакалавра}}}}$
+Задание на \hfill $\underset{\text{(наименование вида работы)}}{\uline{\makebox[28em]{\VSTUDocumentTypeGenitive}}}$
 Студент\hfill $\underset{\text{(фамилия, имя, отчество)}}{\uline{\makebox[28em]{\VSTUStudentFullName}}}$\\
-Код кафедры \uline{\makebox[4cm]{10.19}} \hfill Группа \uline{\makebox[4cm]{\VSTUStudentGroup}} \\
+Код кафедры \uline{\makebox[4cm]{\VSTUDepartmentCode}} \hfill Группа \uline{\makebox[4cm]{\VSTUStudentGroup}} \\
 Тема \VSTUTitleUL\uline{\hfill}\\
 Утверждена приказом по университету от <<\uline{\makebox[0.5cm]{\VSTUOrderDate}}>> \uline{\makebox[1.8cm]{\VSTUOrderMonth}} \uline{\makebox[1.2cm]{\VSTUOrderYear\ г.}} \No\uline{\makebox[1.5cm]{\VSTUOrderNumber}}\\
 Срок представления готовой работы $\underset{\text{(дата, подпись студента)}}{\uline{\makebox[7cm]{}}}$\\
@@ -183,7 +183,7 @@ $\underset{\text{(инициалы и фамилия)}}{\uline{\makebox[5cm]{}}}
 Федеральное государственное бюджетное образовательное учреждение\\
 высшего профессионального образования\\
 Волгоградский Государственный Технический Университет\\
-Кафедра <<Программное обеспечение автоматизированных систем>>\\
+Кафедра <<\VSTUDepartment>>\\
 \end{center}
 \vfill
 \hfill

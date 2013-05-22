@@ -1,22 +1,7 @@
-% Лицензия GNU GPL v2 и совместимые
-%
-% Стиль, задающий соответствие документа ГОСТ 2-105-95.
-%
-% Автор - Алексей Томин, с помощью списка рассылки latex-gost-request@ice.ru
-% Все вопросы, замечания и пожелания сюда: mailto:alxt@yandex.ru
-%
-% Дальнейшая разработка и поддержка - Михаил Конник,
-% связаться можно по адресу mydebianblog@gmail.com
-%
-% Используется:
-%  footmisc.sty для сносок снизу и нумерации на каждой странице
-%  amssymb      для русских "меньше или равно" "больше или равно"
-%  leqno.clo    формулы правильно
-%  mathtext     русские буквы в формулах
-%  caption2     оформление заголовков риснуков и таблиц
-%  icomma       запятая в формулах
-%  longtable    многостраничные таблицы
-%  fancyhdr     кастомные колонтитулы для кода документа
+% Copyright © 2013 Alexey Mednikov, Valeriy Streltsov
+% This work is free. You can redistribute it and/or modify it under the
+% terms of the Do What The Fuck You Want To Public License, Version 2,
+% as published by Sam Hocevar. See http://www.wtfpl.net/ for more details.
 
 \ProvidesPackage{G2-105}[2003/07/07 v1.00 General reqs. GOST 2.105-95]
 \NeedsTeXFormat{LaTeX2e}
@@ -45,31 +30,25 @@
 
 % Префикс, стоящий перед номерами рисунков и таблиц
 \newcommand{\VSTUDocumentNumbersPrefix}{}
+% Сеттеры
 \newcommand{\VSTUSetDocumentNumbersPrefix}[1]{
   \renewcommand{\VSTUDocumentNumbersPrefix}{#1}
 }
 
-% Тип и код документа
-\newcommand{\VSTUDocumentType}{NONE}
-\newcommand{\VSTUDocumentCode}{THIS IS A ROBBERY-\VSTUDocumentType}
-\newcommand{\VSTUSetPersonalCode}[1]{
-  \renewcommand{\VSTUDocumentCode}{#1-\VSTUDocumentType}
+% Код документа (цифры) и его тип (выпускная работа бакалавра, магистерская диссертация и так далее)
+\newcommand{\VSTUDocumentCodeSuffix}{UNKNOWN}
+\newcommand{\VSTUDocumentCode}{UNKNOWN-\VSTUDocumentCodeSuffix}
+\newcommand{\VSTUDocumentTypeDative}{выпускной работе бакалавра}   % в дательном падаже
+\newcommand{\VSTUDocumentTypeGenitive}{выпускную работу бакалавра} % в родительном падеже
+% Сеттеры
+\newcommand{\VSTUSetDocumentCode}[1]{
+  \renewcommand{\VSTUDocumentCode}{#1-\VSTUDocumentCodeSuffix}
 }
-
-% Название дипломной работы
-\newcommand{\VSTUTitle}{Title}
-\newcommand{\VSTUTitleUL}{\uline{Title}}
-\newcommand{\VSTUSetTitle}[1]{
-    \renewcommand{\VSTUTitle}{#1}
-    \renewcommand{\VSTUTitleUL}{\uline{#1}}
+\newcommand{\VSTUSetDocumentTypeDative}[1]{
+  \renewcommand{\VSTUDocumentTypeDative}{#1}
 }
-
-% Название дипломной работы на английском языке
-\newcommand{\VSTUTitleEng}{TitleEng}
-\newcommand{\VSTUTitleULEng}{\uline{TitleEng}}
-\newcommand{\VSTUSetTitleEng}[1]{
-    \renewcommand{\VSTUTitleEng}{#1}
-    \renewcommand{\VSTUTitleULEng}{\uline{#1}}
+\newcommand{\VSTUSetDocumentTypeGenitive}[1]{
+  \renewcommand{\VSTUDocumentTypeGenitive}{#1}
 }
 
 % Номер приказа (месяц задается строкой!)
@@ -77,6 +56,7 @@
 \newcommand{\VSTUOrderMonth}{января}
 \newcommand{\VSTUOrderYear}{2013}
 \newcommand{\VSTUOrderNumber}{1000--ст}
+% Сеттеры
 \newcommand{\VSTUSetOrder}[4]{
   \renewcommand{\VSTUOrderYear}{#4}
   \renewcommand{\VSTUOrderMonth}{#3}
@@ -90,12 +70,17 @@
 % Факультет, кафедра и направление
 \newcommand{\VSTUFaculty}{Электроники\ и\ вычислительной\ техники}
 \newcommand{\VSTUDepartment}{Программное\ обеспечение\ автоматизированных\ систем}
+\newcommand{\VSTUDepartmentCode}{10.19}
 \newcommand{\VSTUDirection}{230100\ Информатика\ и\ вычислительная\ техника}
+% Сеттеры
 \newcommand{\VSTUSetFaculty}[1]{
   \renewcommand{\VSTUFaculty}{#1}
 }
 \newcommand{\VSTUSetDepartment}[1]{
   \renewcommand{\VSTUDepartment}{#1}
+}
+\newcommand{\VSTUSetDepartmentCode}[1]{
+  \renewcommand{\VSTUDepartmentCode}{#1}
 }
 \newcommand{\VSTUSetDirection}[1]{
   \renewcommand{\VSTUDirection}{#1}
@@ -106,6 +91,7 @@
 \newcommand{\VSTUHeadOfDepartmentName}{И.\ О.\ Фамилия}
 \newcommand{\VSTUHeadOfDepartmentDegree}{кто-то,\ какая-то\ каф.}
 \newcommand{\VSTUHeadOfDepartmentPost}{зав.\ каф.\ XXX}
+% Сеттеры
 \newcommand{\VSTUSetHeadOfDepartment}[4]{
   \renewcommand{\VSTUHeadOfDepartmentFullName}{#4}
   \renewcommand{\VSTUHeadOfDepartmentName}{#3}
@@ -117,6 +103,7 @@
 \newcommand{\VSTUDirectorFullName}{Фамилия\ Имя\ Отчество}
 \newcommand{\VSTUDirectorName}{И.\ О.\ Фамилия}
 \newcommand{\VSTUDirectorDegree}{кто-то,\ какая-то\ каф.}
+% Сеттеры
 \newcommand{\VSTUSetDirector}[3]{
   \renewcommand{\VSTUDirectorFullName}{#3}
   \renewcommand{\VSTUDirectorName}{#2}
@@ -127,6 +114,7 @@
 \newcommand{\VSTUStandardsAdviserFullName}{Фамилия\ Имя\ Отчество}
 \newcommand{\VSTUStandardsAdviserName}{И.\ О.\ Фамилия}
 \newcommand{\VSTUStandardsAdviserDegree}{кто-то,\ какая-то\ каф.}
+% Сеттеры
 \newcommand{\VSTUSetStandardsAdviser}[3]{
   \renewcommand{\VSTUStandardsAdviserFullName}{#3}
   \renewcommand{\VSTUStandardsAdviserName}{#2}
@@ -137,10 +125,26 @@
 \newcommand{\VSTUStudentFullName}{Фамилия\ Имя\ Отчество}
 \newcommand{\VSTUStudentName}{И.\ О.\ Фамилия}
 \newcommand{\VSTUStudentGroup}{ГРП--000}
+% Сеттеры
 \newcommand{\VSTUSetStudent}[3]{
   \renewcommand{\VSTUStudentFullName}{#3}
   \renewcommand{\VSTUStudentName}{#2}
   \renewcommand{\VSTUStudentGroup}{#1}
+}
+
+% Название дипломной работы на русском и английском языках
+\newcommand{\VSTUTitle}{Title}
+\newcommand{\VSTUTitleUL}{\uline{Title}}
+\newcommand{\VSTUTitleEng}{TitleEng}
+\newcommand{\VSTUTitleULEng}{\uline{TitleEng}}
+% Сеттеры
+\newcommand{\VSTUSetTitle}[1]{
+    \renewcommand{\VSTUTitle}{#1}
+    \renewcommand{\VSTUTitleUL}{\uline{#1}}
+}
+\newcommand{\VSTUSetTitleEng}[1]{
+    \renewcommand{\VSTUTitleEng}{#1}
+    \renewcommand{\VSTUTitleULEng}{\uline{#1}}
 }
 
 % Стиль страницы
