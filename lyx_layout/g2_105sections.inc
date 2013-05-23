@@ -11,7 +11,7 @@ Style "Раздел"
     LatexType             Command
     LatexName             chapter
     NeedProtect           1
-    NextNoIndent          1
+    NextNoIndent          0
     LabelSep              xxx
     ParSkip               0.4
     TopSep                1.3
@@ -32,14 +32,14 @@ Style Section*
     Margin                Static
     LatexName             ESKDstarsection
     LabelType             No_Label
-    LabelCounter          ""    
+    LabelCounter          ""
     OptionalArgs          0
 
     Preamble
         \newcommand{\ESKDstarsection}[1]{
             \addcontentsline{toc}{section}{#1}
             \section*{#1}
-        } 
+        }
     EndPreamble
 End
 
@@ -133,7 +133,7 @@ Style Abstract
     Margin                Static
     LatexName             chapter*
     LabelType             No_Label
-    LabelCounter          ""    
+    LabelCounter          ""
     OptionalArgs          0
 End
 

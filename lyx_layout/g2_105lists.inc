@@ -6,7 +6,7 @@ Style Itemize
     Margin                Static
     LatexType             Item_Environment
     LatexName             itemize
-    NextNoIndent          1
+    NextNoIndent          0
     LeftMargin            MMN
     LabelSep              xx
     ItemSep               0.2
@@ -25,7 +25,7 @@ Style Enumerate
     Margin                Static
     LatexType             Item_Environment
     LatexName             enumerate
-    NextNoIndent          1
+    NextNoIndent          0
     LeftMargin            MMN
     LabelSep              xx
     ParSkip               0.0
@@ -44,7 +44,7 @@ Style Description
     Margin                First_Dynamic
     LatexType             Item_environment
     LatexName             description
-    NextNoIndent          1
+    NextNoIndent          0
     LeftMargin            MM
     LabelSep              xxx
     ParSkip               0.4
@@ -67,7 +67,7 @@ Style List
     Margin                Manual
     LatexType             Environment
     LatexName             lyxlist
-    NextNoindent          1
+    NextNoindent          0
     LabelSep              xxx
     ParSkip               0.4
     TopSep                0.7
@@ -95,7 +95,7 @@ Style "Сокращения"
     Margin                First_Dynamic
     LatexType             List_Environment
     LatexName             abbreviation
-    NextNoIndent          1
+    NextNoIndent          0
     LeftMargin            MM
     LabelSep              xxx
     ParSkip               0.4
