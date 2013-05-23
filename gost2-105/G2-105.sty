@@ -418,9 +418,10 @@
 % Приложения
 
 \newcounter{appendix}
-\gdef\theappendix{\@Asbuk\c@appendix}%
-\newcommand{\appendix}[1]{
-  \clearpage
+\gdef\theappendix{\@Asbuk\c@appendix}
+
+% Общая команда для приложений
+\newcommand{\appendixcommon}[1]{
   \addtocounter{appendix}{1}
   \addtocounter{totalappendices}{1}
 
@@ -444,7 +445,22 @@
   \appendixname~\theappendix~---~{#1}%
   \end{center}%
   \addcontentsline{toc}{chapter}{\appendixname~\theappendix~---~{#1}}%
-}%
+}
+
+% Обычное приложение
+\newcommand{\appendix}[1]{
+  \clearpage
+  \appendixcommon{#1}
+}
+
+% Приложение в виде отдельного документа
+\newcommand{\appendixdocument}[1]{
+  \clearpage
+  \leavevmode
+  \vfill
+  \appendixcommon{#1}
+  \vfill
+}
 
 % Всякие оглавления
 \newcommand{\tableofcontents}{

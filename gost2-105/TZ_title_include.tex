@@ -5,15 +5,14 @@
 \newcommand{\VSTULUCode}{А.В.00001-01\ \VSTUDocumentCodeSuffix\ 01-1}
 %--------------CHAPTER REDEFINTION----
 \renewcommand\chapter{%
-\vspace{\GostBeforTitleSkip}
+  \vspace{\GostBeforTitleSkip}
   \@startsection{chapter}{0}%
   {\Gost@ChapterIndent}{0mm}{\GostAfterTitleSkip}%
   {\GostTitleStyle\normalfont\Gost@ChapterStyle}%
 }
 %--------------APPENDIX REDEFINTION----
 \gdef\theappendix{\VSTUDocumentNumbersPrefix\@arabic\c@appendix}%
-\renewcommand{\appendix}[1]{
-  \clearpage
+\renewcommand{\appendixcommon}[1]{
   \addtocounter{appendix}{1}
   \addtocounter{totalappendices}{1}
 
@@ -34,9 +33,9 @@
   \renewcommand{\theequation}{\theappendix.\arabic{equation}}
 
   \begin{center}%
-  \appendixname~\theappendix~{##1}%
+  \appendixname~\theappendix~---~{##1}%
   \end{center}%
-  \addcontentsline{toc}{chapter}{\appendixname~\theappendix~{##1}}%
+  \addcontentsline{toc}{chapter}{\appendixname~\theappendix~---~{##1}}%
 }%
 
 {

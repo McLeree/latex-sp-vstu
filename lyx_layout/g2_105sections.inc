@@ -127,6 +127,30 @@ Style "Приложение"
     EndFont
 End
 
+Style "Приложение (отдельный документ)"
+    Category              "Раздел"
+    Margin                Dynamic
+    LabelType             Static
+    LabelCounter          appendix
+    TocLevel              1
+    LatexType             Command
+    LatexName             appendixdocument
+    NeedProtect           1
+    NextNoIndent          1
+    LabelSep              xxx
+    ParSkip               0.4
+    TopSep                1.3
+    BottomSep             0.7
+    ParSep                0.7
+    Align                 Block
+    AlignPossible         Block, Left
+    OptionalArgs          2
+    Font
+      Series              Bold
+      Size                Larger
+    EndFont
+End
+
 Style Abstract
     CopyStyle             "Раздел"
     Category              FrontMatter
