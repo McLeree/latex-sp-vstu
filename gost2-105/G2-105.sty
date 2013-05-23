@@ -23,6 +23,7 @@
 \RequirePackage{mathtext}
 \RequirePackage[T1]{fontenc}
 \RequirePackage{flafter}
+\RequirePackage{setspace}% почему-то приводит в порядок расстояние между строками в подписях оО
 
 % Импорт заголовков для ПЗ и ТЗ
 \input{PZ_title_include.tex}
@@ -162,6 +163,9 @@
 \raggedbottom
 \onecolumn
 
+% 3.6 Абзацный отступ - 15..17 мм
+\setlength\parindent{15mm}
+
 % Всякие разные длины
 \newcommand{\@pnumwidth}{1.55em}
 \renewcommand{\baselinestretch}{}
@@ -225,9 +229,6 @@
 \newcommand{\totalequations} {\ref{reftotalequations}}
 \newcommand{\totalbibs}      {\ref{reftotalbibs}}
 \newcommand{\totalappendices}{\ref{reftotalappendices}}
-
-% 3.6 Абзацный отступ - 15..17 мм
-\setlength\parindent{15mm}
 
 % 4.1.1 - 4.1.6 Деление документа
 
