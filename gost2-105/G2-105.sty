@@ -59,6 +59,41 @@
   \renewcommand{\VSTUPaperInitialData}{#1}
 }
 
+% Содержание основной части пояснительной записки и перечень графического материала
+\newenvironment{VSTUUnderlinedNumberedList}{%
+  \begin{enumerate}
+  \renewcommand{\theenumi}{\arabic{enumi}}
+  \let\olditem\item
+  \renewcommand{\item}{\olditem \uline{\hspace{\textwidth}}\hspace{-\textwidth}}
+}
+{\end{enumerate}}
+
+\newenvironment{VSTUUnderlinedList}{%
+  \begin{VSTUUnderlinedNumberedList}
+  \renewcommand{\labelenumi}{}
+}
+{\end{VSTUUnderlinedNumberedList}}
+
+\newcommand{\VSTUPZContents}{
+  \begin{VSTUUnderlinedList}
+    \item Что-то там раз
+    \item Что-то там два
+  \end{VSTUUnderlinedList}
+}
+\newcommand{\VSTUPZGraphics}{
+  \begin{VSTUUnderlinedNumberedList}
+    \item Графический материал раз
+    \item Графический материал два
+  \end{VSTUUnderlinedNumberedList}
+}
+%Сеттеры
+\newcommand{\VSTUSetPZContents}[1]{
+  \renewcommand{\VSTUPZContents}{#1}
+}
+\newcommand{\VSTUSetPZGraphics}[1]{
+  \renewcommand{\VSTUPZGraphics}{#1}
+}
+
 % Номер приказа (месяц задается строкой!)
 \newcommand{\VSTUOrderDate}{01}
 \newcommand{\VSTUOrderMonth}{января}
