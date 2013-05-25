@@ -53,41 +53,42 @@
 }
 
 % Исходные данные для выполнения работы
-\newcommand{\VSTUPaperInitialData}{задание,\ выданное\ научным\ руководителем\ кафедры\ ПОАС,\ утвержденное\ приказом\ ректора}
+\newcommand{\VSTUInitialData}{задание,\ выданное\ научным\ руководителем\ с\ кафедры\ ПОАС,\ утвержденное\ приказом\ ректора}
 %Сеттеры
-\newcommand{\VSTUSetPaperInitialData}[1]{
-  \renewcommand{\VSTUPaperInitialData}{#1}
+\newcommand{\VSTUSetInitialData}[1]{
+  \renewcommand{\VSTUInitialData}{#1}
 }
 
 % Содержание основной части пояснительной записки и перечень графического материала
 \newenvironment{VSTUUnderlinedNumberedList}{%
   \renewcommand{\theenumi}{\arabic{enumi}}
-  \let\olditem\item
+
   \setlength\leftmargini{1.5em}
   \setlength\leftmarginii{1.5em}
-  %\setlength\labelsep{0mm}
 
+  % Обозначим актуальную длину строки (за вычетом номера)
   \newlength\tmplength
   \setlength\tmplength{\textwidth}
   \addtolength\tmplength{-\labelsep}
   \addtolength\tmplength{-1em}
 
+  \let\olditem\item
   \renewcommand{\item}{\olditem \uline{\hspace{\tmplength}}\hspace{-\tmplength}}
 
-  \begin{enumerate}  
+  \begin{enumerate}
 }
 {\end{enumerate}}
 
 \newenvironment{VSTUUnderlinedList}{%
   \renewcommand{\labelenumi}{}
-  \let\olditem\item
   \setlength\leftmargini{0mm}
   \setlength\leftmarginii{0mm}
   \setlength\labelsep{0mm}
 
+  \let\olditem\item
   \renewcommand{\item}{\olditem \uline{\hspace{\textwidth}}\hspace{-\textwidth}}
 
-  \begin{enumerate}  
+  \begin{enumerate}
 }
 {\end{enumerate}}
 

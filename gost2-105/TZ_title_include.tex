@@ -3,14 +3,14 @@
 \newcommand{\VSTUInitializeTZ} {
 \renewcommand{\VSTUDocumentCodeSuffix}{91}
 \newcommand{\VSTULUCode}{А.В.00001-01\ \VSTUDocumentCodeSuffix\ 01-1}
-%--------------CHAPTER REDEFINTION----
+% Переопределение команды раздела
 \renewcommand\chapter{%
   \vspace{\GostBeforTitleSkip}
   \@startsection{chapter}{0}%
   {\Gost@ChapterIndent}{0mm}{\GostAfterTitleSkip}%
   {\GostTitleStyle\normalfont\Gost@ChapterStyle}%
 }
-%--------------APPENDIX REDEFINTION----
+% Переопределение команды приложений
 \gdef\theappendix{\VSTUDocumentNumbersPrefix\@arabic\c@appendix}%
 \renewcommand{\appendixcommon}[1]{
   \addtocounter{appendix}{1}
@@ -37,10 +37,9 @@
   \end{center}%
   \addcontentsline{toc}{chapter}{\appendixname~\theappendix~---~{##1}}%
 }%
-
 {
 \sloppy
-%---------------Первый титульник ТЗ---------------
+% Титульник ТЗ раз
 \clearpage
 \thispagestyle{empty}
 \begin{center}
@@ -50,7 +49,7 @@
 Кафедра <<\VSTUDepartment>>\\
 \end{center}
 \vspace{\fill}
-\hfill
+\hspace{\fill}
 \begin{minipage}[c]{18em}
 Утверждаю\\
 \VSTUHeadOfDepartmentPost\\
@@ -84,7 +83,7 @@
 \makebox[2cm]{\hrulefill}\VSTUStandardsAdviserName\\
 <<\makebox[1.5cm]{\hrulefill}>>\makebox[3.5cm]{\hrulefill}\the\year
 \end{minipage}
-\hfill
+\hspace{\fill}
 \begin{minipage}[c]{15em}
 Исполнитель\\
 студент\ группы\ \VSTUStudentGroup\\
@@ -97,7 +96,7 @@
 Волгоград,\ \the\year
 \end{center}
 \newpage
-%---------------Второй титульник ТЗ---------------
+% Титульник ТЗ два
 \clearpage
 \setcounter{page}{1}
 \thispagestyle{empty}
