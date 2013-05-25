@@ -61,18 +61,35 @@
 
 % Содержание основной части пояснительной записки и перечень графического материала
 \newenvironment{VSTUUnderlinedNumberedList}{%
-  \begin{enumerate}
   \renewcommand{\theenumi}{\arabic{enumi}}
   \let\olditem\item
-  \renewcommand{\item}{\olditem \uline{\hspace{\textwidth}}\hspace{-\textwidth}}
+  \setlength\leftmargini{1.5em}
+  \setlength\leftmarginii{1.5em}
+  %\setlength\labelsep{0mm}
+
+  \newlength\tmplength
+  \setlength\tmplength{\textwidth}
+  \addtolength\tmplength{-\labelsep}
+  \addtolength\tmplength{-1em}
+
+  \renewcommand{\item}{\olditem \uline{\hspace{\tmplength}}\hspace{-\tmplength}}
+
+  \begin{enumerate}  
 }
 {\end{enumerate}}
 
 \newenvironment{VSTUUnderlinedList}{%
-  \begin{VSTUUnderlinedNumberedList}
   \renewcommand{\labelenumi}{}
+  \let\olditem\item
+  \setlength\leftmargini{0mm}
+  \setlength\leftmarginii{0mm}
+  \setlength\labelsep{0mm}
+
+  \renewcommand{\item}{\olditem \uline{\hspace{\textwidth}}\hspace{-\textwidth}}
+
+  \begin{enumerate}  
 }
-{\end{VSTUUnderlinedNumberedList}}
+{\end{enumerate}}
 
 \newcommand{\VSTUPZContents}{
   \begin{VSTUUnderlinedList}
