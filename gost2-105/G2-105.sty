@@ -55,9 +55,11 @@
 
 % Исходные данные для выполнения работы
 \newcommand{\VSTUInitialData}{задание,\ выданное\ научным\ руководителем\ с\ кафедры\ ПОАС,\ утвержденное\ приказом\ ректора}
+\newcommand{\VSTUInitialDataUL}{\uline{\VSTUInitialData\hfill}}
 %Сеттеры
 \newcommand{\VSTUSetInitialData}[1]{
   \renewcommand{\VSTUInitialData}{#1}
+  \renewcommand{\VSTUInitialDataUL}{\uline{#1\hfill}}
 }
 
 % Содержание основной части пояснительной записки и перечень графического материала
@@ -196,17 +198,17 @@
 
 % Название работы на русском и английском языках
 \newcommand{\VSTUTitle}{Название работы}
-\newcommand{\VSTUTitleUL}{\uline{Название работы}}
-\newcommand{\VSTUTitleEng}{TitleEng}
-\newcommand{\VSTUTitleULEng}{\uline{TitleEng}}
+\newcommand{\VSTUTitleUL}{\uline{\VSTUTitle\hfill}}
+\newcommand{\VSTUTitleEng}{English title}
+\newcommand{\VSTUTitleULEng}{\uline{\VSTUTitleEng\hfill}}
 % Сеттеры
 \newcommand{\VSTUSetTitle}[1]{
     \renewcommand{\VSTUTitle}{#1}
-    \renewcommand{\VSTUTitleUL}{\uline{#1}}
+    \renewcommand{\VSTUTitleUL}{\uline{#1\hfill}}
 }
 \newcommand{\VSTUSetTitleEng}[1]{
     \renewcommand{\VSTUTitleEng}{#1}
-    \renewcommand{\VSTUTitleULEng}{\uline{#1}}
+    \renewcommand{\VSTUTitleULEng}{\uline{#1\hfill}}
 }
 
 % Название дисциплины (для курсовых работ)
