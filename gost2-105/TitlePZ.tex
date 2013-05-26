@@ -18,12 +18,8 @@
 \begin{minipage}[c]{18em}
 Утверждаю\\
 Зав.~кафедрой\\
-\raisebox{-3pt} { % really dirty hack
-$\underset{\text{(подпись)}}{\uline{\makebox[1.5cm]{}}}$
-}
-\raisebox{0pt} {
+$\underset{\text{(подпись)}}{\uline{\makebox[1.5cm]{\vphantom{\VSTUHeadOfDepartmentDegree~\VSTUHeadOfDepartmentName}}}}$ % we need that for field leveling
 $\underset{\text{(инициалы, фамилия)}}{\uline{\makebox[6.5cm]{\text{\VSTUHeadOfDepartmentDegree~\VSTUHeadOfDepartmentName}}}}$\\
-}
 <<\makebox[1.5cm]{\hrulefill}>>\makebox[3.5cm]{\hrulefill}\the\year
 \end{minipage}
 \end{flushright}
@@ -34,14 +30,14 @@ $\underset{\text{(инициалы, фамилия)}}{\uline{\makebox[6.5cm]{\te
 \hfill
 на тему\\
 \VSTUTitleUL\\
-Автор  $\underset{\text{(подпись и дата подписания)}}{\uline{\makebox[6cm]{}}}$
+Автор  $\underset{\text{(подпись и дата подписания)}}{\uline{\makebox[6cm]{\vphantom{\VSTUStudentFullName}}}}$
 \hfill
 $\underset{\text{(фамилия, имя, отчество)}}{\uline{\makebox[8cm]{\VSTUStudentFullName}}}$\\
 Обозначение $\underset{\text{(код документа)}}{\uline{\makebox[\width]{\VSTUDocumentCode}}}$\\
 Группа $\underset{\text{(шифр группы)}}{\uline{\makebox[3cm]{\VSTUStudentGroup}}}$\\
 Направление\hfill $\underset{\text{(код по ОКСО, наименование направления, программы)}}{\uline{\makebox[27em]{\VSTUDirection}}}$\\
 \uline{\makebox[\textwidth]{\hfill}}\\
-Руководитель работы $\underset{\text{(подпись и дата подписания)}}{\uline{\makebox[6cm]{}}}$
+Руководитель работы $\underset{\text{(подпись и дата подписания)}}{\uline{\makebox[6cm]{\vphantom{\VSTUDirectorName}}}}$
 \hfill
 $\underset{\text{(инициалы и фамилия)}}{\uline{\makebox[5cm]{\VSTUDirectorName}}}$\\
 Консультанты по разделам:\\
@@ -61,7 +57,7 @@ $\underset{\text{(подпись и дата подписания)}}{\uline{\mak
 \hfill
 $\underset{\text{(инициалы и фамилия)}}{\uline{\makebox[5cm]{}}}$\\
 \vspace{\fill}\\
-Нормоконтролер\hfill $\underset{\text{(подпись и дата подписания)}}{\uline{\makebox[6cm]{}}}$
+Нормоконтролер\hfill $\underset{\text{(подпись и дата подписания)}}{\uline{\makebox[6cm]{\vphantom{\VSTUStandardsAdviserName}}}}$
 \hfill
 $\underset{\text{(инициалы и фамилия)}}{\uline{\makebox[5cm]{\VSTUStandardsAdviserName}}}$\\
 \vspace{\fill}
@@ -83,12 +79,8 @@ $\underset{\text{(инициалы и фамилия)}}{\uline{\makebox[5cm]{\VS
 \begin{minipage}[c]{18em}
 Утверждаю\\
 Зав.~кафедрой\\
-\raisebox{-3pt} { % really dirty hack
-$\underset{\text{(подпись)}}{\uline{\makebox[1.5cm]{}}}$
-}
-\raisebox{0pt} {
+$\underset{\text{(подпись)}}{\uline{\makebox[1.5cm]{\vphantom{\VSTUHeadOfDepartmentDegree~\VSTUHeadOfDepartmentName}}}}$
 $\underset{\text{(инициалы, фамилия)}}{\uline{\makebox[6.5cm]{\text{\VSTUHeadOfDepartmentDegree~\VSTUHeadOfDepartmentName}}}}$\\
-}
 <<\makebox[1.5cm]{\hrulefill}>>\makebox[3.5cm]{\hrulefill}\the\year
 \end{minipage}
 \end{flushright}
@@ -114,7 +106,7 @@ $\underset{\text{(инициалы, фамилия)}}{\uline{\makebox[6.5cm]{\te
 \VSTUPZGraphics
 }
 \vspace{\fill}
-\noindent Руководитель работы $\underset{\text{(подпись и дата подписания)}}{\uline{\makebox[6cm]{}}}$
+\noindent Руководитель работы $\underset{\text{(подпись и дата подписания)}}{\uline{\makebox[6cm]{\vphantom{\VSTUDirectorName}}}}$
 \hfill
 $\underset{\text{(инициалы и фамилия)}}{\uline{\makebox[5cm]{\VSTUDirectorName}}}$\\
 Консультанты по разделам:\\
