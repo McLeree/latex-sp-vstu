@@ -1,0 +1,85 @@
+\RequirePackage{amsmath}
+\RequirePackage{ulem}
+\newcommand{\VSTUInitializeCW} {
+\renewcommand{\VSTUDocumentCodeSuffix}{81}
+{
+% Задание на курсовую работу
+\clearpage
+\thispagestyle{empty}
+\begin{center}
+Министерство образования и науки Российской Федерации\\
+Федеральное государственное бюджетное образовательное учреждение высшего профессионального образования\\
+Волгоградский Государственный Технический Университет\\
+\end{center}
+Факультет~\uline{\VSTUFaculty\hfill}\\
+Направление~\uline{\VSTUDirection\hfill}\\
+Кафедра~\uline{\VSTUDepartment\hfill}\\
+Дисциплина~\uline{\VSTUSubject\hfill}\\
+\vspace{\fill}
+\begin{flushright}
+\begin{minipage}[c]{18em}
+Утверждаю\\
+Зав.~кафедрой\\
+\raisebox{-3pt} { % really dirty hack
+$\underset{\text{(подпись)}}{\uline{\makebox[1.5cm]{}}}$
+}
+\raisebox{0pt} {
+$\underset{\text{(инициалы, фамилия)}}{\uline{\makebox[6.5cm]{\text{\VSTUHeadOfDepartmentDegree~\VSTUHeadOfDepartmentName}}}}$\\
+}
+<<\makebox[1.5cm]{\hrulefill}>>\makebox[3.5cm]{\hrulefill}\the\year
+\end{minipage}
+\end{flushright}
+\vspace{\fill}
+\begin{center}
+ЗАДАНИЕ\\
+на курсовую работу
+\end{center}
+Студент(ы) $\underset{\text{(фамилия, имя, отчество)}}{\uline{\VSTUStudentFullName\hfill}}$\\
+Группа \uline{\VSTUStudentGroup}\\
+1. Тема: \VSTUTitleUL\uline{\hfill}\\
+Утверждена приказом от <<\uline{\makebox[0.5cm]{}}>> \uline{\makebox[2cm]{}} \uline{\makebox[2cm]{}} \No\uline{\makebox[1.5cm]{}}\\
+2. Срок представления готовой работы:~<<\makebox[1.5cm]{\hrulefill}>>\makebox[3.5cm]{\hrulefill}\the\year\\
+3. Содержание расчетно-пояснительной записки:\\
+\uline{\text{}\hfill}\\
+4. Перечень графического материала:\\
+\uline{\text{}\hfill}\\
+5. Дата выдачи задания: <<\makebox[1.5cm]{\hrulefill}>>\makebox[3.5cm]{\hrulefill}\the\year\\
+Руководитель работы (проекта) $\underset{\text{(подпись и дата подписания)}}{\uline{\makebox[4cm]{}}}$~\VSTUDirectorName\\
+Задание принял к исполнению $\underset{\text{(подпись и дата подписания)}}{\uline{\makebox[4.6cm]{}}}$~~~\VSTUStudentName\\
+\vspace{\fill}
+\begin{center}
+Волгоград,~\the\year
+\end{center}
+\newpage
+% Титульник ПЗ
+\clearpage
+\thispagestyle{empty}
+\setcounter{page}{1}
+\begin{center}
+Министерство образования и науки Российской Федерации\\
+Федеральное государственное бюджетное образовательное учреждение высшего профессионального образования\\
+Волгоградский Государственный Технический Университет\\
+\end{center}
+Факультет~\uline{\VSTUFaculty\hfill}\\
+Кафедра~\uline{\VSTUDepartment\hfill}\\
+\vspace{2cm}
+\begin{center}
+ПОЯСНИТЕЛЬНАЯ ЗАПИСКА\\
+\end{center}
+по дисциплине \uline{\VSTUSubject\hfill}\\
+на тему \VSTUTitleUL\uline{\hfill}\\
+\\
+\\
+Студент(ы) $\underset{\text{(фамилия, имя, отчество)}}{\uline{\VSTUStudentFullName\hfill}}$\\
+Группа \uline{\VSTUStudentGroup}\\
+\\
+\\
+Руководитель работы $\underset{\text{(подпись и дата подписания)}}{\uline{\makebox[4cm]{}}}$~\VSTUDirectorName\\
+Нормоконтролер $\underset{\text{(подпись и дата подписания)}}{\uline{\makebox[5.5cm]{}}}$~~~\VSTUStandardsAdviserName\\
+\vspace{\fill}
+\begin{center}
+Волгоград,~\the\year
+\end{center}
+\newpage
+}
+}

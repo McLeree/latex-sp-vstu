@@ -26,8 +26,9 @@
 \RequirePackage{setspace}% почему-то приводит в порядок расстояние между строками в подписях оО
 
 % Импорт заголовков для ПЗ и ТЗ
-\input{PZ_title_include.tex}
-\input{TZ_title_include.tex}
+\input{TitleCW.tex}
+\input{TitlePZ.tex}
+\input{TitleTZ.tex}
 
 % Префикс, стоящий перед номерами рисунков и таблиц
 \newcommand{\VSTUDocumentNumbersPrefix}{}
@@ -193,9 +194,9 @@
   \renewcommand{\VSTUStudentGroup}{#1}
 }
 
-% Название дипломной работы на русском и английском языках
-\newcommand{\VSTUTitle}{Title}
-\newcommand{\VSTUTitleUL}{\uline{Title}}
+% Название работы на русском и английском языках
+\newcommand{\VSTUTitle}{Название работы}
+\newcommand{\VSTUTitleUL}{\uline{Название работы}}
 \newcommand{\VSTUTitleEng}{TitleEng}
 \newcommand{\VSTUTitleULEng}{\uline{TitleEng}}
 % Сеттеры
@@ -206,6 +207,13 @@
 \newcommand{\VSTUSetTitleEng}[1]{
     \renewcommand{\VSTUTitleEng}{#1}
     \renewcommand{\VSTUTitleULEng}{\uline{#1}}
+}
+
+% Название дисциплины (для курсовых работ)
+\newcommand{\VSTUSubject}{Название дисциплины}
+% Сеттеры
+\newcommand{\VSTUSetSubject}[1]{
+    \renewcommand{\VSTUSubject}{#1}
 }
 
 % Стиль страницы
@@ -222,8 +230,9 @@
 \pagenumbering{arabic}
 \raggedbottom
 \onecolumn
+\sloppy
 
-% 3.6 Абзацный отступ - 15..17 мм
+% Абзацный отступ 15..17 мм
 \setlength\parindent{15mm}
 
 % Всякие разные длины
@@ -290,7 +299,7 @@
 \newcommand{\totalbibs}      {\ref{reftotalbibs}}
 \newcommand{\totalappendices}{\ref{reftotalappendices}}
 
-% 4.1.1 - 4.1.6 Деление документа
+% Деление документа
 
 % Команды для подстройки вида заголовков
 % Расстояние между заголовком и текстом

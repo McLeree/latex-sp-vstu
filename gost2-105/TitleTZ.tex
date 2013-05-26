@@ -2,7 +2,7 @@
 \RequirePackage{ulem}
 \newcommand{\VSTUInitializeTZ} {
 \renewcommand{\VSTUDocumentCodeSuffix}{91}
-\newcommand{\VSTULUCode}{А.В.00001-01\ \VSTUDocumentCodeSuffix\ 01-1}
+\newcommand{\VSTULUCode}{А.В.00001-01~\VSTUDocumentCodeSuffix~01-1}
 % Переопределение команды раздела
 \renewcommand\chapter{%
   \vspace{\GostBeforTitleSkip}
@@ -38,7 +38,6 @@
   \addcontentsline{toc}{chapter}{\appendixname~\theappendix~---~{##1}}%
 }%
 {
-\sloppy
 % Титульник ТЗ раз
 \clearpage
 \thispagestyle{empty}
@@ -86,20 +85,20 @@
 \hspace{\fill}
 \begin{minipage}[c]{15em}
 Исполнитель\\
-студент\ группы\ \VSTUStudentGroup\\
+студент~группы~\VSTUStudentGroup\\
 \makebox[2cm]{\hrulefill}\VSTUStudentName\\
 <<\makebox[1.5cm]{\hrulefill}>>\makebox[3.5cm]{\hrulefill}\the\year
 \end{minipage}
 \end{flushleft}
 \vspace{\fill}
 \begin{center}
-Волгоград,\ \the\year
+Волгоград,~\the\year
 \end{center}
 \newpage
 % Титульник ТЗ два
 \clearpage
-\setcounter{page}{1}
 \thispagestyle{empty}
+\setcounter{page}{1}
 \parУТВЕРЖДЕНО\\
 \par{\small \VSTULUCode-ЛУ\\}
 \vspace{\fill}
@@ -113,7 +112,7 @@
 \end{center}
 \vspace{\fill}
 \begin{center}
-Волгоград,\ \the\year
+Волгоград,~\the\year
 \end{center}
 \newpage
 }
