@@ -20,12 +20,8 @@
 \begin{minipage}[c]{18em}
 Утверждаю\\
 Зав.~кафедрой\\
-\raisebox{-3pt} { % really dirty hack
-$\underset{\text{(подпись)}}{\uline{\makebox[1.5cm]{}}}$
-}
-\raisebox{0pt} {
+$\underset{\text{(подпись)}}{\uline{\makebox[1.5cm]{\vphantom{\VSTUHeadOfDepartmentDegree~\VSTUHeadOfDepartmentName}}}}$ % \vphantom для выравнивания подчеркиваний
 $\underset{\text{(инициалы, фамилия)}}{\uline{\makebox[6.5cm]{\text{\VSTUHeadOfDepartmentDegree~\VSTUHeadOfDepartmentName}}}}$\\
-}
 <<\makebox[1.5cm]{\hrulefill}>>\makebox[3.5cm]{\hrulefill}\the\year
 \end{minipage}
 \end{flushright}
@@ -44,10 +40,10 @@ $\underset{\text{(инициалы, фамилия)}}{\uline{\makebox[6.5cm]{\te
 4. Перечень графического материала:\\
 \uline{\text{}\hfill}\\
 5. Дата выдачи задания: <<\makebox[1.5cm]{\hrulefill}>>\makebox[3.5cm]{\hrulefill}\the\year\\
-Руководитель работы (проекта) $\underset{\text{(подпись и дата подписания)}}{\uline{\makebox[3.5cm]{}}}$
+Руководитель работы (проекта) $\underset{\text{(подпись и дата подписания)}}{\uline{\makebox[3.6cm]{\vphantom{\VSTUDirectorName}}}}$
 \hfill
 $\underset{\text{(инициалы и фамилия)}}{\uline{\makebox[3.5cm]{\VSTUDirectorName}}}$\\
-Задание принял к исполнению $\underset{\text{(подпись и дата подписания)}}{\uline{\makebox[4.6cm]{}}}$
+Задание принял к исполнению $\underset{\text{(подпись и дата подписания)}}{\uline{\makebox[4.6cm]{\vphantom{\VSTUStudentName}}}}$
 \hfill
 $\underset{\text{(инициалы и фамилия)}}{\uline{\makebox[3.5cm]{\VSTUStudentName}}}$\\
 \vspace{\fill}
@@ -78,10 +74,10 @@ $\underset{\text{(инициалы и фамилия)}}{\uline{\makebox[3.5cm]{\
 Группа \uline{\VSTUStudentGroup}\\
 \\
 \\
-Руководитель работы $\underset{\text{(подпись и дата подписания)}}{\uline{\makebox[5.4cm]{}}}$
+Руководитель работы $\underset{\text{(подпись и дата подписания)}}{\uline{\makebox[5.4cm]{\vphantom{\VSTUDirectorName}}}}$
 \hfill
 $\underset{\text{(инициалы и фамилия)}}{\uline{\makebox[4.5cm]{\VSTUDirectorName}}}$\\
-Нормоконтролер $\underset{\text{(подпись и дата подписания)}}{\uline{\makebox[6.5cm]{}}}$
+Нормоконтролер $\underset{\text{(подпись и дата подписания)}}{\uline{\makebox[6.5cm]{\vphantom{\VSTUStandardsAdviserName}}}}$
 \hfill
 $\underset{\text{(инициалы и фамилия)}}{\uline{\makebox[4.5cm]{\VSTUStandardsAdviserName}}}$\\
 \vspace{\fill}
