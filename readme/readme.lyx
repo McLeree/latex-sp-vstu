@@ -5,6 +5,8 @@
 \textclass extarticle
 \begin_preamble
 \sloppy
+\hyphenpenalty 10000
+\exhyphenpenalty 10000
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
@@ -27,6 +29,7 @@
 \output_sync 0
 \bibtex_command default
 \index_command default
+\float_placement H
 \paperfontsize 14
 \spacing onehalf
 \use_hyperref false
@@ -67,114 +70,269 @@
 
 \begin_body
 
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
-УСТАНОВКА
+Зачем мне нужен этот шаблон?
+\end_layout
+
+\begin_layout Standard
+Чтобы сэкономить огромную кучу времени.
+ Для защиты бакалаврской или магистерской работы нужно, чтобы бумажная часть
+ соответствовала ГОСТу/стандарту ВолгГТУ (краткие требования 
+\begin_inset CommandInset href
+LatexCommand href
+name "приведены здесь"
+target "http://wiki.poas.vstu.ru/index.php/%D0%A2%D0%B5%D0%BA%D1%81%D1%82%D0%BE%D0%B2%D1%8B%D0%B9_%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82"
+
+\end_inset
+
+).
+ Каждый год каждый студенты тратят (бесполезно) уйму времени, тыкая в разные
+ настройки Word'а, OpenOffice'а и так далее, причем выбранные стили часто
+ "слетают" и приходится все делать заново.
+ Время, затрачиваемое на оформление дипломной работы, можно 
+\shape italic
+значительно
+\shape default
+ сократить, если не использовать перечисленные выше программы.
+ Вместо этого можно использовать те, которые 
+\shape italic
+предназначены
+\shape default
+ для качественной верстки документов --- например, LaTeX и его графическую
+ оболочку LyX (кстати, на западе научные работы и статьи чаще всего делают
+ именно в них).
+\end_layout
+
+\begin_layout Standard
+В 
+\begin_inset CommandInset href
+LatexCommand href
+name "этом репозитории"
+target "https://bitbucket.org/vostreltsov/bachelors-thesis"
+
+\end_inset
+
+ лежат "исходники" бакалаврской работы, выполненной в LyX.
+ А 
+\begin_inset CommandInset href
+LatexCommand href
+name "эта пояснительная записка"
+target "http://wiki.poas.vstu.ru/img_auth.php/Lyx_bachelors_thesis.pdf"
+
+\end_inset
+
+ --- пример pdf файла, получаемого на выходе.
+ Если вы хотите заботиться только о содержании вашей работы, а не о ее форматиро
+вании --- прошу читать далее.
+\end_layout
+
+\begin_layout Section
+Какие минусы?
+\end_layout
+
+\begin_layout Standard
+Нужно потратить полчаса--час на установку и настройку программ.
+ Ну и сломать стереотип, что LaTeX --- это сложно.
+\end_layout
+
+\begin_layout Section
+Как установить?
+\end_layout
+
+\begin_layout Standard
+Установка LyX, LaTeX и шаблонов довольно проста.
 \end_layout
 
 \begin_layout Enumerate
-Качаем LyX --- редактор документов, который сохраняет файлы в формате, "компилир
-уемом" в TeX.
- Это не хардкорный чистый TeX.
- Процесс создания документов в LyX похож на то, как мы делаем это в известном
- редакторе (не будем говорить названия, все всё поняли).
- Для windows он доступен в двух вариантах: bundle (всё сразу, включая MiKTeX
- как зависимость) и installer (только сам LyX, нужно будет предварительно
- ставить руками MiKTeX).
- Идём на http://www.lyx.org/Download#toc3 и качаем LyX в виде bundle --- весит
- это добро около 200 мегабайт.
+Для начала нужно скачать сам LyX 
+\begin_inset CommandInset href
+LatexCommand href
+name "здесь"
+target "http://www.lyx.org/Download#toc3"
+
+\end_inset
+
+.
+ Он доступен для Windows в двух вариантах --- bundle и installer.
+ Предпочтение следует отдать варианту bundle, так как он содержит все необходимо
+е внутри себя.
+ Во втором же случае придется устанавливать некоторые пакеты руками.
 \end_layout
 
 \begin_layout Enumerate
-Качаем шаблоны (папки gost2-105 и lyx_layout из этого репозитория).
- Это можно сделать прямо с самого bitbucket, можно сделать hg clone и так
- далее.
-\end_layout
-
-\begin_layout Enumerate
-Устанавливаем LyX --- это займет несколько времени, т.
- к.
- будут докачиваться некоторые файлы.
+Устанавливаем скачанный LyX --- это займет несколько времени, так как будут
+ докачиваться некоторые файлы.
  При установке можно поставить галочку для дополнения, проверяющего орфографию.
  С учетом скачивания файлов на моих 2 мегабитах в секунду установка заняла
  минут 15.
 \end_layout
 
 \begin_layout Enumerate
-Устанавливаем наш шаблон.
- Положим, что LyX установлен в C:
+Пока устанавливается LyX, скачиваем 
+\begin_inset CommandInset href
+LatexCommand href
+name "вот этот репозиторий"
+target "https://bitbucket.org/McLeree/latex-sp-vstu"
+
+\end_inset
+
+.
+ Неважно как --- можно архивом, можно сделать hg clone в консоли --- как
+ вам удобнее.
+ Главное, чтобы на вашем компьютере оказались две папки из этого репозитория
+ --- gost2--105 и lyx_layout.
+\end_layout
+
+\begin_layout Enumerate
+Устанавливаем шаблон.
+ Положим, что LyX установился в C:
 \backslash
-Program Files (x86)
+Program
+\begin_inset space ~
+\end_inset
+
+Files
+\begin_inset space ~
+\end_inset
+
+(x86)
 \backslash
-LyX 2.0 и MiKTeX установлен в C:
+LyX 2.0, и вместе с ним MiKTeX установился в C:
 \backslash
-Program Files
+Program
+\begin_inset space ~
+\end_inset
+
+Files
+\begin_inset space ~
+\end_inset
+
+(x86)
 \backslash
 MiKTeX 2.9.
  Тогда:
 \end_layout
 
+\begin_deeper
 \begin_layout Itemize
-Копируем 
-\series bold
-папку
-\series default
- gost2-105 в папку C:
+Копируем папку gost2--105 из скачанного репозитория в папку C:
 \backslash
-Program Files (x86)
+Program
+\begin_inset space ~
+\end_inset
+
+Files
+\begin_inset space ~
+\end_inset
+
+(x86)
 \backslash
 MiKTeX
 \backslash
 tex
 \backslash
-latex
+latex.
 \end_layout
 
 \begin_layout Itemize
-Копируем 
-\series bold
-содержимое папки
-\series default
- lyx_layout в папку C:
+Копируем содержимое папки lyx_layout в папку C:
 \backslash
-Program Files (x86)
+Program
+\begin_inset space ~
+\end_inset
+
+Files
+\begin_inset space ~
+\end_inset
+
+(x86)
 \backslash
 LyX 2.0
 \backslash
 Resources
 \backslash
-layouts
+layouts.
 \end_layout
 
 \begin_layout Itemize
-Чтобы наш шаблон нашёлся, нужно запустить утилиту MiKTeX Settings.
- Она находится в Пуск -> MiKTeX 2.9 -> Maintenance (Admin) -> Settings (Admin)
-\end_layout
-
-\begin_layout Itemize
-Сразу замечаем кнопку Refresh FNDB и нажимаем её
+Чтобы наш шаблон нашелся, нужно запустить утилиту MiKTeX Settings.
+ Она находится в Пуск --> MiKTeX 2.9 --> Maintenance (Admin) --> Settings
+ (Admin).
+ Сразу замечаем кнопку Refresh FNDB и нажимаем ее.
 \end_layout
 
 \begin_layout Itemize
 В LyX нужно сделать аналогичную операцию --- запускаем его и нажимаем в
- меню Инструменты -> Переконфигурировать.
- Закрываем LyX, чтобы настройки сохранились
+ меню Инструменты --> Переконфигурировать.
+ Закрываем LyX, чтобы настройки сохранились.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Установка завершена!
 \end_layout
 
 \begin_layout Section
-ИСПОЛЬЗОВАНИЕ
+Как настроить документ для соответствия ГОСТу?
 \end_layout
 
 \begin_layout Standard
-Запускаем LyX, создаем новый документ.
- Задаем свойства документа, чтобы он использовал наш шаблон, а именно:
+В целом, использование LyX похоже на привычный процесс создания/редактирования
+ документов.
+ Имеются инструменты для деления документа на секции, создания перечислений,
+ вставки картинок и таблиц, и так далее.
+ Единственное отличие --- редактирование происходит в режиме "what you see
+ is what you mean", безо всякого форматирования (подробнее про парадигмы
+ редактирования документов --- 
+\begin_inset CommandInset href
+LatexCommand href
+name "здесь"
+target "http://ru.wikipedia.org/wiki/WYSIWYM"
+
+\end_inset
+
+ и 
+\begin_inset CommandInset href
+LatexCommand href
+name "здесь"
+target "http://ru.wikipedia.org/wiki/WYSIWYG"
+
+\end_inset
+
+).
+ Вы видите только свой текст, а его форматированием за вас займутся LyX/LaTeX.
+\end_layout
+
+\begin_layout Standard
+Итак, первым делом нужно создать новый документ.
+ Делается это либо нажатием пункта меню Файл --> Новый, либо сочетанием
+ клавиш Ctrl+N.
+ Теперь нужно заставить LyX использовать наш шаблон.
+ Для этого:
 \end_layout
 
 \begin_layout Itemize
-Нажимаем в меню Документ -> Настройки...
+Нажимаем пункт меню Документ --> Настройки...
 \end_layout
 
 \begin_layout Itemize
-Вкладка "Класс документа": Из комбобокса выбираем "gost2.105" вместо "article"
+Вкладка "Класс документа": из combobox'а выбираем "gost2.105" вместо "article"
 \end_layout
 
 \begin_layout Itemize
@@ -184,34 +342,20 @@ layouts
 
 \begin_layout Itemize
 Вкладка "Размещение плавающих объектов": убираем размещение по умолчанию,
- оставляем галочку только у "Именно здесь"
+ оставляем галочку только "Именно здесь"
 \end_layout
 
 \begin_layout Itemize
-Вкладка "Преамбула": копируем туда следующие команды:
-\begin_inset listings
-inline false
+Вкладка "Преамбула": (необязательно) копируем туда следующие команды:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
-
-\backslash
-sloppy % запрет выхода за поля
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-hyphenpenalty 10000 % отключение переносов раз
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-exhyphenpenalty 10000 % отключение переносов два
+%
 \end_layout
 
 \end_inset
@@ -220,11 +364,105 @@ exhyphenpenalty 10000 % отключение переносов два
 \end_layout
 
 \begin_layout Standard
-Документ в принципе готов к экспорту в PDF, но нужно указать данные студента,
- руководителя и нормоконтролера.
+
+\family typewriter
+\size footnotesize
+
+\backslash
+hyphenpenalty 10000 % отключение переносов раз
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size footnotesize
+
+\backslash
+exhyphenpenalty 10000 % отключение переносов два
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size footnotesize
+% Хак для многостраничных таблиц
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size footnotesize
+
+\backslash
+let
+\backslash
+oldendfirsthead
+\backslash
+endfirsthead
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size footnotesize
+
+\backslash
+renewcommand
+\backslash
+endfirsthead{
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size footnotesize
+  
+\backslash
+oldendfirsthead
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size footnotesize
+  
+\backslash
+caption{
+\backslash
+space}
+\backslash
+tabularnewline
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size footnotesize
+}
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Документ, в принципе, готов к экспорту в PDF.
+ Но нужно указать данные студента, руководителя, нормоконтролера и заведующего
+ кафедрой, тип документа и прочие вещи, необходимые для автоматической генерации
+ титульных листов.
  Закрываем настройки и видим по-прежнему пустой документ.
- Нажимаем Ctrl+L, появляется пустой прямоугольник.
- Пишем в него следующее:
+ Нажимаем Ctrl+L (это означает вставку на чистом LaTeX'е), и в появившийся
+ пустой прямоугольник пишем следующее:
 \end_layout
 
 \begin_layout Standard
@@ -256,7 +494,263 @@ VSTUSetDocumentNumbersPrefix{}
 \size scriptsize
 
 \backslash
-VSTUSetPersonalCode{ВРБ-40-461-806-10.19-230100-3-13}
+VSTUSetDocumentCode{ВРБ-40-461-806-10.19-230100-03-13}
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size scriptsize
+
+\backslash
+VSTUSetDocumentTypeDative{выпускной работе бакалавра}
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size scriptsize
+
+\backslash
+VSTUSetDocumentTypeGenitive{выпускную работу бакалавра}
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size scriptsize
+
+\backslash
+VSTUSetInitialData{задание, выданное научным руководителем с кафедры ПОАС,
+ утвержденное приказом ректора}
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size scriptsize
+
+\backslash
+VSTUSetPZContents{
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size scriptsize
+
+\backslash
+begin{VSTUUnderlinedList}
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size scriptsize
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\backslash
+item Пункт содержания основной раз
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size scriptsize
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\backslash
+item Пункт содержания основной два
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size scriptsize
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\backslash
+item ~ % пустая линия - может понадобиться при малом количестве пунктов
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size scriptsize
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\backslash
+item ~ % пустая линия
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size scriptsize
+
+\backslash
+end{VSTUUnderlinedList}
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size scriptsize
+}
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size scriptsize
+
+\backslash
+VSTUSetPZGraphics{
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size scriptsize
+
+\backslash
+begin{VSTUUnderlinedNumberedList}
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size scriptsize
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\backslash
+item Графический материал раз
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size scriptsize
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\backslash
+item Графический материал два
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size scriptsize
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\backslash
+item ~ % пустая линия
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size scriptsize
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\backslash
+item ~ % пустая линия
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size scriptsize
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\backslash
+item ~ % пустая линия
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size scriptsize
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\backslash
+item ~ % пустая линия
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size scriptsize
+
+\backslash
+end{VSTUUnderlinedNumberedList}
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size scriptsize
+}
 \end_layout
 
 \begin_layout Standard
@@ -274,16 +768,45 @@ VSTUSetOrder{590--ст}{26}{апреля}{2013}
 \size scriptsize
 
 \backslash
+VSTUSetFaculty{Электроники и вычислительной техники}
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size scriptsize
+
+\backslash
+VSTUSetDepartment{Программное обеспечение автоматизированных систем}
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size scriptsize
+
+\backslash
+VSTUSetDepartmentCode{10.19}
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size scriptsize
+
+\backslash
+VSTUSetDirection{230100.62 Информатика и вычислительная техника}
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size scriptsize
+
+\backslash
 VSTUSetHeadOfDepartment{Зав.
-\backslash
- кафедрой
-\backslash
- ПОАС}{д.т.н.,
-\backslash
- проф.}{А.
-\backslash
+ кафедрой ПОАС}{д.т.н., проф.}{А.
  М.
-\backslash
  Дворянкин}{Дворянкин Александр Михайлович}
 \end_layout
 
@@ -293,16 +816,10 @@ VSTUSetHeadOfDepartment{Зав.
 \size scriptsize
 
 \backslash
-VSTUSetDirector{к.т.н.,
-\backslash
- доц.
-\backslash
+VSTUSetDirector{к.т.н., доц.
  каф.
-\backslash
  ПОАС}{О.
-\backslash
  А.
-\backslash
  Сычев}{Сычев Олег Александрович}
 \end_layout
 
@@ -313,13 +830,9 @@ VSTUSetDirector{к.т.н.,
 
 \backslash
 VSTUSetStandardsAdviser{асс.
-\backslash
  каф.
-\backslash
  ПОАС}{О.
-\backslash
  Н.
-\backslash
  Ляпина}{Ляпина Ольга Николаевна}
 \end_layout
 
@@ -330,9 +843,7 @@ VSTUSetStandardsAdviser{асс.
 
 \backslash
 VSTUSetStudent{ИВТ-460}{В.
-\backslash
  О.
-\backslash
  Стрельцов}{Стрельцов Валерий Олегович}
 \end_layout
 
@@ -342,7 +853,7 @@ VSTUSetStudent{ИВТ-460}{В.
 \size scriptsize
 
 \backslash
-VSTUSetTitle{Русское название работы}
+VSTUSetTitle{Название работы на русском языке}
 \end_layout
 
 \begin_layout Standard
@@ -351,7 +862,7 @@ VSTUSetTitle{Русское название работы}
 \size scriptsize
 
 \backslash
-VSTUSetTitleEng{English title}
+VSTUSetTitleEng{Title in English}
 \end_layout
 
 \begin_layout Standard
@@ -378,70 +889,109 @@ status open
 \end_layout
 
 \begin_layout Standard
-Пробелы нужно эскейпить.
- В принципе, по командам понятно, что они делают.
- Замечание: первая команда добавляет префикс к нумерации рисунков и таблиц.
- В ПЗ он должен быть пустым, в ТЗ же следует написать 
-\backslash
-VSTUSetDocumentNumbersPrefix{А.} если оно идем первым приложением, и т.
-\begin_inset space ~
+Эти команды устанавливают: префикс номеров рисунков и таблиц (актуально
+ для отдельных приложений, например, ТЗ, но в данном случае он пустой),
+ код документа, номер и дату приказа, различные ФИО и названия работы на
+ русском и английском языках.
+ Последняя команда автоматически создает все нужные титульные листы.
+ При оформлении ТЗ (в виде отдельного документа!) первая и последняя команда
+ будут иметь вид:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%
+\end_layout
+
 \end_inset
 
-д.
- если есть другие документы.
- Последняя команда добавляет титульник ПЗ.
- Если вы пишете ТЗ, то вместо нее нужно написать 
-\backslash
-VSTUInitializeTZ.
+
 \end_layout
 
 \begin_layout Standard
 
-\series bold
-Для любителей копипаста
-\series default
-: перестаньте его любить.
- По крайней мере, не нужно копипастить эти команды --- проверяйте расстановку
- пробелов и переносов строк (они иногда ломаются при копипасте).
- Уже был случай, когда человек первый раз открыл LyX, скопировал 
+\family typewriter
+\size scriptsize
+
 \backslash
-sloppy как 
-\backslash
- s l o p p y, в результате была ошибка.
- Поэтому отнеситесь к этому с умом.
+VSTUSetDocumentNumbersPrefix{А.}
 \end_layout
 
 \begin_layout Standard
-Всё, пишем свой документ в простом текстовом виде.
- Все отступы, шрифты и прочие штуки LyX расставит за вас.
- Для того, чтобы отрендерить документ в PDF, можно нажать на кнопку в глазами
- слева наверху, либо нажать Ctrl+R.
+
+\family typewriter
+\size scriptsize
+...
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size scriptsize
+
+\backslash
+VSTUInitializeTZ
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Вместо троеточия идут прежние команды.
+ Верхняя команда заставит рисунки и таблицы иметь номера вида "А.xx", а последняя
+ добавит титульные листы технического задания.
+ На этом настройка документа закончена.
+ Можно приступать к главной части работы, не отвлекаясь более на его оформление.
+ Все отступы, шрифты и прочие штуки LyX/LaTeX расставят за вас.
+ Для того, чтобы экспортировать документ в PDF, можно нажать на кнопку в
+ глазами слева наверху, либо комбинацию клавиш Ctrl+R.
 \end_layout
 
 \begin_layout Section
-КРАТКОЕ РУКОВОДСТВО
+Как работать в LyX?
 \end_layout
 
 \begin_layout Standard
-Во-первых, как делить документ на секции.
- Для этого нужно использовать комбобокс наверху слева, выбирая соответствующую
- структурную единицу.
- Там есть разделы, подразделы, подподразделы, перечисления, аннотация, библиогра
-фия и списки.
- Для аннотации создана отдельная структурная единица, поскольку она не включаетс
-я в содержание.
- Введение и заключение оформляются как ненумерованные разделы.
- Части не должны использоваться.
- Начало документа должно выглядеть примерно так:
+Вообще, вместе с LyX идет отличная документация, но, тем не менее, здесь
+ я кратко опишу основные действия, необходимые для создания документа.
+\end_layout
+
+\begin_layout Itemize
+Деление документа на секции.
+ Для создания секций нужно использовать combobox наверху слева, в нем есть
+ аннотация, главы, разделы, подразделы, перечисления, приложения (обычные
+ и в виде отдельного документа) и так далее.
+\end_layout
+
+\begin_layout Itemize
+Получать количество страниц, рисунков и так далее можно с помощью Ctrl+L
+ вставок.
+ Вот наиболее часто употребимые:
 \end_layout
 
 \begin_layout Standard
-\noindent
-\align center
-\begin_inset Graphics
-	filename annotation.png
-	lyxscale 60
-	scale 60
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%
+\end_layout
 
 \end_inset
 
@@ -449,78 +999,109 @@ sloppy как
 \end_layout
 
 \begin_layout Standard
-Как видно, получать количество страниц, рисунков и т.
-\begin_inset space ~
+
+\family typewriter
+\size scriptsize
+
+\backslash
+VSTUTitle % название работы на русском языке
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size scriptsize
+
+\backslash
+VSTUTitleEng % название работы на английском языке
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size scriptsize
+
+\backslash
+totalpages % количество страниц
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size scriptsize
+
+\backslash
+totaltables % количество таблиц
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size scriptsize
+
+\backslash
+totalfigures % количество рисунков
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size scriptsize
+
+\backslash
+totalappendices % количество приложений
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size scriptsize
+
+\backslash
+ttl % требуется добавлять между двумя подряд идущими заголовками
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%
+\end_layout
+
 \end_inset
 
-д.
- можно с помощью Ctrl+L вставок.
- В английском варианте после них нужно ставить неразрывный пробел (Ctrl+Space).
+
 \end_layout
 
-\begin_layout Standard
-Новую страницу можно начать путем нажатия Вставка -> Форматирование -> Новая
- страница.
+\begin_layout Itemize
+Новую страницу можно начать путем нажатия Вставка --> Форматирование -->
+ Новая страница.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 Содержание делается путем вставки разрыва страницы, вставки оглавления,
  и еще одного разрыва страницы.
- Пункт меню для содержания: Вставка -> Списки/содержание -> Содержание.
+ Пункт меню для содержания: Вставка --> Списки/содержание --> Содержание.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 Рисунки добавляются так.
- Сначала добавляется Вставка -> Плавающий объект -> Рисунок, пишется его
- имя, а затем ниже имени делается Вставка -> Графика...
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align center
-\begin_inset Graphics
-	filename figure.png
-	lyxscale 60
-	scale 60
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Чтобы рисунки были по центру, нужно правой кнопкой нажать на абзац с рисунком,
+ Сначала добавляется Вставка --> Плавающий объект --> Рисунок, пишется его
+ имя, а затем ниже имени делается Вставка --> Графика...
+ Чтобы рисунки были по центру, нужно правой кнопкой нажать на абзац с рисунком,
  выбрать в меню его свойства, и там задать выравнивание по центру.
 \end_layout
 
-\begin_layout Standard
-Таблицы добавляются без использования плавающих объектов: Вставка -> Таблица.
+\begin_layout Itemize
+Таблицы добавляются без использования плавающих объектов: Вставка --> Таблица.
  Для задания имени таблицы нужно нажать правой кнопкой на ее первой(!) строке,
- More -> Settings -> Длинная таблица и поставить галочку напротив 
-\begin_inset Quotes eld
-\end_inset
-
-Подпись
-\begin_inset Quotes erd
-\end_inset
-
-.
+ More --> Settings --> Длинная таблица, затем поставить галочки напротив
+ "Использовать длинную таблицу", "Шапка", "Первая шапка" и "Подпись".
 \end_layout
 
-\begin_layout Standard
-\noindent
-\align center
-\begin_inset Graphics
-	filename table.png
-	lyxscale 60
-	scale 50
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
+\begin_layout Itemize
 Для тех невезучих людей, кому требуется альбомная ориентация (например,
  таблиц), есть решение.
  В свойствах документа, в преамбулу, нужно дописать строчку 
@@ -534,9 +1115,9 @@ begin{landscape} и
 end{landscape} соответственно.
 \end_layout
 
-\begin_layout Standard
-К рисункам и таблицам можно (нужно!) проставлять метки путем Вставка ->
- Метка, а затем ссылаться на них Вставка -> Перекрестная ссылка.
+\begin_layout Itemize
+К рисункам и таблицам можно (нужно!) проставлять метки путем Вставка -->
+ Метка, а затем ссылаться на них Вставка --> Перекрестная ссылка.
  Таким образом всё будет автоматически перенумеровано в случае вставки новых
  рисунков и таблиц.
  Аналогично со списком использованной литературы.
@@ -545,21 +1126,144 @@ end{landscape} соответственно.
 \end_layout
 
 \begin_layout Standard
-Напоследок два важных момента, которые не удалось полностью автоматизировать:
+Вот несколько скриншотов процесса редактирования документа.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename annotation.png
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Начало документа, аннотация и содержание
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename figure.png
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Плавающий объект-рисунок, имеющий метку figure-diagram-classes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename table.png
+	lyxscale 60
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Таблица, имеющая метку table-ambiguities
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Напоследок пара мелких, но важных моментов, которые не удалось полностью
+ автоматизировать:
 \end_layout
 
 \begin_layout Itemize
-если подряд идут два заголовка, между ними нужно нажать Ctrl+L и написать
+Если подряд идут два заголовка, между ними нужно нажать Ctrl+L и написать
  
 \backslash
-ttl --- это сделает расстояние между ними меньше, как нужно по ГОСТу;
+ttl --- это сделает расстояние между ними меньше, как нужно по ГОСТу.
 \end_layout
 
 \begin_layout Itemize
-после последнего пункта перечислений может не быть абзацного отступа, это
+После последнего пункта перечислений может не быть абзацного отступа, это
  лечится добавлением пустой вставки Ctrl+L.
- После пункта, который вы сейчас читаете, эта вставка намеренно не добавлена,
- поэтому следующая строка не имеет абзацного отступа :)
+ После перечисления, которое вы сейчас читаете, эта вставка намеренно не
+ добавлена, поэтому следующая за ним строка не имеет абзацного отступа :)
+\end_layout
+
+\begin_layout Itemize
+Ссылки на приложения среди текста придется писать руками, т.е.
+ метки к приложениям проставлять нельзя.
+\end_layout
+
+\begin_layout Itemize
+Иногда может понадобиться использовать неразрывные пробелы --- комбинация
+ клавиш Ctrl+Space.
 \end_layout
 
 \begin_layout Standard
@@ -567,11 +1271,11 @@ ttl --- это сделает расстояние между ними мень�
 \end_layout
 
 \begin_layout Standard
-Алексей --- mcleree@gmail.com
+Алексей Медников --- mcleree@gmail.com
 \end_layout
 
 \begin_layout Standard
-Валерий --- vostreltsov@gmail.com 
+Валерий Стрельцов --- vostreltsov@gmail.com
 \end_layout
 
 \end_body
