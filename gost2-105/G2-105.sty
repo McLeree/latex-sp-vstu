@@ -307,8 +307,8 @@
 % Расстояние между заголовком и текстом
 \newlength\GostAfterTitleSkip    \setlength\GostAfterTitleSkip    {15mm}
 \newlength\GostBetweenTitleSkip  \setlength\GostBetweenTitleSkip  {8mm}
-\newlength\GostBeforTitleSkip    \setlength\GostBeforTitleSkip    {15mm}
-\newlength\GostBeforNoTitleSkip  \setlength\GostBeforNoTitleSkip  {1.0ex}
+\newlength\GostBeforeTitleSkip   \setlength\GostBeforeTitleSkip    {15mm}
+\newlength\GostBeforeNoTitleSkip \setlength\GostBeforeNoTitleSkip  {1.0ex}
 \newlength\GostHTitleSpace       \setlength\GostHTitleSpace       {2mm}
 \newlength\GostTitleIndent       \setlength\GostTitleIndent       {\parindent}
 \newlength\Gost@ChapterIndent    \setlength\Gost@ChapterIndent    {\GostTitleIndent}
@@ -340,7 +340,7 @@
 \renewcommand{\thesection}{\thechapter.\@arabic\c@section}
 \newcommand{\section}{%
   \@startsection{section}{1}%
-  {\GostTitleIndent}{\GostBeforTitleSkip}{\GostAfterTitleSkip}%
+  {\GostTitleIndent}{\GostBeforeTitleSkip}{\GostAfterTitleSkip}%
   {\GostTitleStyle}%
 }
 \newcommand{\asubpart}[2]{\section{#2\label{#1}}}
@@ -351,7 +351,7 @@
 
 \newcommand{\subsection}{%
   \@startsection{subsection}{2}%
-  {\GostTitleIndent}{\GostBeforTitleSkip}{\GostAfterTitleSkip}%
+  {\GostTitleIndent}{\GostBeforeTitleSkip}{\GostAfterTitleSkip}%
   {\GostTitleStyle}%
 }
 \newcommand{\apara}[2]{\subsection{#2\label{#1}}}
@@ -362,7 +362,7 @@
 
 \newcommand{\subsubsection}{%
   \@startsection{subsubsection}{4}%
-  {\GostTitleIndent}{\GostBeforTitleSkip}{\GostAfterTitleSkip}%
+  {\GostTitleIndent}{\GostBeforeTitleSkip}{\GostAfterTitleSkip}%
   {\GostTitleStyle}%
 }
 \newcommand{\asubpara}[2]{\subsubsection{#2\label{#1}}}
