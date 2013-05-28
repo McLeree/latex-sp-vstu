@@ -488,10 +488,17 @@
 \LTright = \fill
 \def\LT@makecaption#1#2#3{%
   \LT@mcol\LT@cols l{\hbox to\z@{\parbox[t]\LTcapwidth{%
+    % Здесь происходит очередной грязный хак для подписи "Продолжение таблицы X"
+    % Чтобы она выводилась на последующих страницах, необходимо после \endfirsthead указать \caption{\space}\endhead
+    \ifx#3\space
+      \sbox\@tempboxa{#1{}Продолжение таблицы \@arabic\c@table}%
+    \else
       \sbox\@tempboxa{#1{#2\captionlabeldelim{} }#3}%
-          {\box\@tempboxa\hfil}%
-          \endgraf}%
-    \hss}}}
+    \fi
+    {\box\@tempboxa\hfil}%
+  \endgraf}%
+  \hss}}
+}
 
 % Формулы
 
