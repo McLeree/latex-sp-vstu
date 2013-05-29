@@ -54,7 +54,7 @@
 }
 
 % Исходные данные для выполнения работы
-\newcommand{\VSTUInitialData}{задание,\ выданное\ научным\ руководителем\ с\ кафедры\ ПОАС,\ утвержденное\ приказом\ ректора}
+\newcommand{\VSTUInitialData}{задание, выданное научным руководителем кафедры ПОАС, утвержденное приказом ректора университета}
 \newcommand{\VSTUInitialDataUL}{\uline{\VSTUInitialData\hfill}}
 %Сеттеры
 \newcommand{\VSTUSetInitialData}[1]{
@@ -129,13 +129,13 @@
 }
 
 % Получение строки приказа из параметров выше
-\newcommand{\VSTUOrder}{\No~\VSTUOrderNumber\ от\ \VSTUOrderDate~\VSTUOrderMonth~\VSTUOrderYear~года}
+\newcommand{\VSTUOrder}{\No~\VSTUOrderNumber от \VSTUOrderDate~\VSTUOrderMonth~\VSTUOrderYear~года}
 
 % Факультет, кафедра и направление
-\newcommand{\VSTUFaculty}{Электроники\ и\ вычислительной\ техники}
-\newcommand{\VSTUDepartment}{Программное\ обеспечение\ автоматизированных\ систем}
+\newcommand{\VSTUFaculty}{Электроники и вычислительной техники}
+\newcommand{\VSTUDepartment}{Программное обеспечение автоматизированных систем}
 \newcommand{\VSTUDepartmentCode}{10.19}
-\newcommand{\VSTUDirection}{230100\ Информатика\ и\ вычислительная\ техника}
+\newcommand{\VSTUDirection}{230100 Информатика и вычислительная техника}
 % Сеттеры
 \newcommand{\VSTUSetFaculty}[1]{
   \renewcommand{\VSTUFaculty}{#1}
@@ -151,10 +151,10 @@
 }
 
 % ФИО заведующего кафедрой, степень\должность
-\newcommand{\VSTUHeadOfDepartmentFullName}{Фамилия\ Имя\ Отчество}
-\newcommand{\VSTUHeadOfDepartmentName}{И.\ О.\ Фамилия}
-\newcommand{\VSTUHeadOfDepartmentDegree}{кто-то,\ какая-то\ каф.}
-\newcommand{\VSTUHeadOfDepartmentPost}{зав.\ каф.\ XXX}
+\newcommand{\VSTUHeadOfDepartmentFullName}{Фамилия Имя Отчество}
+\newcommand{\VSTUHeadOfDepartmentName}{И. О. Фамилия}
+\newcommand{\VSTUHeadOfDepartmentDegree}{звание}
+\newcommand{\VSTUHeadOfDepartmentPost}{должность}
 % Сеттеры
 \newcommand{\VSTUSetHeadOfDepartment}[4]{
   \renewcommand{\VSTUHeadOfDepartmentFullName}{#4}
@@ -164,30 +164,34 @@
 }
 
 % ФИО руководителя, степень\должность
-\newcommand{\VSTUDirectorFullName}{Фамилия\ Имя\ Отчество}
-\newcommand{\VSTUDirectorName}{И.\ О.\ Фамилия}
-\newcommand{\VSTUDirectorDegree}{кто-то,\ какая-то\ каф.}
+\newcommand{\VSTUDirectorFullName}{Фамилия Имя Отчество}
+\newcommand{\VSTUDirectorName}{И. О. Фамилия}
+\newcommand{\VSTUDirectorDegree}{звание}
+\newcommand{\VSTUDirectorPost}{должность}
 % Сеттеры
-\newcommand{\VSTUSetDirector}[3]{
-  \renewcommand{\VSTUDirectorFullName}{#3}
-  \renewcommand{\VSTUDirectorName}{#2}
-  \renewcommand{\VSTUDirectorDegree}{#1}
+\newcommand{\VSTUSetDirector}[4]{
+  \renewcommand{\VSTUDirectorFullName}{#4}
+  \renewcommand{\VSTUDirectorName}{#3}
+  \renewcommand{\VSTUDirectorDegree}{#2}
+  \renewcommand{\VSTUDirectorPost}{#1}
 }
 
 % ФИО нормоконтролера, степень\должность
-\newcommand{\VSTUStandardsAdviserFullName}{Фамилия\ Имя\ Отчество}
-\newcommand{\VSTUStandardsAdviserName}{И.\ О.\ Фамилия}
-\newcommand{\VSTUStandardsAdviserDegree}{кто-то,\ какая-то\ каф.}
+\newcommand{\VSTUStandardsAdviserFullName}{Фамилия Имя Отчество}
+\newcommand{\VSTUStandardsAdviserName}{И. О. Фамилия}
+\newcommand{\VSTUStandardsAdviserDegree}{звание}
+\newcommand{\VSTUStandardsAdviserPost}{звание}
 % Сеттеры
-\newcommand{\VSTUSetStandardsAdviser}[3]{
-  \renewcommand{\VSTUStandardsAdviserFullName}{#3}
-  \renewcommand{\VSTUStandardsAdviserName}{#2}
-  \renewcommand{\VSTUStandardsAdviserDegree}{#1}
+\newcommand{\VSTUSetStandardsAdviser}[4]{
+  \renewcommand{\VSTUStandardsAdviserFullName}{#4}
+  \renewcommand{\VSTUStandardsAdviserName}{#3}
+  \renewcommand{\VSTUStandardsAdviserDegree}{#2}
+  \renewcommand{\VSTUStandardsAdviserPost}{#1}
 }
 
 % ФИО студента, группа
-\newcommand{\VSTUStudentFullName}{Фамилия\ Имя\ Отчество}
-\newcommand{\VSTUStudentName}{И.\ О.\ Фамилия}
+\newcommand{\VSTUStudentFullName}{Фамилия Имя Отчество}
+\newcommand{\VSTUStudentName}{И. О. Фамилия}
 \newcommand{\VSTUStudentGroup}{ГРП--000}
 % Сеттеры
 \newcommand{\VSTUSetStudent}[3]{

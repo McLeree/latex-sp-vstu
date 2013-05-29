@@ -816,9 +816,9 @@ VSTUSetHeadOfDepartment{Зав.
 \size scriptsize
 
 \backslash
-VSTUSetDirector{к.т.н., доц.
+VSTUSetDirector{доц.
  каф.
- ПОАС}{О.
+ ПОАС}{к.т.н.}{О.
  А.
  Сычев}{Сычев Олег Александрович}
 \end_layout
@@ -831,7 +831,7 @@ VSTUSetDirector{к.т.н., доц.
 \backslash
 VSTUSetStandardsAdviser{асс.
  каф.
- ПОАС}{О.
+ ПОАС}{к.т.н.}{О.
  Н.
  Ляпина}{Ляпина Ольга Николаевна}
 \end_layout

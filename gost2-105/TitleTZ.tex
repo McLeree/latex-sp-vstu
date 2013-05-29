@@ -2,7 +2,7 @@
 \RequirePackage{ulem}
 \newcommand{\VSTUInitializeTZ} {
 \renewcommand{\VSTUDocumentCodeSuffix}{91}
-\newcommand{\VSTULUCode}{А.В.00001-01~\VSTUDocumentCodeSuffix~01-1}
+\newcommand{\VSTULUCode}{А.В.00001--01~\VSTUDocumentCodeSuffix~01--1}
 % Переопределение команды раздела
 \renewcommand\chapter{%
   \vspace{\GostBeforeTitleSkip}
@@ -61,15 +61,15 @@
 \vspace{8mm}
 ТЕХНИЧЕСКОЕ ЗАДАНИЕ\\
 ЛИСТ УТВЕРЖДЕНИЯ\\
-\VSTUDocumentCode{}\\
-\VSTULUCode-ЛУ\\
+\VSTUDocumentCode\\
+\VSTULUCode--ЛУ\\
 Листов 1\\
 \vspace{\fill}
 \end{center}
 \begin{flushright}
 \begin{minipage}[c]{15em}
 Научный руководитель\\
-\VSTUDirectorDegree{}\\
+\VSTUDirectorDegree,~\VSTUDirectorPost\\
 \makebox[2cm]{\hrulefill}\VSTUDirectorName\\
 <<\makebox[1.5cm]{\hrulefill}>>\makebox[3.5cm]{\hrulefill}\the\year
 \end{minipage}
@@ -78,7 +78,7 @@
 \begin{flushleft}
 \begin{minipage}[c]{15em}
 Нормоконтролер\\
-\VSTUStandardsAdviserDegree\\
+\VSTUStandardsAdviserPost\\
 \makebox[2cm]{\hrulefill}\VSTUStandardsAdviserName\\
 <<\makebox[1.5cm]{\hrulefill}>>\makebox[3.5cm]{\hrulefill}\the\year
 \end{minipage}
@@ -100,13 +100,13 @@
 \thispagestyle{empty}
 \setcounter{page}{1}
 \parУТВЕРЖДЕНО\\
-\par{\small \VSTULUCode-ЛУ\\}
+\par{\small \VSTULUCode--ЛУ\\}
 \vspace{\fill}
 \begin{center}
 \VSTUTitle\\
 \vspace{8mm}
 ТЕХНИЧЕСКОЕ ЗАДАНИЕ\\
-\VSTUDocumentCode{}\\
+\VSTUDocumentCode\\
 \VSTULUCode\\
 Листов \totalpages\\
 \end{center}

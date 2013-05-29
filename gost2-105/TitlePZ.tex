@@ -37,9 +37,9 @@ $\underset{\text{(фамилия, имя, отчество)}}{\uline{\makebox[8c
 Группа $\underset{\text{(шифр группы)}}{\uline{\makebox[3cm]{\VSTUStudentGroup}}}$\\
 Направление\hfill $\underset{\text{(код по ОКСО, наименование направления, программы)}}{\uline{\makebox[27em]{\VSTUDirection}}}$\\
 \uline{\makebox[\textwidth]{\hfill}}\\
-Руководитель работы $\underset{\text{(подпись и дата подписания)}}{\uline{\makebox[6cm]{\vphantom{\VSTUDirectorName}}}}$
+Руководитель работы $\underset{\text{(подпись и дата подписания)}}{\uline{\makebox[6cm]{\vphantom{\VSTUDirectorDegree~\VSTUDirectorName}}}}$
 \hfill
-$\underset{\text{(инициалы и фамилия)}}{\uline{\makebox[5cm]{\VSTUDirectorName}}}$\\
+$\underset{\text{(инициалы и фамилия)}}{\uline{\makebox[5cm]{\VSTUDirectorDegree~\VSTUDirectorName}}}$\\
 Консультанты по разделам:\\
 $\underset{\text{(краткое наименование раздела)}}{\uline{\makebox[5.2cm]{}}}$
 \hfill
@@ -106,9 +106,9 @@ $\underset{\text{(инициалы, фамилия)}}{\uline{\makebox[6.5cm]{\te
 \VSTUPZGraphics
 }
 \vspace{\fill}
-\noindent Руководитель работы $\underset{\text{(подпись и дата подписания)}}{\uline{\makebox[6cm]{\vphantom{\VSTUDirectorName}}}}$
+\noindent Руководитель работы $\underset{\text{(подпись и дата подписания)}}{\uline{\makebox[6cm]{\vphantom{\VSTUDirectorDegree~\VSTUDirectorName}}}}$
 \hfill
-$\underset{\text{(инициалы и фамилия)}}{\uline{\makebox[5cm]{\VSTUDirectorName}}}$\\
+$\underset{\text{(инициалы и фамилия)}}{\uline{\makebox[5cm]{\VSTUDirectorDegree~\VSTUDirectorName}}}$\\
 Консультанты по разделам:\\
 $\underset{\text{(краткое наименование раздела)}}{\uline{\makebox[5.2cm]{}}}$
 \hfill
@@ -151,7 +151,7 @@ $\underset{\text{(инициалы и фамилия)}}{\uline{\makebox[5cm]{}}}
 \vspace{\fill}
 ПОЯСНИТЕЛЬНАЯ ЗАПИСКА\\
 \vspace{8mm}
-\VSTUDocumentCode{}\\
+\VSTUDocumentCode\\
 \vspace{8mm}
 Листов \totalpages\\
 \vspace{\fill}
@@ -159,7 +159,7 @@ $\underset{\text{(инициалы и фамилия)}}{\uline{\makebox[5cm]{}}}
 \begin{flushright}
 \begin{minipage}[c]{15em}
 Научный руководитель\\
-\VSTUDirectorDegree{}\\
+\VSTUDirectorDegree,~\VSTUDirectorPost\\
 \makebox[2cm]{\hrulefill}\VSTUDirectorName\\
 <<\makebox[1.5cm]{\hrulefill}>>\makebox[3.5cm]{\hrulefill}\the\year
 \end{minipage}
@@ -168,7 +168,7 @@ $\underset{\text{(инициалы и фамилия)}}{\uline{\makebox[5cm]{}}}
 \begin{flushleft}
 \begin{minipage}[c]{15em}
 Нормоконтролер\\
-\VSTUStandardsAdviserDegree\\
+\VSTUStandardsAdviserPost\\
 \makebox[2cm]{\hrulefill}\VSTUStandardsAdviserName\\
 <<\makebox[1.5cm]{\hrulefill}>>\makebox[3.5cm]{\hrulefill}\the\year
 \end{minipage}
