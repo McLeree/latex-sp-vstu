@@ -501,30 +501,19 @@
 }
 
 % Для стирания последней горизонтальной линии при переносе таблицы
+\usepackage{booktabs}
+\usepackage{colortbl}
 
-% Свой цикл с помощью if!
-\usepackage{ifthen}
-\newcommand{\forloop}[5][1]{%
-  \setcounter{#2}{#3}%
-  \ifthenelse{#4}{%
-    #5%
-    \addtocounter{#2}{#1}%
-    \forloop[#1]{#2}{\value{#2}}{#4}{#5}%
-  }%
-  % Else
-  {}
-}%
-
-% Невероятной грязности хак для того, чтобы заполнить footer
 \let\oldendhead\endhead
 \renewcommand{\endhead}{
-  \oldendhead
-  \newcounter{tmpfor}
-  ~
-  \forloop{tmpfor}{1}{\value{tmpfor} < \LT@cols}{ & ~ }\\
-  \endfoot
-  \hline
-  \endlastfoot
+  \oldendhead%
+  \arrayrulecolor{white}%
+  \addlinespace[-2mm]%
+  \toprule[3mm]%
+  \endfoot%
+  \arrayrulecolor{black}%
+  \hline%
+  \endlastfoot%
 }
 
 % Формулы
