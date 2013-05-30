@@ -311,9 +311,7 @@
 % Расстояние между заголовком и текстом
 \newlength\GostAfterTitleSkip    \setlength\GostAfterTitleSkip    {15mm}
 \newlength\GostBetweenTitleSkip  \setlength\GostBetweenTitleSkip  {8mm}
-\newlength\GostBeforeTitleSkip   \setlength\GostBeforeTitleSkip    {15mm}
-\newlength\GostBeforeNoTitleSkip \setlength\GostBeforeNoTitleSkip  {1.0ex}
-\newlength\GostHTitleSpace       \setlength\GostHTitleSpace       {2mm}
+\newlength\GostBeforeTitleSkip   \setlength\GostBeforeTitleSkip   {15mm}
 \newlength\GostTitleIndent       \setlength\GostTitleIndent       {\parindent}
 \newlength\Gost@ChapterIndent    \setlength\Gost@ChapterIndent    {\GostTitleIndent}
 \newlength\Gost@MainChapterIndent\setlength\Gost@MainChapterIndent{\parindent}
@@ -490,15 +488,18 @@
 \LTpost = 24pt
 \LTleft = \z@
 \LTright = \fill
+\LTcapwidth = \linewidth
 \def\LT@makecaption#1#2#3{%
   \LT@mcol\LT@cols l{\hbox to\z@{\parbox[t]\LTcapwidth{%
     % Здесь происходит очередной грязный хак для подписи "Продолжение таблицы X"
     % Чтобы она выводилась на последующих страницах, необходимо после \endfirsthead указать \caption{\space}\endhead
     \ifx#3\space
-      \sbox\@tempboxa{#1{}Продолжение таблицы \@arabic\c@table}%
+      #1{}Продолжение таблицы \@arabic\c@table%
     \else
-      \sbox\@tempboxa{#1{#2\captionlabeldelim{} }#3}%
+      #1{#2\captionlabeldelim{} }#3%
+      \vspace{\lineskip}%
     \fi
+    \vspace{\lineskip}%
     {\box\@tempboxa\hfil}%
   \endgraf}%
   \hss}}
