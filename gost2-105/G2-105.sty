@@ -640,24 +640,20 @@
 \newenvironment{thebibliography}[1]{
 \renewcommand{\bibname}{Список использованных источников}
   \chapter*{\bibname}\ttl\addcontentsline{toc}{chapter}{\bibname}%
-  \list{\@biblabel{\@arabic\c@enumiv}}%
-       {\settowidth\labelwidth{\@biblabel{#1}}%
-         \leftmargin\labelwidth
-         \advance\leftmargin\labelsep
-         \@openbib@code
-         \usecounter{enumiv}%
-         \let\p@enumiv\@empty
-         \renewcommand{\theenumiv}{\@arabic\c@enumiv}}%
-  \sloppy\clubpenalty4000\widowpenalty4000%
-  \sfcode`\.\@m
-}{
+  \list{\@biblabel{\@arabic\c@enumiv}}{%
+    \@openbib@code%
+    \usecounter{enumiv}%
+    \let\p@enumiv\@empty%
+    \renewcommand{\theenumiv}{\@arabic\c@enumiv}%
+  }%
+}
+{
   \setcounter{totalbibs}{\c@enumiv}%
   \def\@noitemerr
   {\@latex@warning{Empty `thebibliography' environment}}%
   \endlist
 }
 \renewcommand{\@biblabel}{}%
-\setlength\bibindent{1.5em}
 
 % Индекс
 \newenvironment{theindex}{
