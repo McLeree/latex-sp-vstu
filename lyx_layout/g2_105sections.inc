@@ -155,7 +155,7 @@ Style Abstract
     CopyStyle             "Раздел"
     Category              FrontMatter
     Margin                Static
-    LatexName             chapter*
+    LatexName             abstract
     LabelType             No_Label
     LabelCounter          ""
     OptionalArgs          0
