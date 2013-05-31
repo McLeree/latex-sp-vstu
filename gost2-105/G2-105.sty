@@ -554,11 +554,8 @@
   % за ним номер рисунка\таблицы внутри приложения.
   \renewcommand{\thefigure}{\VSTUDocumentNumbersPrefix\theappendix.\arabic{figure}}%
   \renewcommand{\thetable}{\VSTUDocumentNumbersPrefix\theappendix.\arabic{table}}%
-  \renewcommand{\theequation}{\VSTUDocumentNumbersPrefix\theappendix.\arabic{equation}}
+  \renewcommand{\theequation}{\VSTUDocumentNumbersPrefix\theappendix.\arabic{equation}}%
 
-  \begin{center}%
-  \appendixname~\theappendix~---~{#1}%
-  \end{center}%
   \addcontentsline{toc}{chapter}{\appendixname~\theappendix~---~{#1}}%
 }
 
@@ -566,6 +563,9 @@
 \newcommand{\appendix}[1]{
   \clearpage
   \appendixcommon{#1}
+  \begin{center}
+  \appendixname~\theappendix~---~{#1}
+  \end{center}
 }
 
 % Приложение в виде отдельного документа
@@ -573,7 +573,14 @@
   \clearpage
   \leavevmode
   \vfill
+  \vfill
   \appendixcommon{#1}
+  \begin{center}
+  \appendixname~\theappendix\\
+  {#1}
+  \end{center}
+  \vfill
+  \vfill
   \vfill
 }
 

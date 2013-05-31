@@ -1,5 +1,6 @@
 \RequirePackage{amsmath}
 \RequirePackage{ulem}
+\input{TitleCommon.tex}
 \newcommand{\VSTUInitializeTZ} {
 \renewcommand{\VSTUDocumentCodeSuffix}{91}
 \newcommand{\VSTULUCode}{А.В.00001--01~\VSTUDocumentCodeSuffix~01--1}
@@ -30,31 +31,70 @@
   % за ним номер рисунка\таблицы внутри приложения.
   \renewcommand{\thefigure}{\theappendix.\arabic{figure}}%
   \renewcommand{\thetable}{\theappendix.\arabic{table}}%
-  \renewcommand{\theequation}{\theappendix.\arabic{equation}}
+  \renewcommand{\theequation}{\theappendix.\arabic{equation}}%
 
-  \begin{center}%
-  \appendixname~\theappendix~---~{##1}%
-  \end{center}%
   \addcontentsline{toc}{chapter}{\appendixname~\theappendix~---~{##1}}%
 }%
 {
 % Титульник ТЗ раз
 \clearpage
 \thispagestyle{empty}
+\addtocounter{page}{-1}
 \begin{center}
-Министерство образования и науки Российской Федерации\\
-Федеральное государственное бюджетное образовательное учреждение высшего профессионального образования\\
-Волгоградский Государственный Технический Университет\\
+\VSTUTitleHeading
 Кафедра <<\VSTUDepartment>>\\
 \end{center}
 \vspace{\fill}
-\hspace{\fill}
-\begin{minipage}[c]{18em}
-Утверждаю\\
-\VSTUHeadOfDepartmentPost\\
-\makebox[2cm]{\hrulefill}\VSTUHeadOfDepartmentDegree~\VSTUHeadOfDepartmentName\\
+\VSTUTitleHeadApproval
+\vspace{8mm}
+\begin{center}
+<<\VSTUTitle>>\\
+\vspace{\fill}
+ТЕХНИЧЕСКОЕ ЗАДАНИЕ\\
+\vspace{8mm}
+\VSTUDocumentCode\\
+\vspace{8mm}
+Листов \totalpages\\
+\vspace{8mm}
+\end{center}
+\begin{flushright}
+\begin{minipage}[c]{15em}
+Научный руководитель\\
+\VSTUDirectorDegree,~\VSTUDirectorPost\\
+\makebox[2cm]{\hrulefill}\VSTUDirectorName\\
 <<\makebox[1.5cm]{\hrulefill}>>\makebox[3.5cm]{\hrulefill}\the\year
 \end{minipage}
+\end{flushright}
+\vspace{8mm}
+\begin{flushleft}
+\begin{minipage}[c]{15em}
+Нормоконтролер\\
+\VSTUStandardsAdviserPost\\
+\makebox[2cm]{\hrulefill}\VSTUStandardsAdviserName\\
+<<\makebox[1.5cm]{\hrulefill}>>\makebox[3.5cm]{\hrulefill}\the\year
+\end{minipage}
+\hfill
+\begin{minipage}[c]{15em}
+Исполнитель\\
+студент~группы~\VSTUStudentGroup\\
+\makebox[2cm]{\hrulefill}\VSTUStudentName\\
+<<\makebox[1.5cm]{\hrulefill}>>\makebox[3.5cm]{\hrulefill}\the\year
+\end{minipage}
+\end{flushleft}
+\vspace{\fill}
+\begin{center}
+Волгоград,~\the\year
+\end{center}
+\newpage
+% Титульник ТЗ два
+\clearpage
+\thispagestyle{empty}
+\begin{center}
+\VSTUTitleHeading
+Кафедра <<\VSTUDepartment>>\\
+\end{center}
+\vspace{\fill}
+\VSTUTitleHeadApproval
 \vspace{8mm}
 \begin{center}
 \VSTUTitle\\
@@ -90,26 +130,6 @@
 <<\makebox[1.5cm]{\hrulefill}>>\makebox[3.5cm]{\hrulefill}\the\year
 \end{minipage}
 \end{flushleft}
-\vspace{\fill}
-\begin{center}
-Волгоград,~\the\year
-\end{center}
-\newpage
-% Титульник ТЗ два
-\clearpage
-\thispagestyle{empty}
-\setcounter{page}{1}
-\parУТВЕРЖДЕНО\\
-\par{\small \VSTULUCode--ЛУ\\}
-\vspace{\fill}
-\begin{center}
-\VSTUTitle\\
-\vspace{8mm}
-ТЕХНИЧЕСКОЕ ЗАДАНИЕ\\
-\VSTUDocumentCode\\
-\VSTULUCode\\
-Листов \totalpages\\
-\end{center}
 \vspace{\fill}
 \begin{center}
 Волгоград,~\the\year
