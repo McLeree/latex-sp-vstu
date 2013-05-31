@@ -24,6 +24,7 @@
 \RequirePackage[T1]{fontenc}
 \RequirePackage{flafter}
 \RequirePackage{setspace}% почему-то приводит в порядок расстояние между строками в подписях оО
+\RequirePackage{ifthen}
 
 % Импорт заголовков для ПЗ и ТЗ
 \input{TitleCW.tex}
@@ -150,6 +151,14 @@
   \renewcommand{\VSTUDirection}{#1}
 }
 
+% Вспомогательные команды для группировки звания, должности и имени
+\newcommand{\VSTUCombineDegreeAndPost}[2]{
+  \ifthenelse{\equal{#1}{}}{#2}{#1,~#2}
+}
+\newcommand{\VSTUCombineDegreeAndName}[2]{
+  \ifthenelse{\equal{#1}{}}{#2}{#1~#2}
+}
+
 % ФИО заведующего кафедрой, степень\должность
 \newcommand{\VSTUHeadOfDepartmentFullName}{Фамилия Имя Отчество}
 \newcommand{\VSTUHeadOfDepartmentName}{И. О. Фамилия}
@@ -168,6 +177,12 @@
 \newcommand{\VSTUDirectorName}{И. О. Фамилия}
 \newcommand{\VSTUDirectorDegree}{звание}
 \newcommand{\VSTUDirectorPost}{должность}
+\newcommand{\VSTUDirectorDegreeAndPost}{
+  \VSTUCombineDegreeAndPost{\VSTUDirectorDegree}{\VSTUDirectorPost}
+}
+\newcommand{\VSTUDirectorDegreeAndName}{
+  \VSTUCombineDegreeAndName{\VSTUDirectorDegree}{\VSTUDirectorName}
+}
 % Сеттеры
 \newcommand{\VSTUSetDirector}[4]{
   \renewcommand{\VSTUDirectorFullName}{#4}
@@ -181,6 +196,12 @@
 \newcommand{\VSTUStandardsAdviserName}{И. О. Фамилия}
 \newcommand{\VSTUStandardsAdviserDegree}{звание}
 \newcommand{\VSTUStandardsAdviserPost}{звание}
+\newcommand{\VSTUStandardsAdviserDegreeAndPost}{
+  \VSTUCombineDegreeAndPost{\VSTUStandardsAdviserDegree}{\VSTUStandardsAdviserPost}
+}
+\newcommand{\VSTUStandardsAdviserDegreeAndName}{
+  \VSTUCombineDegreeAndName{\VSTUStandardsAdviserDegree}{\VSTUStandardsAdviserName}
+}
 % Сеттеры
 \newcommand{\VSTUSetStandardsAdviser}[4]{
   \renewcommand{\VSTUStandardsAdviserFullName}{#4}
@@ -221,6 +242,8 @@
 \newcommand{\VSTUSetSubject}[1]{
     \renewcommand{\VSTUSubject}{#1}
 }
+
+
 
 % Стиль страницы
 \RequirePackage{fancyhdr}
@@ -506,8 +529,8 @@
 }
 
 % Для стирания последней горизонтальной линии при переносе таблицы
-\usepackage{booktabs}
-\usepackage{colortbl}
+\RequirePackage{booktabs}
+\RequirePackage{colortbl}
 
 \let\oldendhead\endhead
 \renewcommand{\endhead}{

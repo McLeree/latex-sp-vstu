@@ -1,15 +1,44 @@
-\newcommand\VSTUTitleHeading{
+\newcommand{\VSTUTitleHeading}{
 Министерство образования и науки Российской Федерации\\
 Федеральное государственное бюджетное образовательное учреждение высшего профессионального образования\\
 Волгоградский государственный технический университет\\
 }
 
-\newcommand\VSTUTitleHeadApproval{
+\newcommand{\VSTUTitleHeadApproval}{
 \begin{minipage}[c]{18em}
 УТВЕРЖДАЮ\\
 \VSTUHeadOfDepartmentPost\\
-$\underset{\text{(подпись)}}{\uline{\makebox[1.5cm]{\vphantom{\VSTUHeadOfDepartmentDegree~\VSTUHeadOfDepartmentName}}}}$ 
+$\underset{\text{(подпись)}}{\uline{\makebox[1.5cm]{\vphantom{\VSTUHeadOfDepartmentDegree~\VSTUHeadOfDepartmentName}}}}$
 $\underset{\text{(инициалы, фамилия)}}{\uline{\makebox[6.5cm]{\text{\VSTUHeadOfDepartmentDegree~\VSTUHeadOfDepartmentName}}}}$\\
 <<\makebox[1.5cm]{\hrulefill}>>\makebox[3.5cm]{\hrulefill}\the\year\\
 \end{minipage}
 }
+
+\newcommand{\VSTUTitleDirector}{
+\begin{minipage}[c]{15em}
+Научный руководитель\\
+\VSTUDirectorDegreeAndPost\\
+\makebox[2cm]{\hrulefill}\VSTUDirectorName\\
+<<\makebox[1.5cm]{\hrulefill}>>\makebox[3.5cm]{\hrulefill}\the\year
+\end{minipage}
+}
+
+\newcommand{\VSTUTitleStandardsAdviser}{
+\begin{minipage}[c]{15em}
+Нормоконтролер\\
+\VSTUStandardsAdviserDegreeAndPost\\
+\makebox[2cm]{\hrulefill}\VSTUStandardsAdviserName\\
+<<\makebox[1.5cm]{\hrulefill}>>\makebox[3.5cm]{\hrulefill}\the\year
+\end{minipage}
+}
+
+
+\newcommand{\VSTUTitleImplementer}{
+\begin{minipage}[c]{15em}
+Исполнитель\\
+студент~группы~\VSTUStudentGroup\\
+\makebox[2cm]{\hrulefill}\VSTUStudentName\\
+<<\makebox[1.5cm]{\hrulefill}>>\makebox[3.5cm]{\hrulefill}\the\year
+\end{minipage}
+}
+

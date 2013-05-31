@@ -27,9 +27,9 @@ $\underset{\text{(фамилия, имя, отчество)}}{\uline{\makebox[8c
 Группа $\underset{\text{(шифр группы)}}{\uline{\makebox[3cm]{\VSTUStudentGroup}}}$\\
 Направление\hfill $\underset{\text{(код по ОКСО, наименование направления, программы)}}{\uline{\makebox[27em]{\VSTUDirection}}}$\\
 \uline{\makebox[\textwidth]{\hfill}}\\
-Руководитель работы $\underset{\text{(подпись и дата подписания)}}{\uline{\makebox[6cm]{\vphantom{\VSTUDirectorDegree~\VSTUDirectorName}}}}$
+Руководитель работы $\underset{\text{(подпись и дата подписания)}}{\uline{\makebox[6cm]{\vphantom{\VSTUDirectorDegreeAndName}}}}$
 \hfill
-$\underset{\text{(инициалы и фамилия)}}{\uline{\makebox[5cm]{\VSTUDirectorDegree~\VSTUDirectorName}}}$\\
+$\underset{\text{(инициалы и фамилия)}}{\uline{\makebox[5cm]{\VSTUDirectorDegreeAndName}}}$\\
 Консультанты по разделам:\\
 $\underset{\text{(краткое наименование раздела)}}{\uline{\makebox[5.2cm]{}}}$
 \hfill
@@ -47,9 +47,9 @@ $\underset{\text{(подпись и дата подписания)}}{\uline{\mak
 \hfill
 $\underset{\text{(инициалы и фамилия)}}{\uline{\makebox[5cm]{}}}$\\
 \vspace{\fill}\\
-Нормоконтролер\hfill $\underset{\text{(подпись и дата подписания)}}{\uline{\makebox[6cm]{\vphantom{\VSTUStandardsAdviserName}}}}$
+Нормоконтролер\hfill $\underset{\text{(подпись и дата подписания)}}{\uline{\makebox[6cm]{\vphantom{\VSTUStandardsAdviserDegreeAndName}}}}$
 \hfill
-$\underset{\text{(инициалы и фамилия)}}{\uline{\makebox[5cm]{\VSTUStandardsAdviserName}}}$\\
+$\underset{\text{(инициалы и фамилия)}}{\uline{\makebox[5cm]{\VSTUStandardsAdviserDegreeAndName}}}$\\
 \vspace{\fill}
 \begin{center}
 Волгоград,~\the\year
@@ -88,9 +88,9 @@ $\underset{\text{(инициалы и фамилия)}}{\uline{\makebox[5cm]{\VS
 \VSTUPZGraphics
 }
 \vspace{\fill}
-\noindent Руководитель работы $\underset{\text{(подпись и дата подписания)}}{\uline{\makebox[6cm]{\vphantom{\VSTUDirectorDegree~\VSTUDirectorName}}}}$
+\noindent Руководитель работы $\underset{\text{(подпись и дата подписания)}}{\uline{\makebox[6cm]{\vphantom{\VSTUDirectorDegreeAndName}}}}$
 \hfill
-$\underset{\text{(инициалы и фамилия)}}{\uline{\makebox[5cm]{\VSTUDirectorDegree~\VSTUDirectorName}}}$\\
+$\underset{\text{(инициалы и фамилия)}}{\uline{\makebox[5cm]{\VSTUDirectorDegreeAndName}}}$\\
 Консультанты по разделам:\\
 $\underset{\text{(краткое наименование раздела)}}{\uline{\makebox[5.2cm]{}}}$
 \hfill
@@ -130,28 +130,13 @@ $\underset{\text{(инициалы и фамилия)}}{\uline{\makebox[5cm]{}}}
 \vspace{\fill}
 \end{center}
 \begin{flushright}
-\begin{minipage}[c]{15em}
-Научный руководитель\\
-\VSTUDirectorDegree,~\VSTUDirectorPost\\
-\makebox[2cm]{\hrulefill}\VSTUDirectorName\\
-<<\makebox[1.5cm]{\hrulefill}>>\makebox[3.5cm]{\hrulefill}\the\year
-\end{minipage}
+\VSTUTitleDirector
 \end{flushright}
 \vspace{8mm}
 \begin{flushleft}
-\begin{minipage}[c]{15em}
-Нормоконтролер\\
-\VSTUStandardsAdviserPost\\
-\makebox[2cm]{\hrulefill}\VSTUStandardsAdviserName\\
-<<\makebox[1.5cm]{\hrulefill}>>\makebox[3.5cm]{\hrulefill}\the\year
-\end{minipage}
+\VSTUTitleStandardsAdviser
 \hfill
-\begin{minipage}[c]{15em}
-Исполнитель\\
-студент~группы~\VSTUStudentGroup\\
-\makebox[2cm]{\hrulefill}\VSTUStudentName\\
-<<\makebox[1.5cm]{\hrulefill}>>\makebox[3.5cm]{\hrulefill}\the\year
-\end{minipage}
+\VSTUTitleImplementer
 \end{flushleft}
 \vspace{\fill}
 \begin{center}
