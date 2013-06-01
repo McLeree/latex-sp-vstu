@@ -26,21 +26,14 @@ Style "Раздел"
     EndFont
 End
 
-Style Section*
+Style "Раздел*"
     CopyStyle             "Раздел"
     Category              Unnumbered
     Margin                Static
-    LatexName             ESKDstarsection
+    LatexName             starchapter
     LabelType             No_Label
     LabelCounter          ""
     OptionalArgs          0
-
-    Preamble
-        \newcommand{\ESKDstarsection}[1]{
-            \addcontentsline{toc}{section}{#1}
-            \section*{#1}
-        }
-    EndPreamble
 End
 
 Style "Подраздел"
@@ -55,6 +48,16 @@ Style "Подраздел"
       Series              Bold
       Size                Large
     EndFont
+End
+
+Style "Подраздел*"
+    CopyStyle             "Подраздел"
+    Category              Unnumbered
+    Margin                Static
+    LatexName             starsection
+    LabelType             No_Label
+    LabelCounter          ""
+    OptionalArgs          0
 End
 
 Style "Пункт"
@@ -80,6 +83,16 @@ Style "Пункт"
     AlignPossible         Block, Left
 End
 
+Style "Пункт*"
+    CopyStyle             "Пункт"
+    Category              Unnumbered
+    Margin                Static
+    LatexName             starsubsection
+    LabelType             No_Label
+    LabelCounter          ""
+    OptionalArgs          0
+End
+
 Style "Подпункт"
     Category              "Раздел"
     Margin                Dynamic
@@ -103,8 +116,18 @@ Style "Подпункт"
     AlignPossible         Block, Left
 End
 
+Style "Подпункт*"
+    CopyStyle             "Подпункт"
+    Category              Unnumbered
+    Margin                Static
+    LatexName             starsubsubsection
+    LabelType             No_Label
+    LabelCounter          ""
+    OptionalArgs          0
+End
+
 Style "Приложение"
-    Category              "Раздел"
+    Category              BackMatter
     Margin                Dynamic
     LabelType             Static
     LabelCounter          appendix
@@ -128,7 +151,7 @@ Style "Приложение"
 End
 
 Style "Приложение (отдельный документ)"
-    Category              "Раздел"
+    Category              BackMatter
     Margin                Dynamic
     LabelType             Static
     LabelCounter          appendix

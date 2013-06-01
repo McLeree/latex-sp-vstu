@@ -34,7 +34,7 @@
 % Префикс, стоящий перед номерами рисунков и таблиц
 \newcommand{\VSTUDocumentNumbersPrefix}{}
 % Сеттеры
-\newcommand{\VSTUSetDocumentNumbersPrefix}[1]{
+\newcommand*{\VSTUSetDocumentNumbersPrefix}[1]{
   \renewcommand{\VSTUDocumentNumbersPrefix}{#1}
 }
 
@@ -44,13 +44,13 @@
 \newcommand{\VSTUDocumentTypeDative}{выпускной работе бакалавра}   % в дательном падаже
 \newcommand{\VSTUDocumentTypeGenitive}{выпускную работу бакалавра} % в родительном падеже
 % Сеттеры
-\newcommand{\VSTUSetDocumentCode}[1]{
+\newcommand*{\VSTUSetDocumentCode}[1]{
   \renewcommand{\VSTUDocumentCode}{#1-\VSTUDocumentCodeSuffix}
 }
-\newcommand{\VSTUSetDocumentTypeDative}[1]{
+\newcommand*{\VSTUSetDocumentTypeDative}[1]{
   \renewcommand{\VSTUDocumentTypeDative}{#1}
 }
-\newcommand{\VSTUSetDocumentTypeGenitive}[1]{
+\newcommand*{\VSTUSetDocumentTypeGenitive}[1]{
   \renewcommand{\VSTUDocumentTypeGenitive}{#1}
 }
 
@@ -58,13 +58,13 @@
 \newcommand{\VSTUInitialData}{задание, выданное научным руководителем кафедры ПОАС, утвержденное приказом ректора университета}
 \newcommand{\VSTUInitialDataUL}{\uline{\VSTUInitialData\hfill}}
 %Сеттеры
-\newcommand{\VSTUSetInitialData}[1]{
+\newcommand*{\VSTUSetInitialData}[1]{
   \renewcommand{\VSTUInitialData}{#1}
   \renewcommand{\VSTUInitialDataUL}{\uline{#1\hfill}}
 }
 
 % Содержание основной части пояснительной записки и перечень графического материала
-\newenvironment{VSTUUnderlinedNumberedList}{%
+\newenvironment*{VSTUUnderlinedNumberedList}{%
   \renewcommand{\theenumi}{\arabic{enumi}}
 
   \setlength\leftmargini{1.5em}
@@ -83,7 +83,7 @@
 }
 {\end{enumerate}}
 
-\newenvironment{VSTUUnderlinedList}{%
+\newenvironment*{VSTUUnderlinedList}{%
   \renewcommand{\labelenumi}{}
   \setlength\leftmargini{0mm}
   \setlength\leftmarginii{0mm}
@@ -109,10 +109,10 @@
   \end{VSTUUnderlinedNumberedList}
 }
 %Сеттеры
-\newcommand{\VSTUSetPZContents}[1]{
+\newcommand*{\VSTUSetPZContents}[1]{
   \renewcommand{\VSTUPZContents}{#1}
 }
-\newcommand{\VSTUSetPZGraphics}[1]{
+\newcommand*{\VSTUSetPZGraphics}[1]{
   \renewcommand{\VSTUPZGraphics}{#1}
 }
 
@@ -122,7 +122,7 @@
 \newcommand{\VSTUOrderYear}{2013}
 \newcommand{\VSTUOrderNumber}{1000--ст}
 % Сеттеры
-\newcommand{\VSTUSetOrder}[4]{
+\newcommand*{\VSTUSetOrder}[4]{
   \renewcommand{\VSTUOrderYear}{#4}
   \renewcommand{\VSTUOrderMonth}{#3}
   \renewcommand{\VSTUOrderDate}{#2}
@@ -130,7 +130,7 @@
 }
 
 % Получение строки приказа из параметров выше
-\newcommand{\VSTUOrder}{\No~\VSTUOrderNumber от \VSTUOrderDate~\VSTUOrderMonth~\VSTUOrderYear~года}
+\newcommand{\VSTUOrder}{\No~\VSTUOrderNumber\ от\ \VSTUOrderDate~\VSTUOrderMonth~\VSTUOrderYear~года}
 
 % Факультет, кафедра и направление
 \newcommand{\VSTUFaculty}{Электроники и вычислительной техники}
@@ -138,16 +138,16 @@
 \newcommand{\VSTUDepartmentCode}{10.19}
 \newcommand{\VSTUDirection}{230100 Информатика и вычислительная техника}
 % Сеттеры
-\newcommand{\VSTUSetFaculty}[1]{
+\newcommand*{\VSTUSetFaculty}[1]{
   \renewcommand{\VSTUFaculty}{#1}
 }
-\newcommand{\VSTUSetDepartment}[1]{
+\newcommand*{\VSTUSetDepartment}[1]{
   \renewcommand{\VSTUDepartment}{#1}
 }
-\newcommand{\VSTUSetDepartmentCode}[1]{
+\newcommand*{\VSTUSetDepartmentCode}[1]{
   \renewcommand{\VSTUDepartmentCode}{#1}
 }
-\newcommand{\VSTUSetDirection}[1]{
+\newcommand*{\VSTUSetDirection}[1]{
   \renewcommand{\VSTUDirection}{#1}
 }
 
@@ -168,7 +168,7 @@
   \VSTUCombineDegreeAndName{\VSTUHeadOfDepartmentDegree}{\VSTUHeadOfDepartmentName}
 }
 % Сеттеры
-\newcommand{\VSTUSetHeadOfDepartment}[4]{
+\newcommand*{\VSTUSetHeadOfDepartment}[4]{
   \renewcommand{\VSTUHeadOfDepartmentFullName}{#4}
   \renewcommand{\VSTUHeadOfDepartmentName}{#3}
   \renewcommand{\VSTUHeadOfDepartmentDegree}{#2}
@@ -187,7 +187,7 @@
   \VSTUCombineDegreeAndName{\VSTUDirectorDegree}{\VSTUDirectorName}
 }
 % Сеттеры
-\newcommand{\VSTUSetDirector}[4]{
+\newcommand*{\VSTUSetDirector}[4]{
   \renewcommand{\VSTUDirectorFullName}{#4}
   \renewcommand{\VSTUDirectorName}{#3}
   \renewcommand{\VSTUDirectorDegree}{#2}
@@ -206,7 +206,7 @@
   \VSTUCombineDegreeAndName{\VSTUStandardsAdviserDegree}{\VSTUStandardsAdviserName}
 }
 % Сеттеры
-\newcommand{\VSTUSetStandardsAdviser}[4]{
+\newcommand*{\VSTUSetStandardsAdviser}[4]{
   \renewcommand{\VSTUStandardsAdviserFullName}{#4}
   \renewcommand{\VSTUStandardsAdviserName}{#3}
   \renewcommand{\VSTUStandardsAdviserDegree}{#2}
@@ -218,7 +218,7 @@
 \newcommand{\VSTUStudentName}{И. О. Фамилия}
 \newcommand{\VSTUStudentGroup}{ГРП--000}
 % Сеттеры
-\newcommand{\VSTUSetStudent}[3]{
+\newcommand*{\VSTUSetStudent}[3]{
   \renewcommand{\VSTUStudentFullName}{#3}
   \renewcommand{\VSTUStudentName}{#2}
   \renewcommand{\VSTUStudentGroup}{#1}
@@ -230,11 +230,11 @@
 \newcommand{\VSTUTitleEng}{English title}
 \newcommand{\VSTUTitleULEng}{\uline{\VSTUTitleEng\hfill}}
 % Сеттеры
-\newcommand{\VSTUSetTitle}[1]{
+\newcommand*{\VSTUSetTitle}[1]{
     \renewcommand{\VSTUTitle}{#1}
     \renewcommand{\VSTUTitleUL}{\uline{#1\hfill}}
 }
-\newcommand{\VSTUSetTitleEng}[1]{
+\newcommand*{\VSTUSetTitleEng}[1]{
     \renewcommand{\VSTUTitleEng}{#1}
     \renewcommand{\VSTUTitleULEng}{\uline{#1\hfill}}
 }
@@ -242,11 +242,9 @@
 % Название дисциплины (для курсовых работ)
 \newcommand{\VSTUSubject}{Название дисциплины}
 % Сеттеры
-\newcommand{\VSTUSetSubject}[1]{
+\newcommand*{\VSTUSetSubject}[1]{
     \renewcommand{\VSTUSubject}{#1}
 }
-
-
 
 % Стиль страницы
 \RequirePackage{fancyhdr}
@@ -359,6 +357,10 @@
   {\Gost@ChapterIndent}{0mm}{\GostAfterTitleSkip}%
   {\GostTitleStyle\normalfont\Gost@ChapterStyle}%
 }
+\newcommand{\starchapter}[1]{
+  \addcontentsline{toc}{chapter}{#1}
+  \chapter*{#1}
+}
 \newcommand*{\chaptermark}[1]{}
 \newcommand{\apart}[2]{\chapter {#2\label{#1}}}
 \newcommand{\cpart}[2]{\chapter*{#2\label{#1}}}
@@ -371,32 +373,41 @@
   {\GostTitleIndent}{\GostBeforeTitleSkip}{\GostAfterTitleSkip}%
   {\GostTitleStyle}%
 }
+\newcommand{\starsection}[1]{
+  \addcontentsline{toc}{section}{#1}
+  \section*{#1}
+}
 \newcommand{\asubpart}[2]{\section{#2\label{#1}}}
 
 % Пункт
 \newcounter{subsection}[section]
 \renewcommand{\thesubsection}{\thesection.\@arabic\c@subsection}
-
 \newcommand{\subsection}{%
   \@startsection{subsection}{2}%
   {\GostTitleIndent}{\GostBeforeTitleSkip}{\GostAfterTitleSkip}%
   {\GostTitleStyle}%
+}
+\newcommand{\starsubsection}[1]{
+  \addcontentsline{toc}{subsection}{#1}
+  \subsection*{#1}
 }
 \newcommand{\apara}[2]{\subsection{#2\label{#1}}}
 
 % Подпункт
 \newcounter{subsubsection}[subsection]
 \renewcommand{\thesubsubsection}{\thesubsection.\@arabic\c@subsubsection}
-
 \newcommand{\subsubsection}{%
   \@startsection{subsubsection}{4}%
   {\GostTitleIndent}{\GostBeforeTitleSkip}{\GostAfterTitleSkip}%
   {\GostTitleStyle}%
 }
+\newcommand{\starsubsubsection}[1]{
+  \addcontentsline{toc}{subsubsection}{#1}
+  \subsubsection*{#1}
+}
 \newcommand{\asubpara}[2]{\subsubsection{#2\label{#1}}}
 
 % Команда ttl должна вставлятся между двумя заголовками
-\newlength{\NirTitleDropSkip}
 \newcommand{\ttl}{\vspace{\Gost@TitleDropSkip}}
 
 % Нумеруются все заголовки
@@ -679,6 +690,7 @@
 \newdimen\bibindent
 \newenvironment{thebibliography}[1]{
 \renewcommand{\bibname}{Список использованных источников}
+  \clearpage
   \chapter*{\bibname}\ttl\addcontentsline{toc}{chapter}{\bibname}%
   \list{\@biblabel{\@arabic\c@enumiv}}{%
     \@openbib@code%
