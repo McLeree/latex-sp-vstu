@@ -159,11 +159,14 @@
   \ifthenelse{\equal{#1}{}}{#2}{#1~#2}
 }
 
-% ФИО заведующего кафедрой, степень\должность
+% ФИО заведующего кафедрой, степень/должность
 \newcommand{\VSTUHeadOfDepartmentFullName}{Фамилия Имя Отчество}
 \newcommand{\VSTUHeadOfDepartmentName}{И. О. Фамилия}
 \newcommand{\VSTUHeadOfDepartmentDegree}{звание}
 \newcommand{\VSTUHeadOfDepartmentPost}{должность}
+\newcommand{\VSTUHeadOfDepartmentDegreeAndName}{
+  \VSTUCombineDegreeAndName{\VSTUHeadOfDepartmentDegree}{\VSTUHeadOfDepartmentName}
+}
 % Сеттеры
 \newcommand{\VSTUSetHeadOfDepartment}[4]{
   \renewcommand{\VSTUHeadOfDepartmentFullName}{#4}
@@ -172,7 +175,7 @@
   \renewcommand{\VSTUHeadOfDepartmentPost}{#1}
 }
 
-% ФИО руководителя, степень\должность
+% ФИО руководителя, степень/должность
 \newcommand{\VSTUDirectorFullName}{Фамилия Имя Отчество}
 \newcommand{\VSTUDirectorName}{И. О. Фамилия}
 \newcommand{\VSTUDirectorDegree}{звание}
@@ -191,7 +194,7 @@
   \renewcommand{\VSTUDirectorPost}{#1}
 }
 
-% ФИО нормоконтролера, степень\должность
+% ФИО нормоконтролера, степень/должность
 \newcommand{\VSTUStandardsAdviserFullName}{Фамилия Имя Отчество}
 \newcommand{\VSTUStandardsAdviserName}{И. О. Фамилия}
 \newcommand{\VSTUStandardsAdviserDegree}{звание}
@@ -563,7 +566,7 @@
   \addtocounter{appendix}{1}
   \addtocounter{totalappendices}{1}
 
-  % Грязный хак нумерации рисунков\таблиц\формул внутри приложений.
+  % Грязный хак нумерации рисунков/таблиц/формул внутри приложений.
   % Сначала добавляем figure к totalfigures, а затем сбрасываем figure в 0.
   % Аналогично и для table.
   \addtocounter{totalfigures}{\c@figure}%
@@ -574,7 +577,7 @@
   \setcounter{equation}{0}%
 
   % Внешний вид номеров рисунков: сначала номер приложения,
-  % за ним номер рисунка\таблицы внутри приложения.
+  % за ним номер рисунка/таблицы внутри приложения.
   \renewcommand{\thefigure}{\VSTUDocumentNumbersPrefix\theappendix.\arabic{figure}}%
   \renewcommand{\thetable}{\VSTUDocumentNumbersPrefix\theappendix.\arabic{table}}%
   \renewcommand{\theequation}{\VSTUDocumentNumbersPrefix\theappendix.\arabic{equation}}%

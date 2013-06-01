@@ -4,16 +4,25 @@
 Волгоградский государственный технический университет\\
 }
 
+% подчеркивание с подписью/датой и подчеркивание с ФИО
+% #1 - длина подчеркивания
+% #2 - подстрочная подпись
+% #3 - надстрочная подпись
+\newcommand{\VSTUUnderlinedField}[3]{%
+$\underset{\text{(#2)}}{\uline{\makebox[#1]{#3}}}$%
+}%
+
+% Box с подписью босса
 \newcommand{\VSTUTitleHeadApproval}{
 \begin{minipage}[c]{18em}
 УТВЕРЖДАЮ\\
 \VSTUHeadOfDepartmentPost\\
-$\underset{\text{(подпись)}}{\uline{\makebox[1.5cm]{\vphantom{\VSTUHeadOfDepartmentDegree~\VSTUHeadOfDepartmentName}}}}$
-$\underset{\text{(инициалы, фамилия)}}{\uline{\makebox[6.5cm]{\text{\VSTUHeadOfDepartmentDegree~\VSTUHeadOfDepartmentName}}}}$\\
-<<\makebox[1.5cm]{\hrulefill}>>\makebox[3.5cm]{\hrulefill}\the\year\\
+\VSTUUnderlinedField{1.5cm}{подпись}{\vphantom{\VSTUHeadOfDepartmentDegreeAndName}}\VSTUUnderlinedField{6.5cm}{инициалы, фамилия}{\VSTUHeadOfDepartmentDegreeAndName}\\
+<<\makebox[1.5cm]{\hrulefill}>>\makebox[3.5cm]{\hrulefill}\the\year
 \end{minipage}
 }
 
+% Box с подписью руководителя
 \newcommand{\VSTUTitleDirector}{
 \begin{minipage}[c]{15em}
 Научный руководитель\\
@@ -23,6 +32,7 @@ $\underset{\text{(инициалы, фамилия)}}{\uline{\makebox[6.5cm]{\te
 \end{minipage}
 }
 
+% Box с подписью нормоконтролера
 \newcommand{\VSTUTitleStandardsAdviser}{
 \begin{minipage}[c]{15em}
 Нормоконтролер\\
@@ -32,7 +42,7 @@ $\underset{\text{(инициалы, фамилия)}}{\uline{\makebox[6.5cm]{\te
 \end{minipage}
 }
 
-
+% Box с подписью исполнителя (студента)
 \newcommand{\VSTUTitleImplementer}{
 \begin{minipage}[c]{15em}
 Исполнитель\\
@@ -41,4 +51,3 @@ $\underset{\text{(инициалы, фамилия)}}{\uline{\makebox[6.5cm]{\te
 <<\makebox[1.5cm]{\hrulefill}>>\makebox[3.5cm]{\hrulefill}\the\year
 \end{minipage}
 }
-

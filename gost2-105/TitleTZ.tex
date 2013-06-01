@@ -17,7 +17,7 @@
   \addtocounter{appendix}{1}
   \addtocounter{totalappendices}{1}
 
-  % Грязный хак нумерации рисунков\таблиц внутри приложений.
+  % Грязный хак нумерации рисунков/таблиц внутри приложений.
   % Сначала добавляем figure к totalfigures, а затем сбрасываем figure в 0.
   % Аналогично и для table.
   \addtocounter{totalfigures}{\c@figure}%
@@ -28,7 +28,7 @@
   \setcounter{equation}{0}%
 
   % Внешний вид номеров рисунков: сначала номер приложения,
-  % за ним номер рисунка\таблицы внутри приложения.
+  % за ним номер рисунка/таблицы внутри приложения.
   \renewcommand{\thefigure}{\theappendix.\arabic{figure}}%
   \renewcommand{\thetable}{\theappendix.\arabic{table}}%
   \renewcommand{\theequation}{\theappendix.\arabic{equation}}%
