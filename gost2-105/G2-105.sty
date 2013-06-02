@@ -6,18 +6,11 @@
 \ProvidesPackage{G2-105}[2003/07/07 v1.00 General reqs. GOST 2.105-95]
 \NeedsTeXFormat{LaTeX2e}
 
-\newcommand{\Gost@encoding}{}
-\newcommand{\Gost@LineSpread}{1.3}
-\DeclareOption{koi8-r}{\renewcommand{\Gost@encoding}{koi8-r}}
-\DeclareOption{cp1251}{\renewcommand{\Gost@encoding}{cp1251}}
-\DeclareOption{cp866}{\renewcommand{\Gost@encoding}{cp866}}
-\DeclareOption{utf8}{\renewcommand{\Gost@encoding}{utf8}}
-
 \ExecuteOptions{a4paper,14pt,final,utf8}
 \ProcessOptions
 
 % Импорт пакетов
-\RequirePackage[\Gost@encoding]{inputenc}
+\RequirePackage[utf8]{inputenc}
 \RequirePackage[normalem]{ulem}
 \RequirePackage[english, russian]{babel}
 \RequirePackage{mathtext}
@@ -351,8 +344,9 @@
 % Раздел
 \newcounter{chapter}
 \renewcommand{\thechapter}{\@arabic\c@chapter}
+\newcommand{\beforechapterskip}{\clearpage}
 \newcommand{\chapter}{%
-  \clearpage%
+  \beforechapterskip%
   \@startsection{chapter}{0}%
   {\Gost@ChapterIndent}{0mm}{\GostAfterTitleSkip}%
   {\GostTitleStyle\normalfont\Gost@ChapterStyle}%
@@ -589,9 +583,9 @@
 
   % Внешний вид номеров рисунков: сначала номер приложения,
   % за ним номер рисунка/таблицы внутри приложения.
-  \renewcommand{\thefigure}{\VSTUDocumentNumbersPrefix\theappendix.\arabic{figure}}%
-  \renewcommand{\thetable}{\VSTUDocumentNumbersPrefix\theappendix.\arabic{table}}%
-  \renewcommand{\theequation}{\VSTUDocumentNumbersPrefix\theappendix.\arabic{equation}}%
+  \renewcommand{\thefigure}{\theappendix.\arabic{figure}}%
+  \renewcommand{\thetable}{\theappendix.\arabic{table}}%
+  \renewcommand{\theequation}{\theappendix.\arabic{equation}}%
 
   \addcontentsline{toc}{chapter}{\appendixname~\theappendix~---~{#1}}%
 }
@@ -675,16 +669,6 @@
 \newcommand*{\l@table}{\@dottedtocline{1}{1.5em}{2.3em}}
 \newcommand{\@tocrmarg}{2.55em}  % отступ правого края оглавления перенесенных строк
 \newcommand{\@dotsep}{1000}      % между точками в оглавлении в em
-\linespread{\Gost@LineSpread}  % полуторный межстрочный интервал
-
-\AtBeginDocument{%
-  \makeatletter%
-    %\setlength\Gost@EqRemLen{\textwidth}%
-    %\addtolength\Gost@EqRemLen{-10mm}%
-    %\settowidth\Gost@@EqRemLen{где}%
-    %\addtolength\Gost@EqRemLen{-\Gost@@EqRemLen}%
-  \makeatother%
-}
 
 % Библиография
 \newdimen\bibindent

@@ -1,40 +1,13 @@
-\RequirePackage{amsmath}
-\RequirePackage{ulem}
-\input{TitleCommon.tex}
-\newcommand{\VSTUInitializeTZ} {
-\renewcommand{\VSTUDocumentCodeSuffix}{91}
-\newcommand{\VSTULUCode}{А.В.00001--01~\VSTUDocumentCodeSuffix~01--1}
-% Переопределение команды раздела
-\renewcommand\chapter{%
-  \vspace{\GostBeforeTitleSkip}
-  \@startsection{chapter}{0}%
-  {\Gost@ChapterIndent}{0mm}{\GostAfterTitleSkip}%
-  {\GostTitleStyle\normalfont\Gost@ChapterStyle}%
-}
-% Переопределение команды приложений
+\RequirePackage{amsmath}%
+\RequirePackage{ulem}%
+\input{TitleCommon.tex}%
+\newcommand{\VSTUInitializeTZ} {%
+\renewcommand{\VSTUDocumentCodeSuffix}{91}%
+\newcommand{\VSTULUCode}{А.В.00001--01~\VSTUDocumentCodeSuffix~01--1}%
+% Переопределение команды для разделов
+\renewcommand{\beforechapterskip}{\vspace{\GostBeforeTitleSkip}}%
+% Переопределение команды для нумерации приложений
 \gdef\theappendix{\VSTUDocumentNumbersPrefix\@arabic\c@appendix}%
-\renewcommand{\appendixcommon}[1]{
-  \addtocounter{appendix}{1}
-  \addtocounter{totalappendices}{1}
-
-  % Грязный хак нумерации рисунков/таблиц внутри приложений.
-  % Сначала добавляем figure к totalfigures, а затем сбрасываем figure в 0.
-  % Аналогично и для table.
-  \addtocounter{totalfigures}{\c@figure}%
-  \addtocounter{totaltables}{\c@table}%
-  \addtocounter{totalequations}{\c@equation}%
-  \setcounter{figure}{0}%
-  \setcounter{table}{0}%
-  \setcounter{equation}{0}%
-
-  % Внешний вид номеров рисунков: сначала номер приложения,
-  % за ним номер рисунка/таблицы внутри приложения.
-  \renewcommand{\thefigure}{\theappendix.\arabic{figure}}%
-  \renewcommand{\thetable}{\theappendix.\arabic{table}}%
-  \renewcommand{\theequation}{\theappendix.\arabic{equation}}%
-
-  \addcontentsline{toc}{chapter}{\appendixname~\theappendix~---~{##1}}%
-}%
 {
 % Титульник ТЗ раз
 \clearpage
