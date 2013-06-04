@@ -352,8 +352,8 @@
   {\GostTitleStyle\normalfont\Gost@ChapterStyle}%
 }
 \newcommand{\starchapter}[1]{
-  \addcontentsline{toc}{chapter}{#1}
   \chapter*{#1}
+  \addcontentsline{toc}{chapter}{#1}
 }
 \newcommand*{\chaptermark}[1]{}
 \newcommand{\apart}[2]{\chapter {#2\label{#1}}}
@@ -368,8 +368,8 @@
   {\GostTitleStyle}%
 }
 \newcommand{\starsection}[1]{
-  \addcontentsline{toc}{section}{#1}
   \section*{#1}
+  \addcontentsline{toc}{section}{#1}
 }
 \newcommand{\asubpart}[2]{\section{#2\label{#1}}}
 
@@ -382,8 +382,8 @@
   {\GostTitleStyle}%
 }
 \newcommand{\starsubsection}[1]{
-  \addcontentsline{toc}{subsection}{#1}
   \subsection*{#1}
+  \addcontentsline{toc}{subsection}{#1}
 }
 \newcommand{\apara}[2]{\subsection{#2\label{#1}}}
 
@@ -396,8 +396,8 @@
   {\GostTitleStyle}%
 }
 \newcommand{\starsubsubsection}[1]{
-  \addcontentsline{toc}{subsubsection}{#1}
   \subsubsection*{#1}
+  \addcontentsline{toc}{subsubsection}{#1}
 }
 \newcommand{\asubpara}[2]{\subsubsection{#2\label{#1}}}
 
@@ -675,7 +675,9 @@
 \newenvironment{thebibliography}[1]{
 \renewcommand{\bibname}{Список использованных источников}
   \clearpage
-  \chapter*{\bibname}\ttl\addcontentsline{toc}{chapter}{\bibname}%
+  \chapter*{\bibname}
+  \ttl
+  \addcontentsline{toc}{chapter}{\bibname}%
   \list{\@biblabel{\@arabic\c@enumiv}}{%
     \@openbib@code%
     \usecounter{enumiv}%
