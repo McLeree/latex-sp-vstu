@@ -1,6 +1,15 @@
 \RequirePackage{amsmath}
 \RequirePackage{ulem}
-\newcommand{\VSTUInitializeCW} {
+% Команды для задания второго студента
+\newcommand{\VSTUSecondStudentFullName}{Фамилия Имя Отчество}
+\newcommand{\VSTUSecondStudentName}{И. О. Фамилия}
+\newcommand{\VSTUSetSecondStudent}[3]{
+  \renewcommand{\VSTUSecondStudentFullName}{#3}
+  \renewcommand{\VSTUSecondStudentName}{#2}
+  \renewcommand{\VSTUStudentGroup}{#1}
+}
+\newcommand{\VSTUInitializeCWTwo}{%
+
 \renewcommand{\VSTUDocumentCodeSuffix}{81}
 % Переопределение команды для разделов
 \renewcommand{\beforechapterskip}{\vspace{\GostBeforeTitleSkip}}%
@@ -22,7 +31,8 @@
 ЗАДАНИЕ\\
 на курсовую работу
 \end{center}
-Студент \VSTUUnderlinedField{\width}{фамилия, имя, отчество}{\VSTUStudentFullName}\\
+Студенты \VSTUUnderlinedField{137mm}{фамилия, имя, отчество}{\VSTUStudentFullName,}\\
+\VSTUUnderlinedField{\textwidth}{фамилия, имя, отчество}{\VSTUSecondStudentFullName}\\
 Группа \uline{\VSTUStudentGroup}\\
 1. Тема: \VSTUTitleUL\uline{\hfill}\\
 Утверждена приказом от <<\uline{\makebox[0.5cm]{}}>> \uline{\makebox[2cm]{}} \uline{\makebox[2cm]{}} \No\uline{\makebox[1.5cm]{}}\\
@@ -31,13 +41,21 @@
 \uline{\text{}\hfill}\\
 4. Перечень графического материала:\\
 \uline{\text{}\hfill}\\
+\\
 5. Дата выдачи задания: <<\makebox[1.5cm]{\hrulefill}>>\makebox[3.5cm]{\hrulefill}\the\year\\
 Руководитель работы \VSTUUnderlinedField{4.5cm}{подпись и дата подписания}{\vphantom{\VSTUDirectorDegreeAndName}}
 \hfill
 \VSTUUnderlinedField{6cm}{инициалы и фамилия}{\VSTUDirectorDegreeAndName}\\
-Задание принял к исполнению \VSTUUnderlinedField{4.5cm}{подпись и дата подписания}{\vphantom{\VSTUStudentName}}
-\hfill
+Задание принял к исполнению
+\vspace{-6mm}
+\begin{flushright}
+\begin{minipage}{19em}
+\VSTUUnderlinedField{4cm}{подпись и дата подписания}{\vphantom{\VSTUStudentName}}
 \VSTUUnderlinedField{4cm}{инициалы и фамилия}{\VSTUStudentName}\\
+\VSTUUnderlinedField{4cm}{подпись и дата подписания}{\vphantom{\VSTUSecondStudentName}}
+\VSTUUnderlinedField{4cm}{инициалы и фамилия}{\VSTUSecondStudentName}\\
+\end{minipage}
+\end{flushright}
 \vspace{\fill}
 \begin{center}
 Волгоград,~\the\year
@@ -60,7 +78,8 @@
 на тему \VSTUTitleUL\uline{\hfill}\\
 \\
 \\
-Студент \VSTUUnderlinedField{\width}{фамилия, имя, отчество}{\VSTUStudentFullName}\\
+Студенты \VSTUUnderlinedField{137mm}{фамилия, имя, отчество}{\VSTUStudentFullName,}\\
+\VSTUUnderlinedField{\textwidth}{фамилия, имя, отчество}{\VSTUSecondStudentFullName}\\
 Группа \uline{\VSTUStudentGroup}\\
 \\
 \\

@@ -1,0 +1,79 @@
+\RequirePackage{amsmath}
+\RequirePackage{ulem}
+\newcommand{\VSTUInitializeCWOne}{
+\renewcommand{\VSTUDocumentCodeSuffix}{81}
+% Переопределение команды для разделов
+\renewcommand{\beforechapterskip}{\vspace{\GostBeforeTitleSkip}}%
+{
+% Задание на курсовую работу
+\clearpage
+\thispagestyle{empty}
+\begin{center}
+\VSTUTitleHeading
+\end{center}
+Факультет~\uline{\VSTUFaculty\hfill}\\
+Направление~\uline{\VSTUDirection\hfill}\\
+Кафедра~\uline{\VSTUDepartment\hfill}\\
+Дисциплина~\uline{\VSTUSubject\hfill}\\
+\vfill
+\hfill\VSTUTitleHeadApproval
+\vspace{\fill}
+\begin{center}
+ЗАДАНИЕ\\
+на курсовую работу
+\end{center}
+Студент \VSTUUnderlinedField{\width}{фамилия, имя, отчество}{\VSTUStudentFullName}\\
+Группа \uline{\VSTUStudentGroup}\\
+1. Тема: \VSTUTitleUL\uline{\hfill}\\
+Утверждена приказом от <<\uline{\makebox[0.5cm]{}}>> \uline{\makebox[2cm]{}} \uline{\makebox[2cm]{}} \No\uline{\makebox[1.5cm]{}}\\
+2. Срок представления готовой работы:~<<\makebox[1.5cm]{\hrulefill}>>\makebox[3.5cm]{\hrulefill}\the\year\\
+3. Содержание расчетно--пояснительной записки:\\
+\uline{\text{}\hfill}\\
+4. Перечень графического материала:\\
+\uline{\text{}\hfill}\\
+5. Дата выдачи задания: <<\makebox[1.5cm]{\hrulefill}>>\makebox[3.5cm]{\hrulefill}\the\year\\
+Руководитель работы \VSTUUnderlinedField{4.5cm}{подпись и дата подписания}{\vphantom{\VSTUDirectorDegreeAndName}}
+\hfill
+\VSTUUnderlinedField{6cm}{инициалы и фамилия}{\VSTUDirectorDegreeAndName}\\
+Задание принял к исполнению \VSTUUnderlinedField{4.5cm}{подпись и дата подписания}{\vphantom{\VSTUStudentName}}
+\hfill
+\VSTUUnderlinedField{4cm}{инициалы и фамилия}{\VSTUStudentName}\\
+\vspace{\fill}
+\begin{center}
+Волгоград,~\the\year
+\end{center}
+\newpage
+% Титульник ПЗ
+\clearpage
+\thispagestyle{empty}
+\setcounter{page}{1}
+\begin{center}
+\VSTUTitleHeading
+\end{center}
+Факультет~\uline{\VSTUFaculty\hfill}\\
+Кафедра~\uline{\VSTUDepartment\hfill}\\
+\vspace{2cm}
+\begin{center}
+ПОЯСНИТЕЛЬНАЯ ЗАПИСКА\\
+\end{center}
+по дисциплине \uline{\VSTUSubject\hfill}\\
+на тему \VSTUTitleUL\uline{\hfill}\\
+\\
+\\
+Студент \VSTUUnderlinedField{\width}{фамилия, имя, отчество}{\VSTUStudentFullName}\\
+Группа \uline{\VSTUStudentGroup}\\
+\\
+\\
+Руководитель работы \VSTUUnderlinedField{4.5cm}{подпись и дата подписания}{\vphantom{\VSTUDirectorDegreeAndName}}
+\hfill
+\VSTUUnderlinedField{6cm}{инициалы и фамилия}{\VSTUDirectorDegreeAndName}\\
+Нормоконтролер \VSTUUnderlinedField{5.5cm}{подпись и дата подписания}{\vphantom{\VSTUStandardsAdviserDegreeAndName}}
+\hfill
+\VSTUUnderlinedField{6cm}{инициалы и фамилия}{\VSTUStandardsAdviserDegreeAndName}\\
+\vspace{\fill}
+\begin{center}
+Волгоград,~\the\year
+\end{center}
+\newpage
+}
+}
