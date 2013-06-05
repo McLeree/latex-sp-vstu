@@ -540,7 +540,7 @@ VSTUSetPZContents{
 \size scriptsize
 
 \backslash
-begin{VSTUUnderlinedList}
+begin{VSTUList}
 \end_layout
 
 \begin_layout Standard
@@ -556,7 +556,7 @@ begin{VSTUUnderlinedList}
 
 
 \backslash
-item Пункт содержания основной раз
+ulitem{Пункт содержания основной части раз}
 \end_layout
 
 \begin_layout Standard
@@ -572,7 +572,7 @@ item Пункт содержания основной раз
 
 
 \backslash
-item Пункт содержания основной два
+ulitem{Пункт содержания основной части два}
 \end_layout
 
 \begin_layout Standard
@@ -588,7 +588,7 @@ item Пункт содержания основной два
 
 
 \backslash
-item ~ % пустая линия - может понадобиться при малом количестве пунктов
+ulitem{}
 \end_layout
 
 \begin_layout Standard
@@ -604,7 +604,7 @@ item ~ % пустая линия - может понадобиться при м
 
 
 \backslash
-item ~ % пустая линия
+ulitem{}
 \end_layout
 
 \begin_layout Standard
@@ -613,7 +613,7 @@ item ~ % пустая линия
 \size scriptsize
 
 \backslash
-end{VSTUUnderlinedList}
+end{VSTUList}
 \end_layout
 
 \begin_layout Standard
@@ -638,7 +638,7 @@ VSTUSetPZGraphics{
 \size scriptsize
 
 \backslash
-begin{VSTUUnderlinedNumberedList}
+begin{VSTUNumberedList}
 \end_layout
 
 \begin_layout Standard
@@ -654,7 +654,7 @@ begin{VSTUUnderlinedNumberedList}
 
 
 \backslash
-item Графический материал раз
+ulitem{Графический материал раз}
 \end_layout
 
 \begin_layout Standard
@@ -670,7 +670,7 @@ item Графический материал раз
 
 
 \backslash
-item Графический материал два
+ulitem{Графический материал два}
 \end_layout
 
 \begin_layout Standard
@@ -686,7 +686,7 @@ item Графический материал два
 
 
 \backslash
-item ~ % пустая линия
+ulitem{}
 \end_layout
 
 \begin_layout Standard
@@ -702,39 +702,7 @@ item ~ % пустая линия
 
 
 \backslash
-item ~ % пустая линия
-\end_layout
-
-\begin_layout Standard
-
-\family typewriter
-\size scriptsize
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\backslash
-item ~ % пустая линия
-\end_layout
-
-\begin_layout Standard
-
-\family typewriter
-\size scriptsize
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\backslash
-item ~ % пустая линия
+ulitem{}
 \end_layout
 
 \begin_layout Standard
@@ -743,7 +711,7 @@ item ~ % пустая линия
 \size scriptsize
 
 \backslash
-end{VSTUUnderlinedNumberedList}
+end{VSTUNumberedList}
 \end_layout
 
 \begin_layout Standard
@@ -894,7 +862,18 @@ status open
  код документа, номер и дату приказа, различные ФИО и названия работы на
  русском и английском языках.
  Последняя команда автоматически создает все нужные титульные листы.
- При оформлении ТЗ (в виде отдельного документа!) первая и последняя команда
+\end_layout
+
+\begin_layout Standard
+При добавлении пунктов в списки основной части ПЗ и графического материала
+ необходимо вручную контролировать количество item'ов.
+ Пустые строки добавляются с помощью 
+\backslash
+ulitem{}.
+\end_layout
+
+\begin_layout Standard
+При оформлении ТЗ (в виде отдельного документа!) первая и последняя команда
  будут иметь вид:
 \end_layout
 
