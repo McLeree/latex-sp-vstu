@@ -16,7 +16,7 @@
 \pagestyle{plain}
 {
 % Титульник ТЗ раз
-\newpage
+\clearpage
 \thispagestyle{empty}
 \addtocounter{page}{-1}
 \begin{center}
@@ -49,10 +49,13 @@
 \begin{center}
 Волгоград,~\the\year
 \end{center}
-% Титульник ТЗ два
 \newpage
+% Титульник ТЗ два
+\clearpage
 \thispagestyle{empty}
 \hfill\VSTUTitleHeadApproval
+\vspace{\fill}
+\vspace{\fill}
 \vspace{\fill}
 \begin{center}
 \VSTUTitle\\
@@ -72,5 +75,6 @@
 \begin{center}
 Волгоград,~\the\year
 \end{center}
+\newpage
 }
 }
