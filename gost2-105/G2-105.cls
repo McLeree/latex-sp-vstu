@@ -9,6 +9,7 @@
 \input{GostBase.clo}
 \RequirePackage[a4paper,left=30mm,right=20mm,top=20mm,bottom=20mm,headsep=0pt]{geometry}
 \RequirePackage{G2-105}
+\onehalfspacing
 
 \endinput
 % End of file `G2-105.cls'.
