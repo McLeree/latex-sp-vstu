@@ -58,49 +58,38 @@
 }
 
 % Содержание основной части пояснительной записки и перечень графического материала
-\newenvironment*{VSTUUnderlinedNumberedList}{%
-  \renewcommand{\theenumi}{\arabic{enumi}}
+\newcommand{\ulitem}[1]{
+  \item \uline{#1\hfill}
+}
 
+\newenvironment*{VSTUNumberedList}{
+  \renewcommand{\theenumi}{\arabic{enumi}}
   \setlength\leftmargini{1.5em}
   \setlength\leftmarginii{1.5em}
-
-  % Обозначим актуальную длину строки (за вычетом номера)
-  \newlength\tmplength
-  \setlength\tmplength{\textwidth}
-  \addtolength\tmplength{-\labelsep}
-  \addtolength\tmplength{-1em}
-
-  \let\olditem\item
-  \renewcommand{\item}{\olditem \uline{\hspace{\tmplength}}\hspace{-\tmplength}}
-
   \begin{enumerate}
 }
 {\end{enumerate}}
 
-\newenvironment*{VSTUUnderlinedList}{%
+\newenvironment*{VSTUList}{
   \renewcommand{\labelenumi}{}
   \setlength\leftmargini{0mm}
   \setlength\leftmarginii{0mm}
   \setlength\labelsep{0mm}
-
-  \let\olditem\item
-  \renewcommand{\item}{\olditem \uline{\hspace{\textwidth}}\hspace{-\textwidth}}
-
   \begin{enumerate}
 }
 {\end{enumerate}}
 
 \newcommand{\VSTUPZContents}{
-  \begin{VSTUUnderlinedList}
-    \item Что-то там раз
-    \item Что-то там два
-  \end{VSTUUnderlinedList}
+  \begin{VSTUList}
+    \ulitem{Что-то там раз}
+    \ulitem{Что-то там два}
+  \end{VSTUList}
 }
 \newcommand{\VSTUPZGraphics}{
-  \begin{VSTUUnderlinedNumberedList}
-    \item Графический материал раз
-    \item Графический материал два
-  \end{VSTUUnderlinedNumberedList}
+  \begin{VSTUNumberedList}
+    \ulitem{Графический материал раз}
+    \ulitem{Графический материал два}
+  \end{VSTUNumberedList}
 }
 %Сеттеры
 \newcommand*{\VSTUSetPZContents}[1]{
