@@ -420,19 +420,20 @@
  \fi
 }
 
-\newlength{\GostItemGap}
-\newlength{\GostItemIndent}
-\newcommand{\Gost@List}{%
+\newlength{\GostItemGap}      \setlength\GostItemGap{2mm}
+\newlength{\GostItemIndent}   \setlength\GostItemIndent{\parindent}
+
+\renewcommand{\@listI}{%
   \setlength{\itemsep}{0mm}%                 пробел между последовательными элементами
   \setlength{\topsep}{0mm}%                  отступ от текста до перечня
   \setlength{\partopsep}{0mm}%               дополнительный отступ, если начали абзац
   \setlength{\parsep}{0mm}%                  расстояние между абзацами внутри пункта
-  \setlength{\leftmargin}{0mm}%              левый отступ до текста
+  \setlength{\leftmargin}{1.3em}%            левый отступ до текста
   \setlength{\itemindent}{\GostItemIndent}%  дополнительный левый отступ первой строчки
   \setlength{\labelsep}{\GostItemGap}%       от метки до текста
 }
 
-\newcommand{\Gost@ListII}{%
+\renewcommand{\@listii}{%
   \setlength{\itemsep}{0mm}%                 пробел между последовательными элементами
   \setlength{\topsep}{0mm}%                  отступ от текста до перечня
   \setlength{\partopsep}{0mm}%               дополнительный отступ, если начали абзац
@@ -442,15 +443,8 @@
   \setlength{\labelsep}{\GostItemGap}%       от метки до текста
 }
 
-\renewcommand{\@listI} {\Gost@List}
-\renewcommand{\@listii}{\Gost@ListII}
-\setlength\GostItemGap{2mm} % небольшие отступы для пунктов перечисления
-\setlength\leftmarginii{\parindent}
-\setlength\GostItemIndent{\parindent}
-%\addtolength\GostItemIndent{\GostItemGap}
-
 % Ненумерованные перечисления
-\newcommand{\labelitemi}{--}
+\newcommand{\labelitemi}{--~}
 
 % Нумерованные перечисления
 \renewcommand{\theenumi}{\asbuk{enumi}}
