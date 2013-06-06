@@ -33,13 +33,17 @@
 }
 
 % Код документа (цифры) и его тип (выпускная работа бакалавра, магистерская диссертация и так далее)
-\newcommand{\VSTUDocumentCodeSuffix}{UNKNOWN}
+\newcommand{\VSTUDocumentCodeSuffix}{}
 \newcommand{\VSTUDocumentCode}{UNKNOWN-\VSTUDocumentCodeSuffix}
 \newcommand{\VSTUDocumentTypeDative}{выпускной работе бакалавра}   % в дательном падаже
 \newcommand{\VSTUDocumentTypeGenitive}{выпускную работу бакалавра} % в родительном падеже
 % Сеттеры
 \newcommand*{\VSTUSetDocumentCode}[1]{
-  \renewcommand{\VSTUDocumentCode}{#1-\VSTUDocumentCodeSuffix}
+  \renewcommand{\VSTUDocumentCode}{
+    \ifthenelse{\equal{\VSTUDocumentCodeSuffix}{}}
+    {#1}
+    {#1-\VSTUDocumentCodeSuffix}
+  }
 }
 \newcommand*{\VSTUSetDocumentTypeDative}[1]{
   \renewcommand{\VSTUDocumentTypeDative}{#1}
@@ -231,7 +235,9 @@
 
 % Стиль страницы
 \RequirePackage{fancyhdr}
-\fancypagestyle{plain} {
+
+% код документа в верхнем колонтитуле, номер страницы - в нижнем
+\fancypagestyle{plainhf} {
   \setlength\headheight{25pt}
   \fancyhf{}
   \fancyhf[HCO,HCE]{\mdseries{\VSTUDocumentCode}\vspace{2mm}}
@@ -239,7 +245,17 @@
   \renewcommand{\headrulewidth}{0pt}
   \renewcommand{\footrulewidth}{0pt}
 }
-\pagestyle{plain}
+
+% код документа в верхнем колонтитуле, нижний - пустой
+\fancypagestyle{plainh} {
+  \setlength\headheight{25pt}
+  \fancyhf{}
+  \fancyhf[HCO,HCE]{\mdseries{\VSTUDocumentCode}\vspace{2mm}}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+\pagestyle{plainhf}
 \pagenumbering{arabic}
 \raggedbottom
 \onecolumn
@@ -603,7 +619,7 @@
 % Аннотация
 \newcommand{\abstract}[1]{
   \clearpage
-  \thispagestyle{empty}
+  \thispagestyle{plainh}
   \chapter*{#1}
 }
 
@@ -684,7 +700,7 @@
                 \columnseprule \z@
                 \columnsep 35\p@
                 \twocolumn[\@makeschapterhead{\indexname}]%
-                \thispagestyle{plain}\parindent\z@
+                \thispagestyle{plainhf}\parindent\z@
                 \parskip\z@ \@plus .3\p@\relax
                 \let\item\@idxitem}
                {\onecolumn}

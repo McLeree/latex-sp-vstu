@@ -3,17 +3,17 @@
 \input{TitleCommon.tex}%
 \newcommand{\VSTUInitializeTZ} {%
 \renewcommand{\VSTUDocumentCodeSuffix}{91}%
-\newcommand{\VSTULUCode}{А.В.00001--01~\VSTUDocumentCodeSuffix~01--1}%
+\newcommand{\VSTULUCode}{А.В.00001-01~\VSTUDocumentCodeSuffix~01-1}%
 % Переопределение команды для разделов
 \renewcommand{\beforechapterskip}{\vspace{\GostBeforeTitleSkip}}%
 % Переопределение команды для нумерации приложений
 \gdef\theappendix{\VSTUDocumentNumbersPrefix\@arabic\c@appendix}%
 % Переопределение нумерации страниц (сверху под кодом документа)
-\fancypagestyle{plain} {%
+\fancypagestyle{plainh} {%
   \fancyhf{}%
   \fancyhf[HCO,HCE]{\mdseries{\VSTUDocumentCode\\}\thepage\vspace{2mm}}%
 }%
-\pagestyle{plain}
+\pagestyle{plainh}
 {
 % Титульник ТЗ раз
 \clearpage
@@ -62,7 +62,7 @@
 \vspace{8mm}
 ЛИСТ УТВЕРЖДЕНИЯ\\
 \VSTUDocumentCode\\
-\VSTULUCode--ЛУ\\
+\VSTULUCode-ЛУ\\
 Листов 1\\
 \vspace{\fill}
 \end{center}
