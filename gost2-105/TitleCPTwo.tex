@@ -1,0 +1,111 @@
+\RequirePackage{amsmath}
+\RequirePackage{ulem}
+% Команды для задания второго студента
+\newcommand{\VSTUSecondStudentFullName}{Фамилия Имя Отчество}
+\newcommand{\VSTUSecondStudentName}{И. О. Фамилия}
+\newcommand{\VSTUSetSecondStudent}[3]{
+  \renewcommand{\VSTUSecondStudentFullName}{#3}
+  \renewcommand{\VSTUSecondStudentName}{#2}
+  \renewcommand{\VSTUStudentGroup}{#1}
+}
+\newcommand{\VSTUInitializeCPTwo}{%
+\renewcommand{\VSTUDocumentCodeSuffix}{81}
+% Переопределение команды для разделов
+\renewcommand{\beforechapterskip}{\vspace{\GostBeforeTitleSkip}}%
+{
+% Задание на курсовую работу
+\clearpage
+\thispagestyle{empty}
+\begin{center}
+\VSTUTitleHeading
+\end{center}
+Факультет~\uline{\VSTUFaculty\hfill}\\
+Направление~\uline{\VSTUDirection\hfill}\\
+Кафедра~\uline{\VSTUDepartment\hfill}\\
+Дисциплина~\uline{\VSTUSubject\hfill}\\
+\vfill
+\hfill\VSTUTitleHeadApproval
+\vspace{\fill}
+\begin{center}
+ЗАДАНИЕ\\
+на курсовой проект
+\end{center}
+Студенты \VSTUUnderlinedField{137mm}{фамилия, имя, отчество}{\VSTUStudentFullName,}\\
+\VSTUUnderlinedField{\textwidth}{фамилия, имя, отчество}{\VSTUSecondStudentFullName}\\
+Группа \uline{\VSTUStudentGroup}\\
+1. Тема: \VSTUTitleUL\uline{\hfill}\\
+Утверждена приказом от <<\uline{\makebox[0.5cm]{}}>> \uline{\makebox[2cm]{}} \uline{\makebox[2cm]{}} \No\uline{\makebox[1.5cm]{}}\\
+2. Срок представления готовой работы:~<<\makebox[1.5cm]{\hrulefill}>>\makebox[3.5cm]{\hrulefill}\the\year\\
+3. Содержание расчетно--пояснительной записки:
+{\small
+\VSTUPZContents
+}
+\noindent4. Перечень графического материала:
+{\small
+\VSTUPZGraphics
+}
+\noindent5. Дата выдачи задания: <<\makebox[1.5cm]{\hrulefill}>>\makebox[3.5cm]{\hrulefill}\the\year\\
+Руководитель работы \VSTUUnderlinedField{4.5cm}{подпись и дата подписания}{\vphantom{\VSTUDirectorDegreeAndName}}
+\hfill
+\VSTUUnderlinedField{6cm}{инициалы и фамилия}{\VSTUDirectorDegreeAndName}\\
+Задание принял к исполнению
+\vspace{-6mm}
+\begin{flushright}
+\begin{minipage}{19em}
+\VSTUUnderlinedField{4cm}{подпись и дата подписания}{\vphantom{\VSTUStudentName}}
+\VSTUUnderlinedField{4cm}{инициалы и фамилия}{\VSTUStudentName}\\
+\VSTUUnderlinedField{4cm}{подпись и дата подписания}{\vphantom{\VSTUSecondStudentName}}
+\VSTUUnderlinedField{4cm}{инициалы и фамилия}{\VSTUSecondStudentName}\\
+\end{minipage}
+\end{flushright}
+\vspace{\fill}
+\begin{center}
+Волгоград,~\the\year
+\end{center}
+\newpage
+% Титульник ПЗ
+\clearpage
+\thispagestyle{empty}
+\setcounter{page}{1}
+\begin{center}
+\VSTUTitleHeading
+\end{center}
+Факультет~\uline{\VSTUFaculty\hfill}\\
+Кафедра~\uline{\VSTUDepartment\hfill}\\
+\vspace{2cm}
+\begin{center}
+ПОЯСНИТЕЛЬНАЯ ЗАПИСКА\\
+к курсовому проекту
+\end{center}
+по дисциплине \uline{\VSTUSubject\hfill}\\
+на тему \VSTUTitleUL\uline{\hfill}\\
+\\
+\\
+Студенты \VSTUUnderlinedField{137mm}{фамилия, имя, отчество}{\VSTUStudentFullName,}\\
+\VSTUUnderlinedField{\textwidth}{фамилия, имя, отчество}{\VSTUSecondStudentFullName}\\
+Группа \uline{\VSTUStudentGroup}\\
+\\
+Работа зачтена с оценкой \uline{\makebox[3.7cm]{}}
+\\
+\\
+Руководитель работы \VSTUUnderlinedField{4.5cm}{подпись и дата подписания}{\vphantom{\VSTUDirectorDegreeAndName}}
+\hfill
+\VSTUUnderlinedField{6cm}{инициалы и фамилия}{\VSTUDirectorDegreeAndName}\\
+Нормоконтролер \VSTUUnderlinedField{5.6cm}{подпись и дата подписания}{\vphantom{\VSTUStandardsAdviserDegreeAndName}}
+\hfill
+\VSTUUnderlinedField{6cm}{инициалы и фамилия}{\VSTUStandardsAdviserDegreeAndName}
+Члены комиссии
+\begin{flushright}
+\VSTUUnderlinedField{4.5cm}{подпись и дата подписания}{}\hspace{5mm}\VSTUUnderlinedField{6cm}{инициалы и фамилия}{}\\
+\vspace{7mm}
+\VSTUUnderlinedField{4.5cm}{подпись и дата подписания}{}\hspace{5mm}\VSTUUnderlinedField{6cm}{инициалы и фамилия}{}\\
+\vspace{7mm}
+\VSTUUnderlinedField{4.5cm}{подпись и дата подписания}{}\hspace{5mm}\VSTUUnderlinedField{6cm}{инициалы и фамилия}{}\\
+\end{flushright}
+\vspace{\fill}
+\begin{center}
+Волгоград,~\the\year
+\end{center}
+\newpage
+}
+}
