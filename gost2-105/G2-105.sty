@@ -526,7 +526,7 @@
     % Здесь происходит очередной грязный хак для подписи "Продолжение таблицы X"
     % Чтобы она выводилась на последующих страницах, необходимо после \endfirsthead указать \caption{\space}\endhead
     \ifx#3\space
-      #1{}Продолжение таблицы \VSTUDocumentNumbersPrefix\@arabic\c@table%
+      #1{}Продолжение таблицы \thetable%
     \else
       #1{#2\captionlabeldelim{} }#3%
       \vspace{\lineskip}%
@@ -584,9 +584,9 @@
 
   % Внешний вид номеров рисунков: сначала номер приложения,
   % за ним номер рисунка/таблицы внутри приложения.
-  \renewcommand{\thefigure}{\theappendix.\arabic{figure}}%
-  \renewcommand{\thetable}{\theappendix.\arabic{table}}%
-  \renewcommand{\theequation}{\theappendix.\arabic{equation}}%
+  \renewcommand{\thefigure}{\VSTUDocumentNumbersPrefix\theappendix.\arabic{figure}}%
+  \renewcommand{\thetable}{\VSTUDocumentNumbersPrefix\theappendix.\arabic{table}}%
+  \renewcommand{\theequation}{\VSTUDocumentNumbersPrefix\theappendix.\arabic{equation}}%
 
   \addcontentsline{toc}{chapter}{\appendixname~\theappendix~---~{#1}}%
 }
