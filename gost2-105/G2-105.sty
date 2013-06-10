@@ -596,7 +596,11 @@
   \clearpage
   \appendixcommon{#1}
   \begin{center}
+  {
+  \hyphenpenalty 10000
+  \exhyphenpenalty 10000
   \appendixname~\theappendix~---~{#1}
+  }
   \end{center}
 }
 
@@ -625,8 +629,12 @@
 
 % Всякие оглавления
 \newcommand{\tableofcontents}{
+  {
+  \hyphenpenalty 10000
+  \exhyphenpenalty 10000
   \renewcommand{\contentsname}{Содержание}
   \chapter*{\contentsname}\@starttoc{toc}
+  }
 }
 \newcommand{\listoffigures}{
   \chapter*{\listfigurename}\@starttoc{lof}
