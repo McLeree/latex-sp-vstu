@@ -526,7 +526,7 @@
     % Здесь происходит очередной грязный хак для подписи "Продолжение таблицы X"
     % Чтобы она выводилась на последующих страницах, необходимо после \endfirsthead указать \caption{\space}\endhead
     \ifx#3\space
-      #1{}Продолжение таблицы \@arabic\c@table%
+      #1{}Продолжение таблицы \VSTUDocumentNumbersPrefix\@arabic\c@table%
     \else
       #1{#2\captionlabeldelim{} }#3%
       \vspace{\lineskip}%
