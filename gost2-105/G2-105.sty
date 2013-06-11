@@ -11,13 +11,13 @@
 
 % Импорт пакетов
 \RequirePackage[utf8]{inputenc}
-\RequirePackage[normalem]{ulem}
 \RequirePackage[english, russian]{babel}
-\RequirePackage{mathtext}
 \RequirePackage[T1]{fontenc}
-\RequirePackage{flafter}
-\RequirePackage{setspace}% почему-то приводит в порядок расстояние между строками в подписях оО
-\RequirePackage{ifthen}
+\RequirePackage{flafter}                 % контролирует, что флоаты встретятся не раньше, чем упомянуты в тексте
+\RequirePackage{mathtext}                % русские буквы в формулах
+\RequirePackage[normalem]{ulem}          % подчеркивания
+\RequirePackage{setspace}                % почему-то приводит в порядок расстояние между строками в подписях оО
+\RequirePackage{ifthen}                  % кое-где не обойтись без if'ов :(
 
 % Импорт заголовков для ПЗ и ТЗ
 \input{TitleCPOne.tex}
@@ -558,6 +558,11 @@
 \RequirePackage{amssymb} % для русских "меньше или равно" "больше или равно"
 \RequirePackage{icomma}
 \input{leqno.clo}
+
+% Все, что оформлено как $...$, не должно быть курсивным
+\catcode`\$=\active
+\protected\def${\@singledollar}
+\def\@singledollar#1${\begin{math}\mathrm{#1}\end{math}}
 
 % Нумерация формул
 \renewcommand{\theequation}{\VSTUDocumentNumbersPrefix\arabic{equation}}
