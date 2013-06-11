@@ -570,7 +570,7 @@
 % Приложения
 
 \newcounter{appendix}
-\gdef\theappendix{\@Asbuk\c@appendix}
+\gdef\theappendix{\VSTUDocumentNumbersPrefix\@Asbuk\c@appendix}
 
 % Общая команда для приложений
 \newcommand{\appendixcommon}[1]{
@@ -589,9 +589,9 @@
 
   % Внешний вид номеров рисунков: сначала номер приложения,
   % за ним номер рисунка/таблицы внутри приложения.
-  \renewcommand{\thefigure}{\VSTUDocumentNumbersPrefix\theappendix.\arabic{figure}}%
-  \renewcommand{\thetable}{\VSTUDocumentNumbersPrefix\theappendix.\arabic{table}}%
-  \renewcommand{\theequation}{\VSTUDocumentNumbersPrefix\theappendix.\arabic{equation}}%
+  \renewcommand{\thefigure}{\theappendix.\arabic{figure}}%
+  \renewcommand{\thetable}{\theappendix.\arabic{table}}%
+  \renewcommand{\theequation}{\theappendix.\arabic{equation}}%
 
   \addcontentsline{toc}{chapter}{\appendixname~\theappendix~---~{#1}}%
 }

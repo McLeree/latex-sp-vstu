@@ -7,7 +7,7 @@
 % Переопределение команды для разделов
 \renewcommand{\beforechapterskip}{\vspace{\GostBeforeTitleSkip}}%
 % Переопределение команды для нумерации приложений
-\gdef\theappendix{\@arabic\c@appendix}%
+\gdef\theappendix{\VSTUDocumentNumbersPrefix\@arabic\c@appendix}%
 % Переопределение нумерации страниц (сверху под кодом документа)
 \fancypagestyle{plainh} {%
   \fancyhf{}%
