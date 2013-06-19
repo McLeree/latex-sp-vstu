@@ -1,21 +1,16 @@
 \RequirePackage{amsmath}%
 \RequirePackage{ulem}%
-\newcommand{\VSTUInitializeTZ} {%
+\newcommand{\VSTUInitializeRDSP} {%
 \input{TitleCommon.tex}%
-\renewcommand{\VSTUDocumentCodeSuffix}{91}%
-\newcommand{\VSTULUCode}{А.В.00001-01~\VSTUDocumentCodeSuffix~01-1}%
+\renewcommand{\VSTUDocumentCodeSuffix}{32}%
 % Переопределение команды для разделов
 \renewcommand{\beforechapterskip}{\vspace{\GostBeforeTitleSkip}}%
 % Переопределение команды для нумерации приложений
 \gdef\theappendix{\VSTUDocumentNumbersPrefix\@arabic\c@appendix}%
-% Переопределение нумерации страниц (сверху под кодом документа)
-\fancypagestyle{plainh} {%
-  \fancyhf{}%
-  \fancyhf[HCO,HCE]{\mdseries{\VSTUDocumentCode\\}\thepage\vspace{2mm}}%
-}%
+
 \pagestyle{plainh}
 {
-% Титульник ТЗ раз
+% Титульник системного программиста
 \clearpage
 \thispagestyle{empty}
 \addtocounter{page}{-1}
@@ -29,7 +24,7 @@
 \begin{center}
 \VSTUTitle\\
 \vspace{\fill}
-ТЕХНИЧЕСКОЕ ЗАДАНИЕ\\
+РУКОВОДСТВО СИСТЕМНОГО ПРОГРАММИСТА\\
 \vspace{8mm}
 \VSTUDocumentCode\\
 \vspace{8mm}
@@ -49,32 +44,6 @@
 \begin{center}
 Волгоград,~\the\year
 \end{center}
-\newpage
-% Титульник ТЗ два
-\clearpage
-\thispagestyle{empty}
-\hfill\VSTUTitleHeadApproval
-\vspace{\fill}
-\vspace{\fill}
-\vspace{\fill}
-\begin{center}
-\VSTUTitle\\
-\vspace{8mm}
-ЛИСТ УТВЕРЖДЕНИЯ\\
-\VSTUDocumentCode\\
-\VSTULUCode-ЛУ\\
-Листов 1\\
-\vspace{\fill}
-\end{center}
-\begin{flushright}
-\VSTUTitleDirector
-\vfill
-\VSTUTitleImplementer
-\end{flushright}
-\vspace{\fill}
-\begin{center}
-Волгоград,~\the\year
-\end{center}
-\newpage
 }
+\newpage
 }
