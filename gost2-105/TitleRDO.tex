@@ -7,6 +7,10 @@
 \renewcommand{\beforechapterskip}{\vspace{\GostBeforeTitleSkip}}%
 % Переопределение команды для нумерации приложений
 \gdef\theappendix{\VSTUDocumentNumbersPrefix\@arabic\c@appendix}%
+\fancypagestyle{plain} {%
+  \fancyhf{}%
+  \fancyhf[HCO,HCE]{\mdseries{\VSTUDocumentCode\\}\thepage\vspace{2mm}}%
+}%
 
 \pagestyle{plain}
 {

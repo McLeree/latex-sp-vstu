@@ -9,11 +9,11 @@
 % Переопределение команды для нумерации приложений
 \gdef\theappendix{\VSTUDocumentNumbersPrefix\@arabic\c@appendix}%
 % Переопределение нумерации страниц (сверху под кодом документа)
-\fancypagestyle{plainh} {%
+\fancypagestyle{plain} {%
   \fancyhf{}%
   \fancyhf[HCO,HCE]{\mdseries{\VSTUDocumentCode\\}\thepage\vspace{2mm}}%
 }%
-\pagestyle{plainh}
+\pagestyle{plain}
 {
 % Титульник ТЗ раз
 \clearpage
