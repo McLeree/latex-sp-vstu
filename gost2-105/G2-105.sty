@@ -119,7 +119,7 @@
 }
 
 % Получение строки приказа из параметров выше
-\newcommand{\VSTUOrder}{\No~\VSTUOrderNumber\ от\ \VSTUOrderDate~\VSTUOrderMonth~\VSTUOrderYear~года}
+\newcommand{\VSTUOrder}{\textnumero~\VSTUOrderNumber\ от\ \VSTUOrderDate~\VSTUOrderMonth~\VSTUOrderYear~года}
 
 % Факультет, кафедра и направление
 \newcommand{\VSTUFaculty}{Электроники и вычислительной техники}
@@ -423,14 +423,14 @@
 % Перечисления
 
 % Переопределим алфавит - нельзя использовать Ё, 3, Й, О, Ч, Ь, Ы, Ъ
-\renewcommand\@asbuk[1]{%
+\newcommand\@asbuk[1]{%
   \ifcase #1%
     \or а\or б\or в\or г\or д\or е\or ж\or и\or к\or л\or
     м\or н\or п\or р\or с\or т\or у\or ф\or х\or ц\or
     ш\or щ\or э\or ю\or я\else \@ctrerr
   \fi
 }
-\renewcommand\@Asbuk[1]{%
+\newcommand\@Asbuk[1]{%
   \ifcase #1%
     \or А\or Б\or В\or Г\or Д\or Е\or Ж\or И\or К\or Л\or
     М\or Н\or П\or Р\or С\or Т\or У\or Ф\or Х\or Ц\or
