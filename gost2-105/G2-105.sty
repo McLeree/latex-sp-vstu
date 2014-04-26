@@ -10,14 +10,22 @@
 \ProcessOptions
 
 % Импорт пакетов
-\RequirePackage[utf8]{inputenc}
-\RequirePackage[english, russian]{babel}
-\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{luainputenc}
+\RequirePackage{fontspec}
+\RequirePackage{polyglossia}
+\setmainfont[Script=Cyrillic,Renderer=Basic,Ligatures=TeX]{Times New Roman}
+\setmonofont[Script=Cyrillic,Renderer=Basic,Ligatures=TeX]{Courier New}
+\newfontfamily{\cyrillicfont}[Script=Cyrillic,Renderer=Basic,Ligatures=TeX]{Times New Roman}
+\newfontfamily{\cyrillicfonttt}[Script=Cyrillic,Renderer=Basic,Ligatures=TeX]{Courier New}
+\RequirePackage{amsmath}
 \RequirePackage{flafter}                 % контролирует, что флоаты встретятся не раньше, чем упомянуты в тексте
 \RequirePackage{mathtext}                % русские буквы в формулах
 \RequirePackage[normalem]{ulem}          % подчеркивания
 \RequirePackage{setspace}                % почему-то приводит в порядок расстояние между строками в подписях оО
 \RequirePackage{ifthen}                  % кое-где не обойтись без if'ов :(
+
+\setmainlanguage{russian}
+\setotherlanguage{english}
 
 % Импорт заголовков для ПЗ и ТЗ
 \input{TitleCPOne.tex}
