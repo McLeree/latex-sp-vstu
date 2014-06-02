@@ -699,6 +699,17 @@
 \newcommand{\@tocrmarg}{2.55em}  % отступ правого края оглавления перенесенных строк
 \newcommand{\@dotsep}{1000}      % между точками в оглавлении в em
 
+% В магистерских диссертациях требуется писать слово "Глава"
+\RequirePackage{titletoc}
+\newcommand{\VSTUAddChapterWordToTOC}{%
+  \titlecontents{chapter}
+  [0mm]
+  {}
+  {\chaptername\ \thecontentslabel\ }
+  {}
+  {\hfill\contentspage}
+}
+
 % Библиография
 \newdimen\bibindent
 \newenvironment{thebibliography}[1]{
