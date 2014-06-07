@@ -1,12 +1,12 @@
 \RequirePackage{amsmath}
 \RequirePackage{ulem}
-\newcommand{\VSTUInitializeCPTwo}{%
+\newcommand{\VSTUInitializeCWOne}{
 \input{TitleCommon.tex}%
 \renewcommand{\VSTUDocumentCodeSuffix}{}
 % Переопределение команды для разделов
 \renewcommand{\beforechapterskip}{\vspace{\GostBeforeTitleSkip}}%
 {
-% Задание на курсовой проект
+% Задание на курсовую работу
 \clearpage
 \thispagestyle{empty}
 \begin{center}
@@ -21,10 +21,9 @@
 \vspace{\fill}
 \begin{center}
 ЗАДАНИЕ\\
-на курсовой проект
+на курсовую работу
 \end{center}
-Студенты \VSTUUnderlinedField{137mm}{фамилия, имя, отчество}{\VSTUStudentFullName,}\\
-\VSTUUnderlinedField{\textwidth}{фамилия, имя, отчество}{\VSTUSecondStudentFullName}\\
+Студент \VSTUUnderlinedField{\width}{фамилия, имя, отчество}{\VSTUStudentFullName}\\
 Группа \uline{\VSTUStudentGroup}\\
 1. Тема: \VSTUTitleUL\uline{\hfill}\\
 Утверждена приказом от <<\uline{\makebox[0.5cm]{\VSTUOrderDate}}>> \uline{\makebox[1.8cm]{\VSTUOrderMonth}} \uline{\makebox[1.2cm]{\VSTUOrderYear}} \textnumero\uline{\makebox[1.5cm]{\VSTUOrderNumber}}\\
@@ -41,16 +40,9 @@
 Руководитель работы \VSTUUnderlinedField{4.5cm}{подпись и дата подписания}{\vphantom{\VSTUDirectorDegreeAndName}}
 \hfill
 \VSTUUnderlinedField{6cm}{инициалы и фамилия}{\VSTUDirectorDegreeAndName}\\
-Задание принял к исполнению
-\vspace{-6mm}
-\begin{flushright}
-\begin{minipage}{19em}
-\VSTUUnderlinedField{4cm}{подпись и дата подписания}{\vphantom{\VSTUStudentName}}
+Задание принял к исполнению \VSTUUnderlinedField{4.5cm}{подпись и дата подписания}{\vphantom{\VSTUStudentName}}
+\hfill
 \VSTUUnderlinedField{4cm}{инициалы и фамилия}{\VSTUStudentName}\\
-\VSTUUnderlinedField{4cm}{подпись и дата подписания}{\vphantom{\VSTUSecondStudentName}}
-\VSTUUnderlinedField{4cm}{инициалы и фамилия}{\VSTUSecondStudentName}\\
-\end{minipage}
-\end{flushright}
 \vspace{\fill}
 \begin{center}
 Волгоград,~\the\year
@@ -68,14 +60,13 @@
 \vspace{\fill}
 \begin{center}
 ПОЯСНИТЕЛЬНАЯ ЗАПИСКА\\
-к курсовому проекту
+к курсовой работе
 \end{center}
 по дисциплине \uline{\VSTUSubject\hfill}\\
 на тему \VSTUTitleUL\uline{\hfill}\\
 \\
 \\
-Студенты \VSTUUnderlinedField{137mm}{фамилия, имя, отчество}{\VSTUStudentFullName,}\\
-\VSTUUnderlinedField{\textwidth}{фамилия, имя, отчество}{\VSTUSecondStudentFullName}\\
+Студент \VSTUUnderlinedField{\width}{фамилия, имя, отчество}{\VSTUStudentFullName}\\
 Группа \uline{\VSTUStudentGroup}\\
 \\
 Работа зачтена с оценкой \uline{\makebox[3.7cm]{}}

@@ -30,6 +30,10 @@
 % Импорт заголовков для ПЗ и ТЗ
 \input{TitleCPOne.tex}
 \input{TitleCPTwo.tex}
+\input{TitleCWOne.tex}
+\input{TitleCWTwo.tex}
+\input{TitleSWOne.tex}
+\input{TitleSWTwo.tex}
 \input{TitlePZ.tex}
 \input{TitleTZ.tex}
 \input{TitleRDSP.tex}
@@ -218,6 +222,14 @@
 \newcommand*{\VSTUSetStudent}[3]{
   \renewcommand{\VSTUStudentFullName}{#3}
   \renewcommand{\VSTUStudentName}{#2}
+  \renewcommand{\VSTUStudentGroup}{#1}
+}
+% Команды для задания второго студента
+\newcommand{\VSTUSecondStudentFullName}{Фамилия Имя Отчество}
+\newcommand{\VSTUSecondStudentName}{И. О. Фамилия}
+\newcommand{\VSTUSetSecondStudent}[3]{
+  \renewcommand{\VSTUSecondStudentFullName}{#3}
+  \renewcommand{\VSTUSecondStudentName}{#2}
   \renewcommand{\VSTUStudentGroup}{#1}
 }
 

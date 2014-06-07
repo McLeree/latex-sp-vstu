@@ -1,0 +1,40 @@
+\RequirePackage{amsmath}
+\RequirePackage{ulem}
+\newcommand{\VSTUInitializeSWOne}{
+\input{TitleCommon.tex}%
+\renewcommand{\VSTUDocumentCodeSuffix}{}
+% Переопределение команды для разделов
+\renewcommand{\beforechapterskip}{\vspace{\GostBeforeTitleSkip}}%
+{
+% Титульник ПЗ
+\clearpage
+\thispagestyle{empty}
+\setcounter{page}{1}
+\begin{center}
+\VSTUTitleHeading
+\end{center}
+Факультет~\uline{\VSTUFaculty\hfill}\\
+Кафедра~\uline{\VSTUDepartment\hfill}\\
+\vspace{\fill}
+\begin{center}
+СЕМЕСТРОВОЕ ЗАДАНИЕ\\
+по дисциплине "\VSTUSubject"\\
+на тему "\VSTUTitle"\\
+\end{center}
+\vspace{\fill}
+\begin{flushright}
+Выполнил:\\
+\VSTUStudentName\\
+Группа:\\
+\VSTUStudentGroup\\
+\vspace{8mm}
+Проверил:\\
+\VSTUDirectorName
+\end{flushright}
+\vspace{\fill}
+\begin{center}
+Волгоград,~\the\year
+\end{center}
+\newpage
+}
+}
