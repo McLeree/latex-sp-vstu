@@ -369,6 +369,16 @@
 \newcommand{\Gost@MainChapterStyle}{}
 \newcommand{\Gost@ChapterStyle}{\Gost@MainChapterStyle}
 
+% Удаление точки после номера раздела
+\AtBeginDocument{%
+  \def\postchapter{\@aftersepkern}%
+  \def\postsection{\@aftersepkern}%
+  \def\postsubsection{\@aftersepkern}%
+  \def\postsubsubsection{\@aftersepkern}%
+  \def\postparagraph{\@aftersepkern}%
+  \def\postsubparagraph{\@aftersepkern}%
+}
+
 % Раздел
 \newcounter{chapter}
 \renewcommand{\thechapter}{\@arabic\c@chapter}
