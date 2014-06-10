@@ -723,7 +723,8 @@
 
 % В магистерских диссертациях требуется писать слово "Глава"
 \RequirePackage{titletoc}
-\newcommand{\VSTUAddChapterWordToTOC}{%
+\newcommand{\VSTUAddChapterWordToChapters}{%
+  \def\prechapter{\chaptername\ }%
   \titlecontents{chapter}
   [0mm]
   {}
