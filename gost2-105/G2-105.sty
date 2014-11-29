@@ -572,6 +572,12 @@
   \endgraf}%
   \hss}}
 }
+% Хак для многостраничных таблиц
+\let\oldendfirsthead\endfirsthead
+\renewcommand\endfirsthead{
+  \oldendfirsthead
+  \caption{\space}\tabularnewline
+}
 
 % Для стирания последней горизонтальной линии при переносе таблицы
 \RequirePackage{booktabs}

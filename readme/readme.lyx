@@ -403,66 +403,6 @@ exhyphenpenalty 10000 % отключение переносов два
 \end_layout
 
 \begin_layout Standard
-
-\family typewriter
-\size footnotesize
-% Хак для многостраничных таблиц
-\end_layout
-
-\begin_layout Standard
-
-\family typewriter
-\size footnotesize
-
-\backslash
-let
-\backslash
-oldendfirsthead
-\backslash
-endfirsthead
-\end_layout
-
-\begin_layout Standard
-
-\family typewriter
-\size footnotesize
-
-\backslash
-renewcommand
-\backslash
-endfirsthead{
-\end_layout
-
-\begin_layout Standard
-
-\family typewriter
-\size footnotesize
-  
-\backslash
-oldendfirsthead
-\end_layout
-
-\begin_layout Standard
-
-\family typewriter
-\size footnotesize
-  
-\backslash
-caption{
-\backslash
-space}
-\backslash
-tabularnewline
-\end_layout
-
-\begin_layout Standard
-
-\family typewriter
-\size footnotesize
-}
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
