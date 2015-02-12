@@ -1,20 +1,21 @@
 \RequirePackage{amsmath}%
 \RequirePackage{ulem}%
-\newcommand{\VSTUInitializeRDO} {%
+\newcommand{\VSTUInitializeTP} {%
 \input{TitleCommon.tex}%
-\renewcommand{\VSTUDocumentCodeSuffix}{34}%
+\renewcommand{\VSTUDocumentCodeSuffix}{92}%
+\newcommand{\VSTULUCode}{А.В.00001-01~\VSTUDocumentCodeSuffix~01-1}%
 % Переопределение команды для разделов
 \renewcommand{\beforechapterskip}{\vspace{\GostBeforeTitleSkip}}%
 % Переопределение команды для нумерации приложений
-\gdef\theappendix{\VSTUDocumentNumbersPrefix\@arabic\c@appendix}%
+\gdef\theappendix{Б.\VSTUDocumentNumbersPrefix\@arabic\c@appendix}%
+% Переопределение нумерации страниц (сверху под кодом документа)
 \fancypagestyle{plain} {%
   \fancyhf{}%
   \fancyhf[HCO,HCE]{\mdseries{\VSTUDocumentCode\\}\thepage\vspace{2mm}}%
 }%
-
 \pagestyle{plain}
 {
-% Титульник руководства оператора
+% Титульник ТП раз
 \clearpage
 \thispagestyle{empty}
 \addtocounter{page}{-1}
@@ -28,7 +29,7 @@
 \begin{center}
 \VSTUTitle\\
 \vspace{\fill}
-РУКОВОДСТВО ОПЕРАТОРА\\
+ТЕХНИЧЕСКИЙ ПРОЕКТ\\
 \vspace{8mm}
 \VSTUDocumentCode\\
 \vspace{8mm}
@@ -48,6 +49,6 @@
 \begin{center}
 Волгоград,~\the\year
 \end{center}
-}
 \newpage
+}
 }

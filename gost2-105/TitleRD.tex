@@ -1,12 +1,12 @@
 \RequirePackage{amsmath}%
 \RequirePackage{ulem}%
-\newcommand{\VSTUInitializeRDO} {%
+\newcommand{\VSTUInitializeRD} {%
 \input{TitleCommon.tex}%
-\renewcommand{\VSTUDocumentCodeSuffix}{34}%
+\renewcommand{\VSTUDocumentCodeSuffix}{93}%
 % Переопределение команды для разделов
 \renewcommand{\beforechapterskip}{\vspace{\GostBeforeTitleSkip}}%
 % Переопределение команды для нумерации приложений
-\gdef\theappendix{\VSTUDocumentNumbersPrefix\@arabic\c@appendix}%
+\gdef\theappendix{В.\VSTUDocumentNumbersPrefix\@arabic\c@appendix}%
 \fancypagestyle{plain} {%
   \fancyhf{}%
   \fancyhf[HCO,HCE]{\mdseries{\VSTUDocumentCode\\}\thepage\vspace{2mm}}%
@@ -14,7 +14,7 @@
 
 \pagestyle{plain}
 {
-% Титульник руководства оператора
+% Титульник рабочей документации
 \clearpage
 \thispagestyle{empty}
 \addtocounter{page}{-1}
@@ -28,7 +28,7 @@
 \begin{center}
 \VSTUTitle\\
 \vspace{\fill}
-РУКОВОДСТВО ОПЕРАТОРА\\
+РАБОЧАЯ ДОКУМЕНТАЦИЯ\\
 \vspace{8mm}
 \VSTUDocumentCode\\
 \vspace{8mm}
