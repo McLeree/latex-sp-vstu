@@ -1,0 +1,33 @@
+\newcommand{\VSTUInitializeAvtoreferat} {%
+\renewcommand{\VSTUDocumentCodeSuffix}{}%
+% Переопределение колонтитулов: верхний пустой, номер страницы - в нижнем
+\fancypagestyle{plainhf} {
+  \setlength\headheight{25pt}
+  \fancyhf{}
+  \fancyhf[FCO,FCE]{\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+% Титульник автореферата
+\pagestyle{plain}
+{
+\clearpage
+\thispagestyle{empty}
+\hfill
+На правах рукописи
+\begin{center}
+\vspace{24mm}
+\MakeUppercase{\VSTUStudentFullName}\\
+\vspace{8mm}
+\MakeUppercase{\VSTUTitle}\\
+\vspace{8mm}
+\VSTUDirection\\
+\vspace{24mm}
+АВТОРЕФЕРАТ\\
+диссертации на соискание степени магистра\\
+\vspace{\fill}
+Волгоград,~\the\year
+\end{center}
+}
+\newpage
+}
