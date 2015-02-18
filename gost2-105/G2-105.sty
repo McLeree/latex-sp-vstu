@@ -452,6 +452,10 @@
 % Перенос в словах-с-дефисом
 \lccode`\-=`\-
 \defaulthyphenchar=127
+% Но переносы никому не нужны
+\sloppy
+\hyphenpenalty 10000
+\exhyphenpenalty 10000
 
 % Перечисления
 
