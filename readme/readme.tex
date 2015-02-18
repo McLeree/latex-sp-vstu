@@ -1,0 +1,171 @@
+\documentclass[a4paper,english]{G2-105}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{luainputenc}
+\usepackage[unicode=true]{hyperref}
+\usepackage{breakurl}
+\usepackage{listings}
+
+\VSTUSetDocumentCode{~}%
+
+\sloppy
+\hyphenpenalty 10000
+\exhyphenpenalty 10000
+
+\begin{document}
+
+\tableofcontents
+
+\newpage
+
+\starsection{Зачем мне нужен этот шаблон?}
+
+Чтобы сэкономить огромную кучу времени. Для защиты бакалаврской или магистерской работы нужно, чтобы бумажная часть соответствовала ГОСТу/стандарту
+ВолгГТУ (краткие требования \href{http://wiki.poas.vstu.ru/index.php/%D0%A2%D0%B5%D0%BA%D1%81%D1%82%D0%BE%D0%B2%D1%8B%D0%B9_%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82}{приведены здесь}).
+
+Каждый год каждый студенты тратят (бесполезно) уйму времени, тыкая в разные настройки Word'а, OpenOffice'а и так далее, причем выбранные стили часто "слетают" и приходится все делать заново. Время, затрачиваемое на оформление дипломной работы, можно \textit{значительно} сократить, если не использовать перечисленные выше программы. Вместо этого можно использовать те, которые \textit{предназначены}
+для качественной верстки документов --- например, \LaTeX (кстати, на западе научные работы и статьи чаще всего делают именно в нем).
+
+В \href{https://bitbucket.org/vostreltsov/bachelors-thesis}{этом репозитории} лежат "исходники" бакалаврской работы, выполненной в LyX и \LaTeX. А \href{http://wiki.poas.vstu.ru/img_auth.php/Lyx_bachelors_thesis.pdf}{эта пояснительная записка} --- пример pdf файла, получаемого на выходе. Если вы хотите заботиться только о содержании вашей работы, а не о ее форматировании --- прошу читать далее.
+
+\starsection{Какие минусы?}
+
+Нужно потратить полчаса--час на установку и настройку программ и сломать стереотип, что \LaTeX --- это сложно.
+
+\starsection{Как установить?}
+
+Установка \LaTeX и шаблонов довольно проста.
+\begin{enumerate}
+\item Для начала нужно скачать \TeX Live \href{https://www.tug.org/texlive/acquire-netinstall.html}{здесь}. Для Windows нужен файл install-tl-windows.exe, на Linux скорее всего можно поставить пакет из репозиториев.
+\item Пока устанавливается \TeX Live, скачиваем \href{https://bitbucket.org/McLeree/latex-sp-vstu}{вот этот репозиторий}. Неважно как --- можно архивом, можно сделать hg clone в консоли --- как вам удобнее. Главное, чтобы на вашем компьютере оказалась папка gost2--105 из этого репозитория.
+\item Устанавливаем шаблон. Положим, что \TeX Live установился в C:\textbackslash{}texlive\textbackslash{}2014. Тогда:
+
+\begin{itemize}
+\item Копируем папку gost2--105 из скачанного репозитория в папку C:\textbackslash{}texlive\textbackslash{}2014\textbackslash{}texmf-dist\textbackslash{}tex\textbackslash{}latex.
+\item Чтобы шаблон нашелся, нужно запустить утилиту \TeX Live Manager Settings, которая должна была добавиться в меню Пуск. В ней нажимаем меню Действия, Обновить базу данных имен файлов.
+\end{itemize}
+\item Установка завершена!
+\end{enumerate}
+
+\starsection{Как настроить документ для соответствия ГОСТу?}
+
+В целом, использование \LaTeX похоже на HTML верстку. Имеются команды для деления документа на секции, создания перечислений, вставки картинок и таблиц, и так далее.
+
+Итак, первым делом нужно создать новый latex--документ. Начинаться он должен со строчек:
+\begin{lstlisting}[language=TeX]
+\documentclass[a4paper,english]{G2-105}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{luainputenc}
+\end{lstlisting}
+
+
+Также перед началом документа нужно указать данные студента, руководителя, нормоконтролера и заведующего кафедрой, тип документа и прочие вещи, необходимые для автоматической генерации титульных листов. Пишем следующее:
+
+%
+
+\texttt{\scriptsize{}\textbackslash{}VSTUSetDocumentNumbersPrefix\{\}}
+
+\texttt{\scriptsize{}\textbackslash{}VSTUSetDocumentCode\{ВРБ-40-461-806-10.19-230100-03-13\}}
+
+\texttt{\scriptsize{}\textbackslash{}VSTUSetDocumentTypeDative\{выпускной работе бакалавра\}}
+
+\texttt{\scriptsize{}\textbackslash{}VSTUSetDocumentTypeGenitive\{выпускную работу бакалавра\}}
+
+\texttt{\scriptsize{}\textbackslash{}VSTUSetInitialData\{задание, выданное научным руководителем с кафедры ПОАС, утвержденное приказом ректора\}}
+
+\texttt{\scriptsize{}\textbackslash{}VSTUSetPZContents\{}
+
+\texttt{\scriptsize{}\textbackslash{}begin\{VSTUList\}}
+
+\texttt{\scriptsize{}~~\textbackslash{}ulitem\{Пункт содержания основной части раз\}}
+
+\texttt{\scriptsize{}~~\textbackslash{}ulitem\{Пункт содержания основной части два\}}
+
+\texttt{\scriptsize{}~~\textbackslash{}ulitem\{\}}
+
+\texttt{\scriptsize{}~~\textbackslash{}ulitem\{\}}
+
+\texttt{\scriptsize{}\textbackslash{}end\{VSTUList\}}
+
+\texttt{\scriptsize{}\}}
+
+\texttt{\scriptsize{}\textbackslash{}VSTUSetPZGraphics\{}
+
+\texttt{\scriptsize{}\textbackslash{}begin\{VSTUNumberedList\}}
+
+\texttt{\scriptsize{}~~\textbackslash{}ulitem\{Графический материал раз\}}
+
+\texttt{\scriptsize{}~~\textbackslash{}ulitem\{Графический материал два\}}
+
+\texttt{\scriptsize{}~~\textbackslash{}ulitem\{\}}
+
+\texttt{\scriptsize{}~~\textbackslash{}ulitem\{\}}
+
+\texttt{\scriptsize{}\textbackslash{}end\{VSTUNumberedList\}}
+
+\texttt{\scriptsize{}\}}
+
+\texttt{\scriptsize{}\textbackslash{}VSTUSetOrder\{590-{}-ст\}\{26\}\{апреля\}\{2013\}}
+
+\texttt{\scriptsize{}\textbackslash{}VSTUSetFaculty\{Электроники и вычислительной техники\}}
+
+\texttt{\scriptsize{}\textbackslash{}VSTUSetDepartment\{Программное обеспечение автоматизированных систем\}}
+
+\texttt{\scriptsize{}\textbackslash{}VSTUSetDepartmentCode\{10.19\}}
+
+\texttt{\scriptsize{}\textbackslash{}VSTUSetDirection\{230100.62 Информатика и вычислительная техника\}}
+
+\texttt{\scriptsize{}\textbackslash{}VSTUSetHeadOfDepartment\{Зав. кафедрой ПОАС\}\{д.т.н., проф.\}\{А. М. Дворянкин\}\{Дворянкин Александр Михайлович\}}
+
+\texttt{\scriptsize{}\textbackslash{}VSTUSetDirector\{доц. каф. ПОАС\}\{к.т.н.\}\{О. А. Сычев\}\{Сычев Олег Александрович\}}
+
+\texttt{\scriptsize{}\textbackslash{}VSTUSetStandardsAdviser\{асс. каф. ПОАС\}\{к.т.н.\}\{О. Н. Ляпина\}\{Ляпина Ольга Николаевна\}}
+
+\texttt{\scriptsize{}\textbackslash{}VSTUSetStudent\{ИВТ-460\}\{В. О. Стрельцов\}\{Стрельцов Валерий Олегович\}}
+
+\texttt{\scriptsize{}\textbackslash{}VSTUSetTitle\{Название работы на русском языке\}}
+
+\texttt{\scriptsize{}\textbackslash{}VSTUSetTitleEng\{Title in English\}}
+
+\texttt{\scriptsize{}\textbackslash{}VSTUAddChapterWordToTOC \% обязательно для ПЗ в магистерских диссертациях}
+
+\texttt{\scriptsize{}\textbackslash{}VSTUInitializePZ}
+
+%
+
+Эти команды устанавливают: префикс номеров рисунков и таблиц (актуально для отдельных приложений, например, ТЗ, но в данном случае он пустой), код документа, номер и дату приказа, различные ФИО и названия работы на русском и английском языках. Последняя команда автоматически создает все нужные титульные листы пояснительной записки.
+
+При добавлении пунктов в списки основной части ПЗ и графического материала необходимо вручную контролировать количество item'ов. Пустые строки добавляются с помощью \textbackslash{}ulitem\{\}.
+
+При оформлении ТЗ (в виде отдельного документа!) первая и последняя команда будут иметь вид:
+
+%
+
+\texttt{\scriptsize{}\textbackslash{}VSTUSetDocumentNumbersPrefix\{А.\}}
+
+\texttt{\scriptsize{}...}
+
+\texttt{\scriptsize{}\textbackslash{}VSTUInitializeTZ}
+
+%
+
+Вместо троеточия идут прежние команды. Верхняя команда заставит рисунки и таблицы иметь номера вида "{}А.xx"{}, а последняя добавит титульные листы технического задания. На этом настройка документа закончена. Можно приступать к главной части работы, не отвлекаясь более на его оформление. Все отступы, шрифты и прочие штуки \LaTeX расставит за вас.
+
+В магистерских диссертациях требуется писать слово ``Глава'' в содержании.
+Для этого нужно вызвать команду \texttt{\scriptsize{}\textbackslash{}VSTUAddChapterWordToTOC}
+перед командой добавления титульного листа.
+
+Возможно также использовать шаблон для семестровых заданий (VSTUInitializeSWOne, VSTUInitializeSWTwo для одного и двух студентов соответственно), курсовых
+работ (VSTUInitializeCWOne, VSTUInitializeCWTwo) и курсовых проектов (VSTUInitializeCPOne, VSTUInitializeCPTwo).
+
+Напоследок пара мелких, но важных моментов, которые не удалось полностью автоматизировать:
+\begin{itemize}
+\item Если подряд идут два заголовка, между ними нужно написать команду \textbackslash{}ttl --- это сделает расстояние между ними меньше, как нужно по ГОСТу.
+\item Ссылки на приложения среди текста придется писать руками, т.е. метки к приложениям проставлять нельзя.
+\end{itemize}
+
+По вопросам обращаться:
+
+Алексей Медников --- mcleree@gmail.com
+
+Валерий Стрельцов --- vostreltsov@gmail.com
+\end{document}
