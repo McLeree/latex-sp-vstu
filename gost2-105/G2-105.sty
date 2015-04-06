@@ -11,13 +11,14 @@
 
 % Импорт пакетов
 \RequirePackage[utf8]{luainputenc}
-\RequirePackage{fontspec}
+\RequirePackage[no-math]{fontspec}       % no-math предотвращает конфликт с mathastext
 \RequirePackage{polyglossia}
 \setmainfont[Script=Cyrillic,Renderer=Basic,Ligatures=TeX]{Times New Roman}
 \setmonofont[Script=Cyrillic,Renderer=Basic,Ligatures=TeX]{Courier New}
 \newfontfamily{\cyrillicfont}[Script=Cyrillic,Renderer=Basic,Ligatures=TeX]{Times New Roman}
 \newfontfamily{\cyrillicfonttt}[Script=Cyrillic,Renderer=Basic,Ligatures=TeX]{Courier New}
 \RequirePackage{amsmath}
+\RequirePackage[roman]{mathastext}       % roman шрифт в формулах
 \RequirePackage{flafter}                 % контролирует, что флоаты встретятся не раньше, чем упомянуты в тексте
 \RequirePackage{mathtext}                % русские буквы в формулах
 \RequirePackage[normalem]{ulem}          % подчеркивания
@@ -607,8 +608,6 @@
 \RequirePackage{amssymb} % для русских "меньше или равно" "больше или равно"
 \RequirePackage{icomma}
 \input{leqno.clo}
-% устанавливаем шрифт для формул: http://tex.stackexchange.com/questions/15058/use-mathrm-by-default
-\DeclareSymbolFont{letters}{OT1}{cmr}{m}{n}
 
 % Все, что оформлено как $...$, не должно быть курсивным
 %\catcode`\$=\active
