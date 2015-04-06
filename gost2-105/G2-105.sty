@@ -608,14 +608,29 @@
 \RequirePackage{amssymb} % для русских "меньше или равно" "больше или равно"
 \RequirePackage{icomma}
 \input{leqno.clo}
-
-% Все, что оформлено как $...$, не должно быть курсивным
-%\catcode`\$=\active
-%\protected\def${\@singledollar}
-%\def\@singledollar#1${\begin{math}\mathrm{#1}\end{math}}
-
 % Нумерация формул
 \renewcommand{\theequation}{\VSTUDocumentNumbersPrefix\arabic{equation}}
+% Специальный список для "где"
+\newenvironment*{VSTUFormulaWhereList}{
+  \newlength\formulawhere
+  \settowidth{\formulawhere}{где}
+  \addtolength{\formulawhere}{\GostItemGap}
+  \renewcommand{\@listi}{%
+    \setlength{\itemsep}{0mm}%                      пробел между последовательными элементами
+    \setlength{\topsep}{0mm}%                       отступ от текста до перечня
+    \setlength{\partopsep}{0mm}%                    дополнительный отступ, если начали абзац
+    \setlength{\parsep}{0mm}%                       расстояние между абзацами внутри пункта
+    \setlength{\leftmargin}{0mm}%                   левый отступ до текста
+    \setlength{\itemindent}{\formulawhere}%         дополнительный левый отступ первой строчки
+    \setlength{\labelsep}{\GostItemGap}%            от метки до текста
+  }
+  \renewcommand{\labelenumi}{\ifthenelse{\equal{\theenumi}{а}}{где}{}}
+  \setlength\leftmargini{0mm}
+  \setlength\leftmarginii{0mm}
+  \setlength\labelsep{0mm}
+  \begin{enumerate}
+}
+{\end{enumerate}}
 
 % Приложения
 
