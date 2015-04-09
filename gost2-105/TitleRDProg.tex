@@ -1,0 +1,53 @@
+\RequirePackage{amsmath}%
+\RequirePackage{ulem}%
+\newcommand{\VSTUInitializeRDProg} {%
+\input{TitleCommon.tex}%
+\renewcommand{\VSTUDocumentCodeSuffix}{33}%
+% Переопределение команды для разделов
+\renewcommand{\beforechapterskip}{\vspace{\GostBeforeTitleSkip}}%
+% Переопределение команды для нумерации приложений
+\gdef\theappendix{\VSTUDocumentNumbersPrefix\@arabic\c@appendix}%
+\fancypagestyle{plain} {%
+  \fancyhf{}%
+  \fancyhf[HCO,HCE]{\mdseries{\VSTUDocumentCode\\}\thepage\vspace{2mm}}%
+}%
+
+\pagestyle{plain}
+{
+% Титульник руководства программиста
+\clearpage
+\thispagestyle{empty}
+\addtocounter{page}{-1}
+\begin{center}
+\VSTUTitleHeading
+Кафедра <<\VSTUDepartment>>\\
+\end{center}
+\vspace{\fill}
+\hfill\VSTUTitleHeadApproval
+\vspace{8mm}
+\begin{center}
+\VSTUTitle\\
+\vspace{\fill}
+РУКОВОДСТВО ПРОГРАММИСТА\\
+\vspace{8mm}
+\VSTUDocumentCode\\
+\vspace{8mm}
+Листов \totalpages\\
+\vspace{8mm}
+\end{center}
+\begin{flushright}
+\VSTUTitleDirector
+\end{flushright}
+\vspace{8mm}
+\begin{flushleft}
+\VSTUTitleStandardsAdviser
+\hfill
+\VSTUTitleImplementer
+\end{flushleft}
+\vspace{\fill}
+\begin{center}
+Волгоград,~\the\year
+\end{center}
+}
+\newpage
+}
