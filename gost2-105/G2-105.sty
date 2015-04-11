@@ -613,8 +613,8 @@
 % Нумерация формул
 \renewcommand{\theequation}{\VSTUDocumentNumbersPrefix\arabic{equation}}
 % Специальный список для "где"
+\newlength\formulawhere
 \newenvironment*{VSTUFormulaWhereList}{
-  \newlength\formulawhere
   \settowidth{\formulawhere}{где}
   \addtolength{\formulawhere}{\GostItemGap}
   \renewcommand{\@listi}{%
