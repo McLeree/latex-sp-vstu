@@ -1,150 +1,143 @@
-\RequirePackage{amsmath}%
-\RequirePackage{ulem}%
-\newcommand{\VSTUInitializePZ} {%
-\input{TitleCommon.tex}%
-{
-% Титульник ПЗ раз
-\clearpage
-\thispagestyle{empty}
-\begin{center}
-\VSTUTitleHeading
-\end{center}
-Факультет~\uline{\VSTUFaculty\hfill}\\
-Кафедра~\uline{\VSTUDepartment\hfill}\\
-\vfill
-\hfill\VSTUTitleHeadApproval
-\vfill
-\begin{center}
-ПОЯСНИТЕЛЬНАЯ ЗАПИСКА
-\end{center}
-к \VSTUUnderlinedField{26em}{наименование вида работы}{\VSTUDocumentTypeDative}
-\hfill
-на тему\\
-\VSTUTitleUL\\
-Автор \VSTUUnderlinedField{6cm}{подпись и дата подписания}{\vphantom{\VSTUStudentFullName}}
-\hfill
-\VSTUUnderlinedField{8cm}{фамилия, имя, отчество}{\VSTUStudentFullName}\\
-Обозначение \VSTUUnderlinedField{\width}{код документа}{\VSTUDocumentCode}\\
-Группа \VSTUUnderlinedField{3cm}{шифр группы}{\VSTUStudentGroup}\\
-Направление \VSTUUnderlinedField{25.9em}{код по ОКСО, наименование направления, программы}{\VSTUDirection}\\
-\uline{\makebox[\textwidth]{\hfill}}\\
-Руководитель работы \VSTUUnderlinedField{6cm}{подпись и дата подписания}{\vphantom{\VSTUDirectorDegreeAndName}}
-\hfill
-\VSTUUnderlinedField{5cm}{инициалы и фамилия}{\VSTUDirectorDegreeAndName}\\
-Консультанты по разделам:\\
-\VSTUUnderlinedField{5.5cm}{краткое наименование раздела}{}
-\hfill
-\VSTUUnderlinedField{5cm}{подпись и дата подписания}{}
-\hfill
-\VSTUUnderlinedField{4cm}{инициалы и фамилия}{}\\
-\VSTUUnderlinedField{5.5cm}{краткое наименование раздела}{}
-\hfill
-\VSTUUnderlinedField{5cm}{подпись и дата подписания}{}
-\hfill
-\VSTUUnderlinedField{4cm}{инициалы и фамилия}{}\\
-%\VSTUUnderlinedField{5.5cm}{краткое наименование раздела}{}
-%\hfill
-%\VSTUUnderlinedField{5cm}{подпись и дата подписания}{}
-%\hfill
-%\VSTUUnderlinedField{4cm}{инициалы и фамилия}{}\\
-\vspace{\fill}\\
-Нормоконтролер \VSTUUnderlinedField{6cm}{подпись и дата подписания}{\vphantom{\VSTUStandardsAdviserDegreeAndName}}
-\hfill
-\VSTUUnderlinedField{5cm}{инициалы и фамилия}{\VSTUStandardsAdviserDegreeAndName}\\
-\vspace{\fill}
-\begin{center}
-Волгоград,~\the\year
-\end{center}
-\newpage
-% Титульник ПЗ два
-{
-\clearpage
-\thispagestyle{empty}
-\begin{center}
-\VSTUTitleHeading
-\end{center}
-Кафедра~\uline{\VSTUDepartment\hfill}\\
-\vfill
-\hfill\VSTUTitleHeadApproval
-\vspace{\fill}
-\\Задание на \VSTUUnderlinedField{26.9em}{наименование вида работы}{\VSTUDocumentTypeGenitive}\\
-Студент \VSTUUnderlinedField{28em}{фамилия, имя, отчество}{\VSTUStudentFullName}\\
-Код кафедры \uline{\makebox[4cm]{\VSTUDepartmentCode}} \hfill Группа \uline{\makebox[4cm]{\VSTUStudentGroup}}\\
-\vspace{1mm}\\
-Тема \VSTUTitleUL\\
-Утверждена приказом по университету от <<\uline{\makebox[0.5cm]{\VSTUOrderDate}}>> \uline{\makebox[1.8cm]{\VSTUOrderMonth}} \uline{\makebox[1.2cm]{\VSTUOrderYear}} \textnumero\uline{\makebox[2cm]{\VSTUOrderNumber}}\\
-Срок представления готовой работы \VSTUUnderlinedField{81mm}{дата, подпись студента}{}\\
-Исходные данные для выполнения работы\\
-\VSTUInitialDataUL\\
-\vspace{4mm}\\
-Содержание основной части пояснительной записки
-{\small
-\VSTUPZContents
-}
-\thispagestyle{empty}
-\addtocounter{page}{-1}
-\noindent Перечень графического материала
-{\small
-\VSTUPZGraphics
-}
-\vspace{\fill}
-\thispagestyle{empty}
-\noindent Руководитель работы \VSTUUnderlinedField{6cm}{подпись и дата подписания}{\vphantom{\VSTUDirectorDegreeAndName}}
-\hfill
-\VSTUUnderlinedField{5cm}{инициалы и фамилия}{\VSTUDirectorDegreeAndName}\\\\
-Консультанты по разделам:\\
-\VSTUUnderlinedField{5.5cm}{краткое наименование раздела}{}
-\hfill
-\VSTUUnderlinedField{5cm}{подпись и дата подписания}{}
-\hfill
-\VSTUUnderlinedField{4cm}{инициалы и фамилия}{}\\
-%\VSTUUnderlinedField{5.5cm}{краткое наименование раздела}{}
-%\hfill
-%\VSTUUnderlinedField{5cm}{подпись и дата подписания}{}
-%\hfill
-%\VSTUUnderlinedField{4cm}{инициалы и фамилия}{}\\
-%\VSTUUnderlinedField{5.5cm}{краткое наименование раздела}{}
-%\hfill
-%\VSTUUnderlinedField{5cm}{подпись и дата подписания}{}
-%\hfill
-%\VSTUUnderlinedField{4cm}{инициалы и фамилия}{}\\
-\newpage
-}
-% Теперь добавляем суффикс к коду МД
-\renewcommand{\VSTUDocumentCodeSuffix}{81}
-% Титульник ПЗ три
-\clearpage
-\thispagestyle{empty}
-\begin{center}
-\VSTUTitleHeading
-Кафедра <<\VSTUDepartment>>\\
-\end{center}
-\vfill
-\hfill\VSTUTitleHeadApproval
-\vspace{8mm}
-\begin{center}
-\VSTUTitle\\
-\vspace{\fill}
-ПОЯСНИТЕЛЬНАЯ ЗАПИСКА\\
-\vspace{8mm}
-\VSTUDocumentCode\\
-\vspace{8mm}
-Листов \totalpages\\
-\vspace{\fill}
-\end{center}
-\begin{flushright}
-\VSTUTitleDirector
-\end{flushright}
-\vspace{8mm}
-\begin{flushleft}
-\VSTUTitleStandardsAdviser
-\hfill
-\VSTUTitleImplementer
-\end{flushleft}
-\vspace{\fill}
-\begin{center}
-Волгоград,~\the\year
-\end{center}
-\newpage
-}
+\RequirePackage{amsmath}
+\RequirePackage{ulem}
+\newcommand{\VSTUInitializePZ}{
+    % Титульник ПЗ раз
+    \clearpage
+    \thispagestyle{empty}
+    \begin{center}
+    \VSTUTitleHeading
+    \end{center}
+    Факультет~\uline{\VSTUFaculty\hfill}\\
+    Кафедра~\uline{\VSTUDepartment\hfill}\\
+    \vfill
+    \hfill\VSTUTitleHeadApproval
+    \vfill
+    \begin{center}
+    ПОЯСНИТЕЛЬНАЯ ЗАПИСКА
+    \end{center}
+    к \VSTUUnderlinedField{26em}{наименование вида работы}{\VSTUDocumentTypeDative}
+    \hfill
+    на тему\\
+    \VSTUTitleUL\\
+    Автор \VSTUUnderlinedField{6cm}{подпись и дата подписания}{\vphantom{\VSTUStudentFullName}}
+    \hfill
+    \VSTUUnderlinedField{8cm}{фамилия, имя, отчество}{\VSTUStudentFullName}\\
+    Обозначение \VSTUUnderlinedField{\width}{код документа}{\VSTUDocumentCode}\\
+    Группа \VSTUUnderlinedField{3cm}{шифр группы}{\VSTUStudentGroup}\\
+    Направление \VSTUUnderlinedField{25.9em}{код по ОКСО, наименование направления, программы}{\VSTUDirection}\\
+    \uline{\makebox[\textwidth]{\hfill}}\\
+    Руководитель работы \VSTUUnderlinedField{6cm}{подпись и дата подписания}{\vphantom{\VSTUDirectorDegreeAndName}}
+    \hfill
+    \VSTUUnderlinedField{5cm}{инициалы и фамилия}{\VSTUDirectorDegreeAndName}\\
+    Консультанты по разделам:\\
+    \VSTUUnderlinedField{5.5cm}{краткое наименование раздела}{}
+    \hfill
+    \VSTUUnderlinedField{5cm}{подпись и дата подписания}{}
+    \hfill
+    \VSTUUnderlinedField{4cm}{инициалы и фамилия}{}\\
+    \VSTUUnderlinedField{5.5cm}{краткое наименование раздела}{}
+    \hfill
+    \VSTUUnderlinedField{5cm}{подпись и дата подписания}{}
+    \hfill
+    \VSTUUnderlinedField{4cm}{инициалы и фамилия}{}\\
+    %\VSTUUnderlinedField{5.5cm}{краткое наименование раздела}{}
+    %\hfill
+    %\VSTUUnderlinedField{5cm}{подпись и дата подписания}{}
+    %\hfill
+    %\VSTUUnderlinedField{4cm}{инициалы и фамилия}{}\\
+    \vspace{\fill}\\
+    Нормоконтролер \VSTUUnderlinedField{6cm}{подпись и дата подписания}{\vphantom{\VSTUStandardsAdviserDegreeAndName}}
+    \hfill
+    \VSTUUnderlinedField{5cm}{инициалы и фамилия}{\VSTUStandardsAdviserDegreeAndName}\\
+    \vspace{\fill}
+    \begin{center}
+    Волгоград,~\the\year
+    \end{center}
+    \clearpage
+    % Титульник ПЗ два
+    \thispagestyle{empty}
+    \begin{center}
+    \VSTUTitleHeading
+    \end{center}
+    Кафедра~\uline{\VSTUDepartment\hfill}\\
+    \vfill
+    \hfill\VSTUTitleHeadApproval
+    \vspace{\fill}
+    \\Задание на \VSTUUnderlinedField{26.9em}{наименование вида работы}{\VSTUDocumentTypeGenitive}\\
+    Студент \VSTUUnderlinedField{28em}{фамилия, имя, отчество}{\VSTUStudentFullName}\\
+    Код кафедры \uline{\makebox[4cm]{\VSTUDepartmentCode}} \hfill Группа \uline{\makebox[4cm]{\VSTUStudentGroup}}\\
+    \vspace{1mm}\\
+    Тема \VSTUTitleUL\\
+    Утверждена приказом по университету от <<\uline{\makebox[0.5cm]{\VSTUOrderDate}}>> \uline{\makebox[1.8cm]{\VSTUOrderMonth}} \uline{\makebox[1.2cm]{\VSTUOrderYear}} \textnumero\uline{\makebox[2cm]{\VSTUOrderNumber}}\\
+    Срок представления готовой работы \VSTUUnderlinedField{81mm}{дата, подпись студента}{}\\
+    Исходные данные для выполнения работы\\
+    \VSTUInitialDataUL\\
+    \vspace{4mm}\\
+    Содержание основной части пояснительной записки
+    {\small
+    \VSTUPZContents
+    }
+    \thispagestyle{empty}
+    \addtocounter{page}{-1}
+    \noindent Перечень графического материала
+    {\small
+    \VSTUPZGraphics
+    }
+    \vspace{\fill}
+    \thispagestyle{empty}
+    \noindent Руководитель работы \VSTUUnderlinedField{6cm}{подпись и дата подписания}{\vphantom{\VSTUDirectorDegreeAndName}}
+    \hfill
+    \VSTUUnderlinedField{5cm}{инициалы и фамилия}{\VSTUDirectorDegreeAndName}\\\\
+    Консультанты по разделам:\\
+    \VSTUUnderlinedField{5.5cm}{краткое наименование раздела}{}
+    \hfill
+    \VSTUUnderlinedField{5cm}{подпись и дата подписания}{}
+    \hfill
+    \VSTUUnderlinedField{4cm}{инициалы и фамилия}{}\\
+    %\VSTUUnderlinedField{5.5cm}{краткое наименование раздела}{}
+    %\hfill
+    %\VSTUUnderlinedField{5cm}{подпись и дата подписания}{}
+    %\hfill
+    %\VSTUUnderlinedField{4cm}{инициалы и фамилия}{}\\
+    %\VSTUUnderlinedField{5.5cm}{краткое наименование раздела}{}
+    %\hfill
+    %\VSTUUnderlinedField{5cm}{подпись и дата подписания}{}
+    %\hfill
+    %\VSTUUnderlinedField{4cm}{инициалы и фамилия}{}\\
+    \clearpage
+    % Титульник ПЗ три
+    % Теперь добавляем суффикс к коду МД
+    \renewcommand{\VSTUDocumentCodeSuffix}{81}
+    \thispagestyle{empty}
+    \begin{center}
+    \VSTUTitleHeading
+    Кафедра <<\VSTUDepartment>>\\
+    \end{center}
+    \vfill
+    \hfill\VSTUTitleHeadApproval
+    \vspace{8mm}
+    \begin{center}
+    \VSTUTitle\\
+    \vspace{\fill}
+    ПОЯСНИТЕЛЬНАЯ ЗАПИСКА\\
+    \vspace{8mm}
+    \VSTUDocumentCode\\
+    \vspace{8mm}
+    Листов \totalpages\\
+    \vspace{\fill}
+    \end{center}
+    \begin{flushright}
+    \VSTUTitleDirector
+    \end{flushright}
+    \vspace{8mm}
+    \begin{flushleft}
+    \VSTUTitleStandardsAdviser
+    \hfill
+    \VSTUTitleImplementer
+    \end{flushleft}
+    \vspace{\fill}
+    \begin{center}
+    Волгоград,~\the\year
+    \end{center}
+    \clearpage
 }
