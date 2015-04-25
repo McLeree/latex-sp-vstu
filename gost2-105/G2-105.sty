@@ -127,7 +127,7 @@
 % Номер приказа (месяц задается строкой!)
 \newcommand{\VSTUOrderDate}{01}
 \newcommand{\VSTUOrderMonth}{января}
-\newcommand{\VSTUOrderYear}{2013}
+\newcommand{\VSTUOrderYear}{\the\year}
 \newcommand{\VSTUOrderNumber}{1000--ст}
 % Сеттеры
 \newcommand*{\VSTUSetOrder}[4]{
@@ -139,6 +139,15 @@
 
 % Получение строки приказа из параметров выше
 \newcommand{\VSTUOrder}{\textnumero~\VSTUOrderNumber\ от\ \VSTUOrderDate~\VSTUOrderMonth~\VSTUOrderYear~года}
+
+% Дата предоставления готовой работы - только число и месяц
+% TODO: использовать эти команды в титульниках по курсовикам?
+\newcommand{\VSTUDeadlineDate}{01}
+\newcommand{\VSTUDeadlineMonth}{января}
+\newcommand*{\VSTUSetDeadline}[2]{
+  \renewcommand{\VSTUDeadlineMonth}{#2}
+  \renewcommand{\VSTUDeadlineDate}{#1}
+}
 
 % Факультет, кафедра и направление
 \newcommand{\VSTUFaculty}{Электроники и вычислительной техники}
