@@ -58,6 +58,7 @@
 \newcommand{\VSTUDocumentCode}{UNKNOWN-\VSTUDocumentCodeSuffix}
 \newcommand{\VSTUDocumentTypeDative}{выпускной работе бакалавра}   % в дательном падаже
 \newcommand{\VSTUDocumentTypeGenitive}{выпускную работу бакалавра} % в родительном падеже
+\newcommand{\VSTUDocumentTypeEng}{bachelor's thesis}
 % Сеттеры
 \newcommand*{\VSTUSetDocumentCode}[1]{
   \renewcommand{\VSTUDocumentCode}{
@@ -71,6 +72,9 @@
 }
 \newcommand*{\VSTUSetDocumentTypeGenitive}[1]{
   \renewcommand{\VSTUDocumentTypeGenitive}{#1}
+}
+\newcommand*{\VSTUSetDocumentTypeEng}[1]{
+  \renewcommand{\VSTUDocumentTypeEng}{#1}
 }
 
 % Исходные данные для выполнения работы
@@ -232,6 +236,7 @@
 
 % ФИО студента, группа
 \newcommand{\VSTUStudentFullName}{Фамилия Имя Отчество}
+\newcommand{\VSTUStudentFullNameEng}{FirstName LastName}
 \newcommand{\VSTUStudentName}{И. О. Фамилия}
 \newcommand{\VSTUStudentGroup}{ГРП--000}
 % Сеттеры
@@ -239,6 +244,9 @@
   \renewcommand{\VSTUStudentFullName}{#3}
   \renewcommand{\VSTUStudentName}{#2}
   \renewcommand{\VSTUStudentGroup}{#1}
+}
+\newcommand*{\VSTUSetStudentFullNameEng}[1]{
+  \renewcommand{\VSTUStudentFullNameEng}{#1}
 }
 % Команды для задания второго студента
 \newcommand{\VSTUSecondStudentFullName}{Фамилия Имя Отчество}
