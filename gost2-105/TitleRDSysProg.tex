@@ -10,9 +10,9 @@
       \fancyhf{}
       \fancyhf[HCO,HCE]{\mdseries{\VSTUDocumentCode\\}\thepage\vspace{2mm}}
     }
+    \pagestyle{empty}
     % Титульник руководства системного программиста
     \clearpage
-    \thispagestyle{empty}
     \addtocounter{page}{-1}
     \begin{center}
     \VSTUTitleHeading
@@ -45,4 +45,5 @@
     Волгоград,~\the\year
     \end{center}
     \clearpage
+    \pagestyle{plainhf}
 }

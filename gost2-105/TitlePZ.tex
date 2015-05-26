@@ -1,9 +1,10 @@
 \RequirePackage{amsmath}
 \RequirePackage{ulem}
 \newcommand{\VSTUInitializePZ}{
+    \pagestyle{empty}
     % Титульник ПЗ раз
+    % Это титульник на всю диссертацию и он не нумеруется
     \clearpage
-    \thispagestyle{empty}
     \begin{center}
     \VSTUTitleHeading
     \end{center}
@@ -55,7 +56,8 @@
     \end{center}
     \clearpage
     % Титульник ПЗ два
-    \thispagestyle{empty}
+    \newcounter{pageAtSecondTitle}
+    \setcounter{pageAtSecondTitle}{\thepage}
     \begin{center}
     \VSTUTitleHeading
     \end{center}
@@ -77,14 +79,11 @@
     {\small
     \VSTUPZContents
     }
-    \thispagestyle{empty}
-    \addtocounter{page}{-1}
     \noindent Перечень графического материала
     {\small
     \VSTUPZGraphics
     }
     \vspace{\fill}
-    \thispagestyle{empty}
     \noindent Руководитель работы \VSTUUnderlinedField{6cm}{подпись и дата подписания}{\vphantom{\VSTUDirectorDegreeAndName}}
     \hfill
     \VSTUUnderlinedField{5cm}{инициалы и фамилия}{\VSTUDirectorDegreeAndName}\\\\
@@ -108,7 +107,13 @@
     % Титульник ПЗ три
     % Теперь добавляем суффикс к коду МД
     \renewcommand{\VSTUDocumentCodeSuffix}{81}
-    \thispagestyle{empty}
+    % Уменьшаем счетчик страниц, поскольку были двухсторонние страницы
+    \newcounter{pagesLost}
+    \setcounter{pagesLost}{\thepage}
+    \addtocounter{pagesLost}{-\value{pageAtSecondTitle}} % теперь в этом счетчике количество страниц (не листов) во втором титульнике
+    \ifthenelse{\isodd{\value{pagesLost}}}{\addtocounter{pagesLost}{1}}{} % если количество страниц нечетное, добавляем 1 фиктивную
+    \dividecounter{pagesLost}{2} % финальное значение счетчика - делим пополам
+    \addtocounter{page}{-\value{pagesLost}}
     \begin{center}
     \VSTUTitleHeading
     Кафедра <<\VSTUDepartment>>\\
@@ -140,4 +145,5 @@
     Волгоград,~\the\year
     \end{center}
     \clearpage
+    \pagestyle{plainhf}
 }
