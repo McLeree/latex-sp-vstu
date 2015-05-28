@@ -6,14 +6,11 @@
     \renewcommand{\beforechapterskip}{\vspace{\GostBeforeTitleSkip}}
     % Переопределение команды для нумерации приложений
     \gdef\theappendix{\VSTUDocumentNumbersPrefix\@arabic\c@appendix}
-    \fancypagestyle{plain} {
-      \fancyhf{}
-      \fancyhf[HCO,HCE]{\mdseries{\VSTUDocumentCode\\}\thepage\vspace{2mm}}
-    }
+    % Переопределение нумерации страниц (сверху под кодом документа)
+    \VSTUPageNumbersToTheTop
     \pagestyle{empty}
     % Титульник руководства оператора
     \clearpage
-    \addtocounter{page}{-1}
     \begin{center}
     \VSTUTitleHeading
     Кафедра <<\VSTUDepartment>>\\

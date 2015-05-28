@@ -3,7 +3,7 @@
 \newcommand{\VSTUInitializePZ}{
     \pagestyle{empty}
     % Титульник ПЗ раз
-    % Это титульник на всю диссертацию и он не нумеруется
+    % Это титульник на всю диссертацию
     \clearpage
     \begin{center}
     \VSTUTitleHeading
@@ -55,9 +55,8 @@
     Волгоград,~\the\year
     \end{center}
     \clearpage
-    % Титульник ПЗ два
-    \newcounter{pageAtSecondTitle}
-    \setcounter{pageAtSecondTitle}{\thepage}
+    % Титульник ПЗ два - задание на работу/диссертацию
+    % Двусторонний лист, считающийся за одну страницу
     \begin{center}
     \VSTUTitleHeading
     \end{center}
@@ -107,13 +106,8 @@
     % Титульник ПЗ три
     % Теперь добавляем суффикс к коду МД
     \renewcommand{\VSTUDocumentCodeSuffix}{81}
-    % Уменьшаем счетчик страниц, поскольку были двухсторонние страницы
-    \newcounter{pagesLost}
-    \setcounter{pagesLost}{\thepage}
-    \addtocounter{pagesLost}{-\value{pageAtSecondTitle}} % теперь в этом счетчике количество страниц (не листов) во втором титульнике
-    \ifthenelse{\isodd{\value{pagesLost}}}{\addtocounter{pagesLost}{1}}{} % если количество страниц нечетное, добавляем 1 фиктивную
-    \dividecounter{pagesLost}{2} % финальное значение счетчика - делим пополам
-    \addtocounter{page}{-\value{pagesLost}}
+    % Уменьшаем счетчик страниц, поскольку предыдущий лист двусторонний
+    \addtocounter{page}{-1}
     \begin{center}
     \VSTUTitleHeading
     Кафедра <<\VSTUDepartment>>\\

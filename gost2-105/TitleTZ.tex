@@ -8,14 +8,10 @@
     % Переопределение команды для нумерации приложений
     \gdef\theappendix{\VSTUDocumentNumbersPrefix\@arabic\c@appendix}
     % Переопределение нумерации страниц (сверху под кодом документа)
-    \fancypagestyle{plain} {
-      \fancyhf{}
-      \fancyhf[HCO,HCE]{\mdseries{\VSTUDocumentCode\\}\thepage\vspace{2mm}}
-    }
+    \VSTUPageNumbersToTheTop
     \pagestyle{empty}
-    % Титульник ТЗ раз
+    % Титульник ТЗ раз - на само ТЗ
     \clearpage
-    \addtocounter{page}{-1}
     \begin{center}
     \VSTUTitleHeading
     Кафедра <<\VSTUDepartment>>\\
@@ -47,7 +43,7 @@
     Волгоград,~\the\year
     \end{center}
     \clearpage
-    % Титульник ТЗ два
+    % Титульник ТЗ два - лист утверждения. Он также нумеруются и идет вторым
     \hfill\VSTUTitleHeadApproval
     \vspace{\fill}
     \vspace{\fill}

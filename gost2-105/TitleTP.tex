@@ -8,14 +8,10 @@
     % Переопределение команды для нумерации приложений
     \gdef\theappendix{\VSTUDocumentNumbersPrefix\@arabic\c@appendix}
     % Переопределение нумерации страниц (сверху под кодом документа)
-    \fancypagestyle{plain} {
-      \fancyhf{}
-      \fancyhf[HCO,HCE]{\mdseries{\VSTUDocumentCode\\}\thepage\vspace{2mm}}
-    }
+    \VSTUPageNumbersToTheTop
     \pagestyle{empty}
     % Титульник ТП раз
     \clearpage
-    \addtocounter{page}{-1}
     \begin{center}
     \VSTUTitleHeading
     Кафедра <<\VSTUDepartment>>\\
