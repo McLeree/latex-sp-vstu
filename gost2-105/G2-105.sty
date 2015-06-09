@@ -42,9 +42,10 @@
 \input{TitleTZ.tex}
 \input{TitleTP.tex}
 \input{TitleRD.tex}
+\input{TitleRDOperator.tex}
 \input{TitleRDProg.tex}
 \input{TitleRDSysProg.tex}
-\input{TitleRDOperator.tex}
+\input{TitleReview.tex}
 
 % Префикс, стоящий перед номерами рисунков и таблиц
 \newcommand{\VSTUDocumentNumbersPrefix}{}
@@ -57,7 +58,7 @@
 \newcommand{\VSTUDocumentCodeSuffix}{}
 \newcommand{\VSTUDocumentCode}{UNKNOWN-\VSTUDocumentCodeSuffix}
 \newcommand{\VSTUDocumentTypeDative}{выпускной работе бакалавра}   % в дательном падаже
-\newcommand{\VSTUDocumentTypeGenitive}{выпускную работу бакалавра} % в родительном падеже
+\newcommand{\VSTUDocumentTypeAccusative}{выпускную работу бакалавра} % в родительном падеже
 \newcommand{\VSTUDocumentTypeEng}{bachelor's thesis}
 % Сеттеры
 \newcommand*{\VSTUSetDocumentCode}[1]{
@@ -70,8 +71,8 @@
 \newcommand*{\VSTUSetDocumentTypeDative}[1]{
   \renewcommand{\VSTUDocumentTypeDative}{#1}
 }
-\newcommand*{\VSTUSetDocumentTypeGenitive}[1]{
-  \renewcommand{\VSTUDocumentTypeGenitive}{#1}
+\newcommand*{\VSTUSetDocumentTypeAccusative}[1]{
+  \renewcommand{\VSTUDocumentTypeAccusative}{#1}
 }
 \newcommand*{\VSTUSetDocumentTypeEng}[1]{
   \renewcommand{\VSTUDocumentTypeEng}{#1}
@@ -234,13 +235,34 @@
   \renewcommand{\VSTUStandardsAdviserPost}{#1}
 }
 
+% ФИО рецензента, степень/должность
+\newcommand{\VSTUReviewerFullName}{Фамилия Имя Отчество}
+\newcommand{\VSTUReviewerName}{И. О. Фамилия}
+\newcommand{\VSTUReviewerDegree}{звание}
+\newcommand{\VSTUReviewerPost}{звание}
+\newcommand{\VSTUReviewerDegreeAndPost}{
+  \VSTUCombineDegreeAndPost{\VSTUReviewerDegree}{\VSTUReviewerPost}
+}
+\newcommand{\VSTUReviewerDegreeAndName}{
+  \VSTUCombineDegreeAndName{\VSTUReviewerDegree}{\VSTUReviewerName}
+}
+% Сеттеры
+\newcommand*{\VSTUSetReviewer}[4]{
+  \renewcommand{\VSTUReviewerFullName}{#4}
+  \renewcommand{\VSTUReviewerName}{#3}
+  \renewcommand{\VSTUReviewerDegree}{#2}
+  \renewcommand{\VSTUReviewerPost}{#1}
+}
+
 % ФИО студента, группа
 \newcommand{\VSTUStudentFullName}{Фамилия Имя Отчество}
+\newcommand{\VSTUStudentFullNameGenitive}{Фамилии Имени Отчества}
 \newcommand{\VSTUStudentFullNameEng}{FirstName LastName}
 \newcommand{\VSTUStudentName}{И. О. Фамилия}
 \newcommand{\VSTUStudentGroup}{ГРП--000}
 % Сеттеры
-\newcommand*{\VSTUSetStudent}[3]{
+\newcommand*{\VSTUSetStudent}[4]{
+  \renewcommand{\VSTUStudentFullNameGenitive}{#4}
   \renewcommand{\VSTUStudentFullName}{#3}
   \renewcommand{\VSTUStudentName}{#2}
   \renewcommand{\VSTUStudentGroup}{#1}
