@@ -804,6 +804,17 @@
   {}
   {\hfill\contentspage}
 }
+% В ТЗ по ГОСТ 19 нужно Содержание по центру
+\newcommand{\VSTUMakeCenteredTOC}{%
+    \renewcommand{\tableofcontents}{
+      {
+      \hyphenpenalty 10000
+      \exhyphenpenalty 10000
+      \renewcommand{\contentsname}{\center{\hspace{-8mm}Содержание}}
+      \chapter*{\contentsname}\@starttoc{toc}
+      }
+    }
+}
 
 % Библиография
 \newdimen\bibindent
